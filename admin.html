@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Admin - Oceanic Lending</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        *{box-sizing:border-box}body{margin:0;font-family:Inter,sans-serif;background:#0a1628;color:#e8edf5}
+        .login-page{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1628,#1a3a5c)}
+        .login-card{background:#142b44;padding:45px;border-radius:20px;width:380px;box-shadow:0 20px 60px #00000066}
+        .login-card .logo{text-align:center;font-size:48px;color:#20c9d7;margin-bottom:10px}
+        .login-card h1{font-size:26px;margin-bottom:8px;color:#fff;text-align:center}
+        .login-card p{color:#8aa4b8;font-size:13px;margin-bottom:30px;text-align:center}
+        .login-card .input-group{position:relative;margin:15px 0}
+        .login-card .input-group .fa{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#5a7a92}
+        .login-card input{width:100%;padding:14px 14px 14px 42px;border:1px solid #2a4a66;border-radius:10px;background:#0d1f32;color:#fff;font-size:14px}
+        .login-card input:focus{outline:2px solid #087ea4;border-color:transparent}
+        .login-card button{width:100%;padding:14px;background:linear-gradient(135deg,#087ea4,#075d86);border:0;border-radius:10px;color:#fff;font-weight:700;font-size:15px;margin-top:8px;cursor:pointer}
+        .login-card button:hover{opacity:.9}
+        .login-card .error{color:#ff6b6b;font-size:12px;text-align:center;margin-top:12px}
+        .dash{display:none;padding:25px}
+        .dash-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;flex-wrap:wrap;gap:15px}
+        .dash-header h1{font-size:28px;margin:0}
+        .dash-header h1 .fa{color:#20c9d7}
+        .dash-header .logout{background:#2a4a66;border:0;color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer}
+        .dash-header .logout:hover{background:#3a5a76}
+        .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin-bottom:30px}
+        .stat{background:#142b44;padding:20px;border-radius:12px;border:1px solid #1f3f5a}
+        .stat .fa{color:#20c9d7;margin-right:6px}
+        .stat small{color:#8aa4b8;font-size:10px;letter-spacing:1px}
+        .stat h2{font-size:28px;margin:8px 0 0}
+        .section{background:#142b44;border-radius:12px;padding:20px;margin-bottom:25px;border:1px solid #1f3f5a;overflow-x:auto}
+        .section h3{font-size:16px;margin:0 0 15px;color:#b8d4e8}
+        .section h3 .fa{color:#20c9d7;margin-right:8px}
+        table{width:100%;border-collapse:collapse;font-size:12px}
+        th{text-align:left;padding:10px 8px;color:#8aa4b8;border-bottom:1px solid #1f3f5a;font-weight:600}
+        td{padding:10px 8px;border-bottom:1px solid #0d1f32}
+        .badge{padding:4px 10px;border-radius:12px;font-size:9px;font-weight:700;display:inline-block}
+        .badge.pending{background:#f59f00;color:#000}
+        .badge.under_review{background:#f59f00;color:#000}
+        .badge.approved{background:#20c997;color:#000}
+        .badge.rejected{background:#ff6b6b;color:#fff}
+        .badge.completed{background:#20c997;color:#000}
+        .badge.processing{background:#4dabf7;color:#000}
+        .badge.cancelled{background:#868e96;color:#fff}
+        .badge.active{background:#20c997;color:#000}
+        .badge.inactive{background:#ff6b6b;color:#fff}
+        .action-btn{background:#1f3f5a;border:0;color:#fff;padding:5px 12px;border-radius:6px;font-size:10px;margin:2px;font-weight:600;cursor:pointer}
+        .action-btn.approve{background:#20c997}
+        .action-btn.reject{background:#ff6b6b}
+        .action-btn:hover{opacity:.8}
+        .empty{color:#5a7a92;text-align:center;padding:30px;font-size:13px}
+        .empty .fa{font-size:30px;display:block;margin-bottom:10px;color:#2a4a66}
+        .toast{position:fixed;bottom:20px;right:20px;background:#142b44;color:#fff;padding:14px 22px;border-radius:10px;font-size:13px;border:1px solid #2a4a66;z-index:999;animation:slideIn .3s;display:flex;align-items:center;gap:10px}
+        .toast .fa{color:#20c9d7;font-size:16px}
+        @keyframes slideIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+        @media(max-width:768px){.login-card{width:90%;padding:30px}.dash-header{flex-direction:column;align-items:start;gap:10px}.stats{grid-template-columns:1fr 1fr}}
+        @media(max-width:480px){.stats{grid-template-columns:1fr}}
+        .status-select{padding:4px 8px;border-radius:6px;border:1px solid #2a4a66;background:#0d1f32;color:#fff;font-size:11px}
+    </style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage" class="login-page">
+    <div class="login-card">
+        <div class="logo"><i class="fas fa-shield-alt"></i></div>
+        <h1>Admin Access</h1>
+        <p>Oceanic Lending Management</p>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input id="adminUser" type="text" placeholder="Username" value="admin">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input id="adminPass" type="password" placeholder="Password" value="admin123">
+        </div>
+        <button onclick="adminLogin()"><i class="fas fa-sign-in-alt"></i> Login to Dashboard</button>
+        <div id="adminError" class="error"></div>
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="dash">
+    <div class="dash-header">
+        <h1><i class="fas fa-chart-pie"></i> Admin Dashboard</h1>
+        <button class="logout" onclick="adminLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
+
+    <div class="stats" id="stats">
+        <div class="stat"><small><i class="fas fa-users"></i> TOTAL USERS</small><h2 id="totalUsers">0</h2></div>
+        <div class="stat"><small><i class="fas fa-file-invoice"></i> TOTAL LOANS</small><h2 id="totalLoans">0</h2></div>
+        <div class="stat"><small><i class="fas fa-hourglass-half"></i> PENDING WITHDRAWALS</small><h2 id="pendingWithdrawals">0</h2></div>
+        <div class="stat"><small><i class="fas fa-clock"></i> PENDING LOANS</small><h2 id="pendingLoans">0</h2></div>
+    </div>
+
+    <div class="section">
+        <h3><i class="fas fa-users"></i> Users</h3>
+        <div id="usersList"><div class="empty"><i class="fas fa-users"></i>Loading...</div></div>
+    </div>
+
+    <div class="section">
+        <h3><i class="fas fa-file-invoice"></i> Loan Applications</h3>
+        <div id="loansList"><div class="empty"><i class="fas fa-spinner fa-spin"></i>Loading...</div></div>
+    </div>
+
+    <div class="section">
+        <h3><i class="fas fa-hand-holding-usd"></i> Withdrawal Requests</h3>
+        <div id="withdrawalsList"><div class="empty"><i class="fas fa-spinner fa-spin"></i>Loading...</div></div>
+    </div>
+</div>
+
+<script>
+let adminToken = localStorage.getItem('oceanicAdminToken');
+const API = '';
+
+function showToast(msg) {
+    const t = document.createElement('div');
+    t.className = 'toast';
+    t.innerHTML = `<i class="fas fa-check-circle"></i> ${msg}`;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 3000);
+}
+
+async function apiCall(endpoint, options = {}) {
+    const res = await fetch(`${API}${endpoint}`, {
+        ...options,
+        headers: {
+            'Content-Type': 'application/json',
+            ...(adminToken ? { 'Authorization': `Bearer ${adminToken}` } : {}),
+            ...(options.headers || {})
+        }
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'API Error');
+    return data;
+}
+
+function formatMoney(amount, currency = 'USD') {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(amount || 0);
+}
+
+function getBadge(status) {
+    const map = {
+        'pending': 'pending',
+        'under_review': 'under_review',
+        'approved': 'approved',
+        'rejected': 'rejected',
+        'completed': 'completed',
+        'processing': 'processing',
+        'cancelled': 'cancelled',
+        'active': 'active',
+        'inactive': 'inactive'
+    };
+    return `<span class="badge ${map[status] || 'pending'}">${status || 'unknown'}</span>`;
+}
+
+async function adminLogin() {
+    const username = document.getElementById('adminUser').value.trim();
+    const password = document.getElementById('adminPass').value.trim();
+
+    if (!username || !password) {
+        document.getElementById('adminError').textContent = 'Please enter credentials.';
+        return;
+    }
+
+    try {
+        const data = await apiCall('/api/admin/login', {
+            method: 'POST',
+            body: JSON.stringify({ username, password })
+        });
+        adminToken = data.token;
+        localStorage.setItem('oceanicAdminToken', adminToken);
+        document.getElementById('adminError').textContent = '';
+        showToast('Logged in successfully!');
+        loadDashboard();
+    } catch (e) {
+        document.getElementById('adminError').textContent = e.message || 'Invalid credentials';
+    }
+}
+
+async function loadDashboard() {
+    try {
+        const data = await apiCall('/api/admin/dashboard');
+        
+        // Stats
+        document.getElementById('totalUsers').textContent = data.users.length;
+        document.getElementById('totalLoans').textContent = data.loans.length;
+        document.getElementById('pendingWithdrawals').textContent = data.withdrawals.filter(w => w.status === 'pending').length;
+        document.getElementById('pendingLoans').textContent = data.loans.filter(l => l.status === 'under_review').length;
+
+        // Users
+        document.getElementById('usersList').innerHTML = data.users.length ? 
+            `<table>
+                <tr><th><i class="fas fa-user"></i> Name</th><th><i class="fas fa-envelope"></i> Email</th><th><i class="fas fa-phone"></i> Phone</th><th><i class="fas fa-wallet"></i> Balance</th><th><i class="fas fa-circle"></i> Status</th></tr>
+                ${data.users.map(u => `
+                    <tr>
+                        <td><strong>${u.fullName}</strong></td>
+                        <td>${u.email}</td>
+                        <td>${u.phone}</td>
+                        <td>${formatMoney(u.balance, u.currency || 'NGN')}</td>
+                        <td>${getBadge(u.status)}</td>
+                    </tr>
+                `).join('')}
+            </table>` : '<div class="empty"><i class="fas fa-users"></i>No users registered yet.</div>';
+
+        // Loans
+        document.getElementById('loansList').innerHTML = data.loans.length ? 
+            `<table>
+                <tr><th><i class="fas fa-user"></i> Applicant</th><th><i class="fas fa-hand-holding-usd"></i> Amount</th><th><i class="fas fa-clock"></i> Period</th><th><i class="fas fa-circle"></i> Status</th><th><i class="fas fa-cog"></i> Action</th></tr>
+                ${data.loans.map(l => `
+                    <tr>
+                        <td><strong>${l.applicantName}</strong><br><small><i class="fas fa-envelope"></i> ${l.email}</small></td>
+                        <td>${formatMoney(l.loanAmount, l.currency)}</td>
+                        <td>${l.loanPeriodYears} yrs</td>
+                        <td>${getBadge(l.status)}</td>
+                        <td>
+                            ${l.status === 'under_review' ? `
+                                <button class="action-btn approve" onclick="updateLoan('${l.id}','approved')"><i class="fas fa-check"></i> Approve</button>
+                                <button class="action-btn reject" onclick="updateLoan('${l.id}','rejected')"><i class="fas fa-times"></i> Reject</button>
+                            ` : l.status}
+                        </td>
+                    </tr>
+                `).join('')}
+            </table>` : '<div class="empty"><i class="fas fa-file-invoice"></i>No loan applications yet.</div>';
+
+        // Withdrawals
+        document.getElementById('withdrawalsList').innerHTML = data.withdrawals.length ? 
+            `<table>
+                <tr><th><i class="fas fa-user"></i> User</th><th><i class="fas fa-money-bill"></i> Amount</th><th><i class="fas fa-university"></i> Destination</th><th><i class="fas fa-circle"></i> Status</th><th><i class="fas fa-cog"></i> Action</th></tr>
+                ${data.withdrawals.map(w => `
+                    <tr>
+                        <td><strong>${w.userId}</strong><br><small><i class="fas fa-hashtag"></i> ${w.reference}</small></td>
+                        <td>${formatMoney(w.amount, w.currency)}</td>
+                        <td><small><i class="fas fa-map-pin"></i> ${w.destination}</small></td>
+                        <td>${getBadge(w.status)}</td>
+                        <td>
+                            ${w.status === 'pending' ? `
+                                <button class="action-btn approve" onclick="updateWithdrawal('${w.id}','completed')"><i class="fas fa-check"></i> Approve</button>
+                                <button class="action-btn reject" onclick="updateWithdrawal('${w.id}','rejected')"><i class="fas fa-times"></i> Reject</button>
+                            ` : w.status}
+                        </td>
+                    </tr>
+                `).join('')}
+            </table>` : '<div class="empty"><i class="fas fa-hand-holding-usd"></i>No withdrawal requests yet.</div>';
+
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+
+    } catch (e) {
+        showToast('Error: ' + e.message);
+        adminLogout();
+    }
+}
+
+async function updateLoan(id, status) {
+    if (!confirm(`Set loan to ${status}?`)) return;
+    try {
+        await apiCall(`/api/admin/loans/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ status })
+        });
+        showToast(`Loan ${status}!`);
+        loadDashboard();
+    } catch (e) {
+        showToast('Error: ' + e.message);
+    }
+}
+
+async function updateWithdrawal(id, status) {
+    if (!confirm(`Set withdrawal to ${status}?`)) return;
+    try {
+        await apiCall(`/api/admin/withdrawals/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ status })
+        });
+        showToast(`Withdrawal ${status}!`);
+        loadDashboard();
+    } catch (e) {
+        showToast('Error: ' + e.message);
+    }
+}
+
+function adminLogout() {
+    localStorage.removeItem('oceanicAdminToken');
+    adminToken = null;
+    document.getElementById('loginPage').style.display = 'flex';
+    document.getElementById('dashboard').style.display = 'none';
+    showToast('Logged out');
+}
+
+if (adminToken) {
+    loadDashboard().catch(() => adminLogout());
+}
+</script>
+</body>
+</html>

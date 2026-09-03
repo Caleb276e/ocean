@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Oceanic Lending Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        *{box-sizing:border-box}body{margin:0;font-family:Inter,sans-serif;color:#10263d;background:#f2f9fc}button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}.screen{min-height:100vh}.nav{height:78px;padding:0 6%;display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid #e4edf1}.brand{display:flex;gap:10px;align-items:center}.logo{width:43px;height:43px;border-radius:13px;background:linear-gradient(145deg,#20c9d7,#0879a4);display:grid;place-items:center;color:#fff;font-size:23px;font-weight:800}.brand b{display:block;letter-spacing:2px}.brand small{display:block;font-size:8px;letter-spacing:2px;color:#81909b}.nav-actions{display:flex;gap:12px}.link,.ghost,.back{background:none;border:0;color:#486779;font-weight:700}.nav-btn,.primary{border:0;border-radius:12px;background:linear-gradient(135deg,#087ea4,#075d86);color:#fff;padding:13px 19px;font-weight:800;box-shadow:0 10px 25px #087ea433}.hero{max-width:1180px;margin:auto;min-height:calc(100vh - 78px);display:grid;grid-template-columns:1.1fr .7fr;gap:70px;align-items:center;padding:50px 25px}.eyebrow{font-size:10px;letter-spacing:1.7px;font-weight:800;color:#087ea4}.hero h1{font-size:clamp(42px,6vw,70px);line-height:1.03;letter-spacing:-3px;margin:14px 0 22px;color:#071f37}.hero h1 span{color:#087ea4}.hero p{max-width:600px;color:#718391;line-height:1.8}.actions{display:flex;gap:12px;margin-top:30px}.features{display:flex;gap:25px;margin-top:35px;font-size:11px;color:#687d8b}.features .fa{color:#099d76;background:#def8ee;border-radius:50%;padding:4px;font-style:normal}.wallet{background:linear-gradient(145deg,#06243f,#0b7895);color:#fff;border-radius:26px;padding:30px;min-height:310px;box-shadow:0 30px 70px #07314c33;transform:rotate(2deg)}.wallet strong{display:block;font-size:35px;margin-top:75px}.wallet small{opacity:.65}.wallet .bottom{display:flex;justify-content:space-between;margin-top:85px;font-size:10px;opacity:.65}.auth{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}.auth-side{background:linear-gradient(145deg,#06243f,#087ea4);color:#fff;padding:8%;display:flex;flex-direction:column;justify-content:center}.auth-side h1{font-size:52px;max-width:500px;line-height:1.05}.auth-side p{max-width:450px;line-height:1.8;color:#c7e1e8}.auth-card{max-width:500px;width:100%;margin:auto;padding:35px}.auth-card h2{font-size:30px}.muted{color:#82939f;font-size:12px;line-height:1.7}.field{display:block;margin:15px 0;font-size:11px;font-weight:700;color:#466173}.field input,.field select,.field textarea{display:block;width:100%;margin-top:7px;padding:13px;border:1px solid #dce8ee;border-radius:11px;background:#fff;outline:0}.full{width:100%;margin-top:10px}.switch{text-align:center;font-size:11px;color:#81909b}.switch button{border:0;background:none;color:#087ea4;font-weight:800}.message{color:#d25757;font-size:11px;text-align:center;margin-top:12px}.dashnav{height:78px;padding:0 6%;display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid #e4edf1}.user{display:flex;gap:10px;align-items:center;font-size:12px;font-weight:700}.avatar{border:0;border-radius:50%;width:37px;height:37px;background:#e6f7f8;color:#087ea4;font-size:16px}.dashboard{max-width:1180px;margin:auto;padding:50px 25px}.welcome{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}.welcome h1{font-size:34px;margin:5px 0}.welcome h1 span{color:#087ea4}.welcome p{font-size:12px;color:#84939e}.balance{background:linear-gradient(135deg,#06243f,#087ea4);color:#fff;border-radius:25px;padding:30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 22px 50px #07314c20}.balance small{font-size:9px;letter-spacing:1.7px;opacity:.65}.balance h2{font-size:42px;margin:8px 0}.balance-actions{display:flex;gap:10px}.balance-actions button{border:1px solid #ffffff33;background:#ffffff12;color:#fff;border-radius:10px;padding:11px 15px;font-weight:700}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.panel{background:#fff;border:1px solid #e4edf1;border-radius:19px;padding:22px;min-height:230px}.panel h3{font-size:14px}.empty{padding:50px;text-align:center;color:#9aa8b1;font-size:11px}.modal{position:fixed;inset:0;background:#061d31cc;backdrop-filter:blur(7px);z-index:10;overflow:auto;padding:25px}.modal-card{background:#fff;max-width:760px;margin:20px auto;border-radius:25px;padding:28px}.modal-head{display:flex;justify-content:space-between}.close{border:0;border-radius:50%;background:#edf4f7;width:34px;height:34px;font-size:20px;color:#486779}.steps{display:flex;align-items:center;margin:28px 0 38px}.step{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#edf3f5;color:#82929c;font-size:11px;font-weight:800}.step.active{background:#087ea4;color:#fff}.line{height:2px;background:#e5edf1;flex:1;margin:0 8px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.estimate{margin-top:18px;padding:18px;background:#082c46;color:#fff;border-radius:15px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px}.estimate small{display:block;font-size:8px;opacity:.6}.estimate b{font-size:13px}.review{background:#f5fafc;padding:15px;border-radius:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:10px;margin-top:18px}.review b{display:block;margin-top:3px}.notice{font-size:9px;line-height:1.6;background:#fff8e6;padding:10px;border-radius:10px;margin-top:12px}.backstep{border:0;background:none;color:#60798a;font-size:11px;font-weight:700;margin-top:14px}.toast{position:fixed;bottom:20px;right:20px;background:#071f37;color:#fff;padding:16px 24px;border-radius:12px;font-size:13px;z-index:999;box-shadow:0 10px 30px #00000033;animation:slideIn .3s ease;display:flex;align-items:center;gap:10px}.toast .fa{font-size:16px}.error{border-color:#d25757!important;background:#fff5f5!important}@keyframes slideIn{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}@media(max-width:850px){.hero,.auth{grid-template-columns:1fr}.wallet,.auth-side{display:none}.grid{grid-template-columns:1fr}.welcome{flex-direction:column;align-items:start;gap:15px}.balance{flex-direction:column;align-items:start;gap:22px}.balance-actions{width:100%}.balance-actions button{flex:1}}@media(max-width:560px){.nav,.dashnav{padding:0 18px}.hero{padding:40px 18px}.hero h1{font-size:40px}.actions{flex-direction:column}.two,.review,.estimate{grid-template-columns:1fr}.modal{padding:10px}.modal-card{padding:20px 16px}}
+    </style>
+</head>
+<body>
+
+<!-- LANDING PAGE -->
+<div id="landing" class="screen">
+    <nav class="nav">
+        <div class="brand">
+            <div class="logo">O</div>
+            <div><b>OCEANIC</b><small>LENDING COMPANY</small></div>
+        </div>
+        <div class="nav-actions">
+            <button class="link" onclick="showAuth('login')"><i class="fas fa-sign-in-alt"></i> Log in</button>
+            <button class="nav-btn" onclick="showAuth('register')"><i class="fas fa-user-plus"></i> Create account</button>
+        </div>
+    </nav>
+    <main class="hero">
+        <div>
+            <span class="eyebrow"><i class="fas fa-wallet"></i> YOUR DIGITAL LENDING WALLET</span>
+            <h1>Borrow, manage and <span>track your money.</span></h1>
+            <p>Open your Oceanic account, complete your loan application in five simple steps, and manage your wallet from one dashboard.</p>
+            <div class="actions">
+                <button class="primary" onclick="showAuth('register')"><i class="fas fa-rocket"></i> Get started →</button>
+                <button class="ghost" onclick="showAuth('login')"><i class="fas fa-arrow-right"></i> I already have an account</button>
+            </div>
+            <div class="features">
+                <span><i class="fas fa-check-circle" style="color:#099d76;background:#def8ee;border-radius:50%;padding:4px;"></i> Personal wallet</span>
+                <span><i class="fas fa-check-circle" style="color:#099d76;background:#def8ee;border-radius:50%;padding:4px;"></i> Loan tracking</span>
+                <span><i class="fas fa-check-circle" style="color:#099d76;background:#def8ee;border-radius:50%;padding:4px;"></i> Withdrawal requests</span>
+            </div>
+        </div>
+        <div class="wallet">
+            <small>OCEANIC WALLET</small>
+            <small style="float:right"><i class="fas fa-ellipsis-h"></i></small>
+            <strong>$24,680.00</strong>
+            <small>Available balance</small>
+            <div class="bottom"><span><i class="fas fa-circle" style="font-size:6px;color:#20c9d7;"></i> •••• 2849</span><span>OCEANIC</span></div>
+        </div>
+    </main>
+</div>
+
+<!-- AUTH PAGE -->
+<div id="auth" class="screen hidden">
+    <div class="auth">
+        <aside class="auth-side">
+            <div class="brand">
+                <div class="logo">O</div>
+                <div><b>OCEANIC</b><small style="color:#b5d6df">LENDING COMPANY</small></div>
+            </div>
+            <h1><i class="fas fa-wallet" style="color:#20c9d7;"></i> Everything you need in one wallet.</h1>
+            <p>Manage your profile, loan application, balance and withdrawals from one place.</p>
+        </aside>
+        <section class="auth-card">
+            <button class="back" onclick="showScreen('landing')"><i class="fas fa-arrow-left"></i> Back</button>
+            <div id="loginBox">
+                <span class="eyebrow"><i class="fas fa-user"></i> WELCOME BACK</span>
+                <h2>Log in to your wallet</h2>
+                <p class="muted">Enter your account details to continue.</p>
+                <label class="field"><i class="fas fa-envelope"></i> Email address<input id="le" type="email"></label>
+                <label class="field"><i class="fas fa-lock"></i> Password<input id="lp" type="password"></label>
+                <button class="primary full" onclick="login()"><i class="fas fa-sign-in-alt"></i> Log in</button>
+                <p class="switch">Don't have an account? <button onclick="showAuth('register')">Create one</button></p>
+            </div>
+            <div id="registerBox" class="hidden">
+                <span class="eyebrow"><i class="fas fa-user-plus"></i> CREATE ACCOUNT</span>
+                <h2>Open your Oceanic wallet</h2>
+                <p class="muted">Create an account before starting your application.</p>
+                <label class="field"><i class="fas fa-user"></i> Full name<input id="rn"></label>
+                <label class="field"><i class="fas fa-envelope"></i> Email address<input id="re" type="email"></label>
+                <label class="field"><i class="fas fa-phone"></i> Phone number<input id="rp"></label>
+                <label class="field"><i class="fas fa-lock"></i> Password<input id="rpass" type="password"></label>
+                <button class="primary full" onclick="register()"><i class="fas fa-user-plus"></i> Create account</button>
+                <p class="switch">Already registered? <button onclick="showAuth('login')">Log in</button></p>
+            </div>
+            <div id="am" class="message"></div>
+        </section>
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="screen hidden">
+    <nav class="dashnav">
+        <div class="brand">
+            <div class="logo">O</div>
+            <div><b>OCEANIC</b><small>LENDING COMPANY</small></div>
+        </div>
+        <div class="user">
+            <span id="un"></span>
+            <button class="avatar" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
+        </div>
+    </nav>
+    <main class="dashboard">
+        <div class="welcome">
+            <div>
+                <span class="eyebrow"><i class="fas fa-wallet"></i> MY WALLET</span>
+                <h1>Good day, <span id="dn"></span>.</h1>
+                <p>Manage your wallet and loan activity.</p>
+            </div>
+            <button class="primary" onclick="openLoan()"><i class="fas fa-hand-holding-usd"></i> Apply for a loan +</button>
+        </div>
+        <div class="balance">
+            <div>
+                <small><i class="fas fa-coins"></i> AVAILABLE BALANCE</small>
+                <h2 id="bal">$0.00</h2>
+                <small>Wallet balance</small>
+            </div>
+            <div class="balance-actions">
+                <button onclick="openWithdraw()"><i class="fas fa-arrow-up"></i> Withdraw</button>
+                <button onclick="openLoan()"><i class="fas fa-hand-holding-usd"></i> Request loan</button>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="panel">
+                <h3><i class="fas fa-history"></i> Recent activity</h3>
+                <div id="activity" class="empty"><i class="fas fa-inbox"></i> No transactions yet.</div>
+            </div>
+            <div class="panel">
+                <h3><i class="fas fa-file-invoice"></i> Loan status</h3>
+                <p id="ls" style="margin-top:45px;font-size:12px;color:#718391"><i class="fas fa-info-circle"></i> No application yet.</p>
+                <button class="ghost" onclick="openLoan()"><i class="fas fa-arrow-right"></i> Start application →</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- LOAN MODAL -->
+<div id="loan" class="modal hidden">
+    <div class="modal-card">
+        <div class="modal-head">
+            <div><span class="eyebrow"><i class="fas fa-file-invoice"></i> LOAN APPLICATION</span><h2>Five simple steps</h2></div>
+            <button class="close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="steps">
+            <div id="st1" class="step active">1</div><div class="line"></div>
+            <div id="st2" class="step">2</div><div class="line"></div>
+            <div id="st3" class="step">3</div><div class="line"></div>
+            <div id="st4" class="step">4</div><div class="line"></div>
+            <div id="st5" class="step">5</div>
+        </div>
+        <div id="ls1">
+            <span class="eyebrow"><i class="fas fa-user"></i> STEP 1 OF 5</span>
+            <h3>Personal information</h3>
+            <div class="two">
+                <label class="field"><i class="fas fa-user"></i> Applicant's name<input id="an"></label>
+                <label class="field"><i class="fas fa-globe"></i> Country<select id="country"><option>Nigeria</option><option>Ghana</option><option>Kenya</option><option>South Africa</option><option>United Kingdom</option><option>United States</option><option>Other</option></select></label>
+                <label class="field"><i class="fas fa-phone"></i> Phone<input id="aph"></label>
+                <label class="field"><i class="fas fa-envelope"></i> Active email address<input id="ae"></label>
+            </div>
+            <button class="primary full" onclick="nextStep(1)"><i class="fas fa-arrow-right"></i> Continue →</button>
+        </div>
+        <div id="ls2" class="hidden">
+            <span class="eyebrow"><i class="fas fa-home"></i> STEP 2 OF 5</span>
+            <h3>Your address</h3>
+            <label class="field"><i class="fas fa-location-dot"></i> Address title<input id="address"></label>
+            <div class="two">
+                <label class="field"><i class="fas fa-city"></i> City<input id="city"></label>
+                <label class="field"><i class="fas fa-map"></i> State / Region<input id="state"></label>
+            </div>
+            <button class="primary full" onclick="nextStep(2)"><i class="fas fa-arrow-right"></i> Continue →</button>
+        </div>
+        <div id="ls3" class="hidden">
+            <span class="eyebrow"><i class="fas fa-money-bill"></i> STEP 3 OF 5</span>
+            <h3>Income information</h3>
+            <label class="field"><i class="fas fa-money-bill-wave"></i> Monthly income<input id="income" type="number"></label>
+            <label class="field"><i class="fas fa-briefcase"></i> Source of income<select id="source"><option>Employment</option><option>Business</option><option>Self-employed</option><option>Other</option></select></label>
+            <button class="primary full" onclick="nextStep(3)"><i class="fas fa-arrow-right"></i> Continue →</button>
+        </div>
+        <div id="ls4" class="hidden">
+            <span class="eyebrow"><i class="fas fa-calculator"></i> STEP 4 OF 5</span>
+            <h3>Loan details</h3>
+            <div class="two">
+                <label class="field"><i class="fas fa-hand-holding-usd"></i> Loan amount<input id="amount" type="number" oninput="estimate()"></label>
+                <label class="field"><i class="fas fa-dollar-sign"></i> Loan currency<select id="currency" onchange="estimate()"><option>NGN</option><option>USD</option><option>GBP</option><option>EUR</option></select></label>
+                <label class="field"><i class="fas fa-clock"></i> Loan period<select id="period" onchange="estimate()"><option value="1">1 year</option><option value="2">2 years</option><option value="3">3 years</option><option value="4">4 years</option><option value="5">5 years</option></select></label>
+                <label class="field"><i class="fas fa-bullseye"></i> Purpose<select id="purpose"><option>Business</option><option>Education</option><option>Home</option><option>Personal</option><option>Emergency</option></select></label>
+            </div>
+            <div class="estimate">
+                <div><small><i class="fas fa-percent"></i> RATE</small><b>12% / year</b></div>
+                <div><small><i class="fas fa-calculator"></i> ESTIMATED TOTAL</small><b id="total">—</b></div>
+                <div><small><i class="fas fa-calendar"></i> ESTIMATED MONTHLY</small><b id="monthly">—</b></div>
+            </div>
+            <button class="primary full" onclick="nextStep(4)"><i class="fas fa-arrow-right"></i> Review application →</button>
+        </div>
+        <div id="ls5" class="hidden">
+            <span class="eyebrow"><i class="fas fa-check-circle"></i> STEP 5 OF 5</span>
+            <h3>Review & submit</h3>
+            <div id="review" class="review"></div>
+            <div class="notice"><i class="fas fa-info-circle"></i> Illustrative estimate only. Final eligibility, rates, fees and repayment terms require proper review and approval.</div>
+            <button class="primary full" onclick="submitLoan()"><i class="fas fa-check"></i> Submit application ✓</button>
+        </div>
+        <button id="prev" class="backstep" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Previous step</button>
+    </div>
+</div>
+
+<!-- WITHDRAW MODAL -->
+<div id="withdraw" class="modal hidden">
+    <div class="modal-card" style="max-width:430px">
+        <button class="close" style="float:right" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        <span class="eyebrow"><i class="fas fa-wallet"></i> WALLET</span>
+        <h2>Request withdrawal</h2>
+        <p class="muted">Enter the amount and destination.</p>
+        <label class="field"><i class="fas fa-money-bill"></i> Amount<input id="wa" type="number"></label>
+        <label class="field"><i class="fas fa-university"></i> Destination<input id="wd" placeholder="Bank account / payment destination"></label>
+        <button class="primary full" onclick="requestWithdraw()"><i class="fas fa-arrow-up"></i> Request withdrawal</button>
+        <div id="wm" class="message"></div>
+    </div>
+</div>
+
+<script>
+const API = '';
+let user = null;
+let step = 1;
+let token = localStorage.getItem('oceanicToken');
+
+async function apiCall(endpoint, options = {}) {
+    const res = await fetch(`${API}${endpoint}`, {
+        ...options,
+        headers: {
+            'Content-Type': 'application/json',
+            ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
+            ...(options.headers || {})
+        }
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'API Error');
+    return data;
+}
+
+function showToast(msg, icon = 'fa-check-circle') {
+    const t = document.createElement('div');
+    t.className = 'toast';
+    t.innerHTML = `<i class="fas ${icon}" style="color:#20c9d7;"></i> ${msg}`;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 3000);
+}
+
+function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(x => x.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+}
+
+function showAuth(type) {
+    showScreen('auth');
+    document.getElementById('loginBox').classList.toggle('hidden', type !== 'login');
+    document.getElementById('registerBox').classList.toggle('hidden', type !== 'register');
+    document.getElementById('am').textContent = '';
+}
+
+function formatMoney(amount, currency = 'USD') {
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: currency,
+        minimumFractionDigits: 2
+    }).format(amount || 0);
+}
+
+async function register() {
+    const name = document.getElementById('rn').value.trim();
+    const email = document.getElementById('re').value.trim().toLowerCase();
+    const phone = document.getElementById('rp').value.trim();
+    const password = document.getElementById('rpass').value;
+
+    if (!name || !email || !phone || password.length < 8) {
+        document.getElementById('am').textContent = 'Please fill all fields. Password must be at least 8 characters.';
+        return;
+    }
+
+    try {
+        const data = await apiCall('/api/auth/register', {
+            method: 'POST',
+            body: JSON.stringify({ fullName: name, email, phone, password })
+        });
+        token = data.token;
+        localStorage.setItem('oceanicToken', token);
+        user = data.user;
+        showToast('Account created successfully!', 'fa-user-check');
+        loadDashboard();
+    } catch (e) {
+        document.getElementById('am').textContent = e.message;
+    }
+}
+
+async function login() {
+    const email = document.getElementById('le').value.trim().toLowerCase();
+    const password = document.getElementById('lp').value;
+
+    if (!email || !password) {
+        document.getElementById('am').textContent = 'Please enter email and password.';
+        return;
+    }
+
+    try {
+        const data = await apiCall('/api/auth/login', {
+            method: 'POST',
+            body: JSON.stringify({ email, password })
+        });
+        token = data.token;
+        localStorage.setItem('oceanicToken', token);
+        user = data.user;
+        showToast('Welcome back!', 'fa-hand-peace');
+        loadDashboard();
+    } catch (e) {
+        document.getElementById('am').textContent = e.message;
+    }
+}
+
+function logout() {
+    localStorage.removeItem('oceanicToken');
+    token = null;
+    user = null;
+    showScreen('landing');
+    showToast('Logged out', 'fa-sign-out-alt');
+}
+
+async function loadDashboard() {
+    try {
+        const data = await apiCall('/api/me');
+        user = data.user;
+        showScreen('dashboard');
+        document.getElementById('un').textContent = user.fullName;
+        document.getElementById('dn').textContent = user.fullName.split(' ')[0];
+        document.getElementById('bal').textContent = formatMoney(user.balance);
+
+        const wallet = await apiCall('/api/wallet');
+        document.getElementById('activity').innerHTML = wallet.transactions.length ? 
+            wallet.transactions.slice(0, 5).map(t => 
+                `<div style="padding:12px 0;border-top:1px solid #edf2f4;font-size:10px">
+                    <b>${t.description || t.type}</b><br>
+                    <span style="color:#82929d"><i class="far fa-clock"></i> ${new Date(t.createdAt).toLocaleString()}</span>
+                    <strong style="float:right;color:${t.type === 'withdrawal' ? '#d25757' : '#0b9b73'}">
+                        ${t.type === 'withdrawal' ? '<i class="fas fa-arrow-down"></i>' : '<i class="fas fa-arrow-up"></i>'} ${formatMoney(t.amount, t.currency)}
+                    </strong>
+                </div>`
+            ).join('') : '<div class="empty"><i class="fas fa-inbox"></i> No transactions yet.</div>';
+
+        const loans = await apiCall('/api/loans');
+        const lastLoan = loans.loans[0];
+        document.getElementById('ls').textContent = lastLoan ? 
+            `Application: ${formatMoney(lastLoan.loanAmount, lastLoan.currency)} • ${lastLoan.loanPeriodYears} year(s) • Status: ${lastLoan.status}` :
+            'No application yet. Start your five-step application.';
+
+    } catch (e) {
+        showToast('Error loading dashboard: ' + e.message, 'fa-exclamation-circle');
+    }
+}
+
+function openLoan() {
+    document.getElementById('loan').classList.remove('hidden');
+    step = 1;
+    document.getElementById('an').value = user?.fullName || '';
+    document.getElementById('aph').value = user?.phone || '';
+    document.getElementById('ae').value = user?.email || '';
+    renderLoan();
+}
+
+function closeModal() {
+    document.getElementById('loan').classList.add('hidden');
+    document.getElementById('withdraw').classList.add('hidden');
+}
+
+function renderLoan() {
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById('ls' + i).classList.toggle('hidden', i !== step);
+        document.getElementById('st' + i).classList.toggle('active', i <= step);
+    }
+    document.getElementById('prev').style.visibility = step > 1 ? 'visible' : 'hidden';
+    if (step === 5) reviewLoan();
+}
+
+function nextStep(n) {
+    if (n === 1 && (!document.getElementById('an').value || !document.getElementById('aph').value || !document.getElementById('ae').value)) {
+        return showToast('Complete all required fields.', 'fa-exclamation-circle');
+    }
+    if (n === 2 && (!document.getElementById('address').value || !document.getElementById('city').value || !document.getElementById('state').value)) {
+        return showToast('Complete the address fields.', 'fa-exclamation-circle');
+    }
+    if (n === 3 && !document.getElementById('income').value) {
+        return showToast('Enter monthly income.', 'fa-exclamation-circle');
+    }
+    if (n === 4 && !document.getElementById('amount').value) {
+        return showToast('Enter the loan amount.', 'fa-exclamation-circle');
+    }
+    step = n + 1;
+    renderLoan();
+}
+
+function prevStep() {
+    if (step > 1) { step--; renderLoan(); }
+}
+
+function estimate() {
+    const amount = parseFloat(document.getElementById('amount').value);
+    const years = parseInt(document.getElementById('period').value);
+    const currency = document.getElementById('currency').value;
+    if (!amount) {
+        document.getElementById('total').textContent = '—';
+        document.getElementById('monthly').textContent = '—';
+        return;
+    }
+    const rate = 0.12;
+    const interest = amount * rate * years;
+    const total = amount + interest;
+    document.getElementById('total').textContent = formatMoney(total, currency);
+    document.getElementById('monthly').textContent = formatMoney(total / (years * 12), currency);
+}
+
+function reviewLoan() {
+    const amount = parseFloat(document.getElementById('amount').value);
+    const years = parseInt(document.getElementById('period').value);
+    const currency = document.getElementById('currency').value;
+    const rate = 0.12;
+    const total = amount + (amount * rate * years);
+    document.getElementById('review').innerHTML = [
+        ['<i class="fas fa-user"></i> Applicant', document.getElementById('an').value],
+        ['<i class="fas fa-globe"></i> Country', document.getElementById('country').value],
+        ['<i class="fas fa-home"></i> Address', document.getElementById('address').value],
+        ['<i class="fas fa-money-bill"></i> Monthly income', formatMoney(parseFloat(document.getElementById('income').value) || 0, currency)],
+        ['<i class="fas fa-hand-holding-usd"></i> Loan amount', formatMoney(amount, currency)],
+        ['<i class="fas fa-clock"></i> Period', years + ' year(s)'],
+        ['<i class="fas fa-bullseye"></i> Purpose', document.getElementById('purpose').value],
+        ['<i class="fas fa-calculator"></i> Estimated repayment', formatMoney(total, currency)]
+    ].map(x => `<div>${x[0]}<b>${x[1]}</b></div>`).join('');
+}
+
+async function submitLoan() {
+    try {
+        const data = {
+            applicantName: document.getElementById('an').value,
+            country: document.getElementById('country').value,
+            addressTitle: document.getElementById('address').value,
+            city: document.getElementById('city').value,
+            stateRegion: document.getElementById('state').value,
+            phone: document.getElementById('aph').value,
+            email: document.getElementById('ae').value,
+            monthlyIncome: parseFloat(document.getElementById('income').value),
+            loanAmount: parseFloat(document.getElementById('amount').value),
+            currency: document.getElementById('currency').value,
+            loanPeriodYears: parseInt(document.getElementById('period').value),
+            purpose: document.getElementById('purpose').value
+        };
+
+        await apiCall('/api/loans', {
+            method: 'POST',
+            body: JSON.stringify(data)
+        });
+
+        showToast('Application submitted for review!', 'fa-check-circle');
+        closeModal();
+        loadDashboard();
+    } catch (e) {
+        showToast('Error: ' + e.message, 'fa-exclamation-circle');
+    }
+}
+
+function openWithdraw() {
+    document.getElementById('withdraw').classList.remove('hidden');
+    document.getElementById('wm').textContent = '';
+}
+
+async function requestWithdraw() {
+    const amount = parseFloat(document.getElementById('wa').value);
+    const destination = document.getElementById('wd').value.trim();
+
+    if (!amount || !destination) {
+        document.getElementById('wm').textContent = 'Enter amount and destination.';
+        return;
+    }
+    if (amount > user.balance) {
+        document.getElementById('wm').textContent = 'Amount exceeds available balance.';
+        return;
+    }
+
+    try {
+        await apiCall('/api/withdrawals', {
+            method: 'POST',
+            body: JSON.stringify({ amount, destination })
+        });
+        showToast('Withdrawal request submitted for approval!', 'fa-check-circle');
+        closeModal();
+        loadDashboard();
+    } catch (e) {
+        document.getElementById('wm').textContent = e.message;
+    }
+}
+
+(async function init() {
+    if (token) {
+        try {
+            await loadDashboard();
+            return;
+        } catch (e) {
+            localStorage.removeItem('oceanicToken');
+            token = null;
+        }
+    }
+    showScreen('landing');
+})();
+</script>
+</body>
+</html>
