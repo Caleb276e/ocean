@@ -219,22 +219,52 @@
 </div>
 
 <script>
-const API = 'https://back-production-766a.up.railway.app/';
+const API = 'https://back-production-766a.up.railway.app';
 let user = null;
 let step = 1;
 let token = localStorage.getItem('oceanicToken');
 
+function apiUrl(endpoint) {
+    const base = API.replace(/\/+$/, '');
+    const path = '/' + String(endpoint || '').replace(/^\/+/, '');
+    return base + path;
+}
+
 async function apiCall(endpoint, options = {}) {
-    const res = await fetch(`${API}${endpoint}`, {
-        ...options,
-        headers: {
-            'Content-Type': 'application/json',
-            ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
-            ...(options.headers || {})
+    const url = apiUrl(endpoint);
+    let res;
+
+    try {
+        res = await fetch(url, {
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
+                ...(options.headers || {})
+            }
+        });
+    } catch (networkError) {
+        throw new Error(`Cannot reach the backend at ${API}. Check the Railway deployment and CORS settings.`);
+    }
+
+    const raw = await res.text();
+    let data = {};
+
+    if (raw) {
+        try {
+            data = JSON.parse(raw);
+        } catch {
+            throw new Error(
+                `Backend returned HTML/non-JSON instead of API JSON (${res.status} ${res.statusText}). ` +
+                `Requested: ${url}. Check that this exact API route is deployed.`
+            );
         }
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'API Error');
+    }
+
+    if (!res.ok) {
+        throw new Error(data.error || data.message || `API request failed (${res.status})`);
+    }
+
     return data;
 }
 
@@ -331,7 +361,7 @@ async function loadDashboard() {
         showScreen('dashboard');
         document.getElementById('un').textContent = user.fullName;
         document.getElementById('dn').textContent = user.fullName.split(' ')[0];
-        document.getElementById('bal').textContent = formatMoney(user.balance);
+        document.getElementById('bal').textContent = formatMoney(user.balance, user.currency || 'NGN');
 
         const wallet = await apiCall('/api/wallet');
         document.getElementById('activity').innerHTML = wallet.transactions.length ? 
