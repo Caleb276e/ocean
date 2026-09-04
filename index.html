@@ -10,6 +10,60 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         *{box-sizing:border-box}body{margin:0;font-family:Inter,sans-serif;color:#10263d;background:#f2f9fc}button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}.screen{min-height:100vh}.nav{height:78px;padding:0 6%;display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid #e4edf1}.brand{display:flex;gap:10px;align-items:center}.logo{width:43px;height:43px;border-radius:13px;background:linear-gradient(145deg,#20c9d7,#0879a4);display:grid;place-items:center;color:#fff;font-size:23px;font-weight:800}.brand b{display:block;letter-spacing:2px}.brand small{display:block;font-size:8px;letter-spacing:2px;color:#81909b}.nav-actions{display:flex;gap:12px}.link,.ghost,.back{background:none;border:0;color:#486779;font-weight:700}.nav-btn,.primary{border:0;border-radius:12px;background:linear-gradient(135deg,#087ea4,#075d86);color:#fff;padding:13px 19px;font-weight:800;box-shadow:0 10px 25px #087ea433}.hero{max-width:1180px;margin:auto;min-height:calc(100vh - 78px);display:grid;grid-template-columns:1.1fr .7fr;gap:70px;align-items:center;padding:50px 25px}.eyebrow{font-size:10px;letter-spacing:1.7px;font-weight:800;color:#087ea4}.hero h1{font-size:clamp(42px,6vw,70px);line-height:1.03;letter-spacing:-3px;margin:14px 0 22px;color:#071f37}.hero h1 span{color:#087ea4}.hero p{max-width:600px;color:#718391;line-height:1.8}.actions{display:flex;gap:12px;margin-top:30px}.features{display:flex;gap:25px;margin-top:35px;font-size:11px;color:#687d8b}.features .fa{color:#099d76;background:#def8ee;border-radius:50%;padding:4px;font-style:normal}.wallet{background:linear-gradient(145deg,#06243f,#0b7895);color:#fff;border-radius:26px;padding:30px;min-height:310px;box-shadow:0 30px 70px #07314c33;transform:rotate(2deg)}.wallet strong{display:block;font-size:35px;margin-top:75px}.wallet small{opacity:.65}.wallet .bottom{display:flex;justify-content:space-between;margin-top:85px;font-size:10px;opacity:.65}.auth{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}.auth-side{background:linear-gradient(145deg,#06243f,#087ea4);color:#fff;padding:8%;display:flex;flex-direction:column;justify-content:center}.auth-side h1{font-size:52px;max-width:500px;line-height:1.05}.auth-side p{max-width:450px;line-height:1.8;color:#c7e1e8}.auth-card{max-width:500px;width:100%;margin:auto;padding:35px}.auth-card h2{font-size:30px}.muted{color:#82939f;font-size:12px;line-height:1.7}.field{display:block;margin:15px 0;font-size:11px;font-weight:700;color:#466173}.field input,.field select,.field textarea{display:block;width:100%;margin-top:7px;padding:13px;border:1px solid #dce8ee;border-radius:11px;background:#fff;outline:0}.full{width:100%;margin-top:10px}.switch{text-align:center;font-size:11px;color:#81909b}.switch button{border:0;background:none;color:#087ea4;font-weight:800}.message{color:#d25757;font-size:11px;text-align:center;margin-top:12px}.dashnav{height:78px;padding:0 6%;display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid #e4edf1}.user{display:flex;gap:10px;align-items:center;font-size:12px;font-weight:700}.avatar{border:0;border-radius:50%;width:37px;height:37px;background:#e6f7f8;color:#087ea4;font-size:16px}.dashboard{max-width:1180px;margin:auto;padding:50px 25px}.welcome{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}.welcome h1{font-size:34px;margin:5px 0}.welcome h1 span{color:#087ea4}.welcome p{font-size:12px;color:#84939e}.balance{background:linear-gradient(135deg,#06243f,#087ea4);color:#fff;border-radius:25px;padding:30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 22px 50px #07314c20}.balance small{font-size:9px;letter-spacing:1.7px;opacity:.65}.balance h2{font-size:42px;margin:8px 0}.balance-actions{display:flex;gap:10px}.balance-actions button{border:1px solid #ffffff33;background:#ffffff12;color:#fff;border-radius:10px;padding:11px 15px;font-weight:700}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.panel{background:#fff;border:1px solid #e4edf1;border-radius:19px;padding:22px;min-height:230px}.panel h3{font-size:14px}.empty{padding:50px;text-align:center;color:#9aa8b1;font-size:11px}.modal{position:fixed;inset:0;background:#061d31cc;backdrop-filter:blur(7px);z-index:10;overflow:auto;padding:25px}.modal-card{background:#fff;max-width:760px;margin:20px auto;border-radius:25px;padding:28px}.modal-head{display:flex;justify-content:space-between}.close{border:0;border-radius:50%;background:#edf4f7;width:34px;height:34px;font-size:20px;color:#486779}.steps{display:flex;align-items:center;margin:28px 0 38px}.step{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#edf3f5;color:#82929c;font-size:11px;font-weight:800}.step.active{background:#087ea4;color:#fff}.line{height:2px;background:#e5edf1;flex:1;margin:0 8px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.estimate{margin-top:18px;padding:18px;background:#082c46;color:#fff;border-radius:15px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px}.estimate small{display:block;font-size:8px;opacity:.6}.estimate b{font-size:13px}.review{background:#f5fafc;padding:15px;border-radius:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:10px;margin-top:18px}.review b{display:block;margin-top:3px}.notice{font-size:9px;line-height:1.6;background:#fff8e6;padding:10px;border-radius:10px;margin-top:12px}.backstep{border:0;background:none;color:#60798a;font-size:11px;font-weight:700;margin-top:14px}.toast{position:fixed;bottom:20px;right:20px;background:#071f37;color:#fff;padding:16px 24px;border-radius:12px;font-size:13px;z-index:999;box-shadow:0 10px 30px #00000033;animation:slideIn .3s ease;display:flex;align-items:center;gap:10px}.toast .fa{font-size:16px}.error{border-color:#d25757!important;background:#fff5f5!important}@keyframes slideIn{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}@media(max-width:850px){.hero,.auth{grid-template-columns:1fr}.wallet,.auth-side{display:none}.grid{grid-template-columns:1fr}.welcome{flex-direction:column;align-items:start;gap:15px}.balance{flex-direction:column;align-items:start;gap:22px}.balance-actions{width:100%}.balance-actions button{flex:1}}@media(max-width:560px){.nav,.dashnav{padding:0 18px}.hero{padding:40px 18px}.hero h1{font-size:40px}.actions{flex-direction:column}.two,.review,.estimate{grid-template-columns:1fr}.modal{padding:10px}.modal-card{padding:20px 16px}}
+
+
+        /* ===== RESPONSIVE / MODERN UI OVERRIDES ===== */
+        :root{--navy:#071f37;--navy2:#06243f;--blue:#087ea4;--cyan:#20c9d7;--teal:#0b9b73;--card:#fff;--line:#dfe9ee;--muted:#718391;--shadow:0 18px 50px rgba(7,31,55,.10)}
+        html{scroll-behavior:smooth}body{min-width:0;-webkit-font-smoothing:antialiased;background:radial-gradient(circle at 8% 0%,#20c9d714,transparent 28%),linear-gradient(180deg,#f8fcfd,#f2f8fa)}
+        button{min-height:42px}input,select,textarea{min-height:44px}.screen{min-height:100dvh}.nav,.dashnav{position:sticky;top:0;z-index:20;min-height:76px;height:auto;backdrop-filter:blur(16px);background:#fffffff0;padding-top:max(10px,env(safe-area-inset-top));padding-bottom:10px}
+        .logo{box-shadow:0 9px 24px #087ea42d}.logo i{font-size:20px}.nav-actions{align-items:center;flex-wrap:wrap;justify-content:flex-end}.nav-btn,.primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s ease}.nav-btn:hover,.primary:hover{transform:translateY(-1px);box-shadow:0 13px 28px #087ea440}.ghost,.link,.back{display:inline-flex;align-items:center;gap:8px}
+        .hero{width:min(1180px,calc(100% - 40px));grid-template-columns:minmax(0,1.1fr) minmax(330px,.72fr);gap:62px;padding:58px 0 74px}.hero h1{font-size:clamp(44px,6vw,74px);letter-spacing:-3.4px}.hero p{font-size:14px}.features{flex-wrap:wrap}.features span{background:#fff;border:1px solid var(--line);border-radius:13px;padding:10px 12px;box-shadow:0 8px 22px #071f3708}.wallet{transform:rotate(1deg);overflow:hidden;position:relative}.wallet:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#ffffff18;right:-90px;top:-95px}.wallet>*{position:relative;z-index:1}
+        .auth{grid-template-columns:minmax(360px,.92fr) minmax(0,1.08fr)}.auth-side{position:relative;overflow:hidden}.auth-side:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:#ffffff0e;right:-190px;bottom:-180px}.auth-side>*{position:relative;z-index:1}.auth-card{border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:38px}.field input,.field select,.field textarea{transition:border .18s,box-shadow .18s}.field input:focus,.field select:focus,.field textarea:focus{border-color:#67bdd4;box-shadow:0 0 0 4px #087ea414}.message{line-height:1.5}
+        .dashboard{width:min(1180px,calc(100% - 40px));padding:44px 0 64px}.welcome{gap:20px}.welcome h1{font-size:clamp(30px,4vw,40px);letter-spacing:-1.3px}.balance{overflow:hidden;position:relative}.balance:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:#ffffff12;right:-90px;top:-135px}.balance>*{position:relative;z-index:1}.grid{grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr)}.panel{min-width:0;box-shadow:0 8px 24px #071f3708}.panel h3{display:flex;align-items:center;gap:8px}.panel h3 i{color:var(--blue)}#activity{min-width:0}#activity>div:not(.empty){display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center}#activity strong{float:none!important;white-space:nowrap}
+        /* Loan application lives inside the dashboard instead of using an overlay. */
+        #loan.modal{position:static;inset:auto;background:transparent;backdrop-filter:none;z-index:auto;overflow:visible;padding:0;margin:24px 0 0;display:block}
+        #loan.modal.hidden{display:none!important}#loan .modal-card{max-width:none;width:100%;margin:0;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)}#loan .modal-head{align-items:flex-start;gap:16px}#loan .steps{margin:24px 0 34px}#loan .step{flex:0 0 36px}#loan .line{min-width:16px}#loan .field input,#loan .field select{background:#fff}#loan .primary.full{max-width:280px;margin-left:auto;display:flex}#loan .backstep{display:inline-flex;align-items:center;gap:7px}
+        .modal:not(#loan){display:grid;place-items:center}.modal:not(#loan) .modal-card{width:min(100%,430px);margin:0}
+        .toast{max-width:min(380px,calc(100% - 40px));bottom:max(20px,env(safe-area-inset-bottom))}
+        @media(max-width:1050px){.hero{grid-template-columns:minmax(0,1fr) 380px;gap:38px}.grid{grid-template-columns:1fr}.hero h1{font-size:clamp(46px,6vw,64px)}}
+        @media(max-width:850px){.nav,.dashnav{padding-left:16px;padding-right:16px}.hero,.dashboard{width:min(720px,calc(100% - 28px))}.hero{grid-template-columns:1fr;min-height:auto;padding:44px 0 64px}.wallet{transform:none;max-width:560px;width:100%;margin:0 auto}.auth{grid-template-columns:1fr}.auth-side{display:flex;min-height:auto;padding:30px 22px}.auth-side h1{font-size:36px;margin:20px 0 10px}.auth-side p{font-size:12px}.auth-card{box-shadow:none;margin:0 auto;padding:28px 22px}.welcome{flex-direction:column;align-items:flex-start}.welcome>.primary{width:100%}.balance{flex-direction:column;align-items:flex-start;gap:22px}.balance-actions{width:100%}.balance-actions button{flex:1;justify-content:center}.two,.review{grid-template-columns:1fr 1fr}#loan .modal-card{padding:24px}#loan .steps{overflow-x:auto;padding-bottom:4px}.estimate{grid-template-columns:repeat(3,minmax(0,1fr))}}
+        @media(max-width:620px){.brand>div:last-child{display:none}.nav-actions{gap:6px}.nav-actions .link{font-size:0;padding:9px}.nav-actions .link i{font-size:16px}.nav-btn{padding:11px 13px;font-size:11px}.hero{width:calc(100% - 24px);padding-top:32px}.hero h1{font-size:clamp(38px,12vw,52px);letter-spacing:-2.2px}.hero p{font-size:13px}.actions{display:grid;grid-template-columns:1fr;width:100%}.actions .primary,.actions .ghost{width:100%}.features{display:grid;grid-template-columns:1fr;gap:8px}.wallet{min-height:285px;padding:24px}.auth-side{padding:24px 18px}.auth-side h1{font-size:31px}.auth-card{padding:24px 18px;border-radius:20px}.dashboard{width:calc(100% - 24px);padding-top:28px}.user span{display:none}.balance{padding:24px}.balance h2{font-size:36px}.balance-actions{display:grid;grid-template-columns:1fr}.panel{padding:18px}.grid{gap:14px}#activity>div:not(.empty){grid-template-columns:1fr}#activity strong{justify-self:start}.two,.review,.estimate{grid-template-columns:1fr}#loan .modal-card{padding:20px 16px;border-radius:18px}#loan .modal-head h2{font-size:22px}#loan .steps{gap:0;margin:20px 0 28px}#loan .step{width:32px;height:32px;flex-basis:32px}#loan .line{margin:0 5px}#loan .primary.full{max-width:none}.modal{padding:12px}.modal-card{padding:22px 18px}.toast{left:14px;right:14px;bottom:max(14px,env(safe-area-inset-bottom));max-width:none}}
+        @media(max-width:390px){.nav-btn{font-size:0;width:42px;padding:0}.nav-btn i{font-size:15px}.hero h1{font-size:37px}.dashboard{width:calc(100% - 20px)}.balance{border-radius:20px}.panel{border-radius:16px}#loan .modal-card{padding:18px 13px}.field input,.field select,.field textarea{padding:12px}.steps .line{min-width:8px}}
+
+
+        /* ===== PROFESSIONAL LANDING PAGE SECTIONS ===== */
+        .hero-copy{max-width:700px}
+        .hero-note{margin-top:18px;font-size:10px!important;line-height:1.65!important;color:#8a99a4!important;max-width:650px!important}
+        .features.professional-features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:680px;margin-top:30px}
+        .professional-features .feature-card{display:flex;align-items:flex-start;gap:11px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 15px;box-shadow:0 8px 22px #071f3708}
+        .professional-features .feature-icon{width:34px;height:34px;flex:0 0 34px;border-radius:10px;display:grid;place-items:center;background:#e9f8f6;color:var(--teal);font-size:14px}
+        .professional-features b{display:block;font-size:11px;color:#27475a;margin-bottom:3px}
+        .professional-features small{display:block;font-size:9px;line-height:1.5;color:#81909b}
+        .landing-section{padding:74px 0}
+        .landing-section.alt{background:#fff;border-top:1px solid #e8eff2;border-bottom:1px solid #e8eff2}
+        .landing-inner{width:min(1180px,calc(100% - 40px));margin:auto}
+        .section-head{max-width:720px;margin-bottom:30px}
+        .section-head h2{font-size:clamp(28px,4vw,42px);line-height:1.08;letter-spacing:-1.6px;margin:10px 0 12px;color:#071f37}
+        .section-head p{font-size:13px;color:#718391;line-height:1.75;margin:0}
+        .how-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+        .how-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 8px 24px #071f3708;min-height:180px}
+        .how-card .how-number{width:36px;height:36px;border-radius:12px;background:#e9f7fa;color:#087ea4;display:grid;place-items:center;font-size:11px;font-weight:800;margin-bottom:18px}
+        .how-card h3{font-size:14px;margin:0 0 8px;color:#17354a}
+        .how-card p{font-size:10px;line-height:1.65;color:#7a8b96;margin:0}
+        .benefit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+        .benefit-card{background:linear-gradient(180deg,#fff,#f8fcfd);border:1px solid var(--line);border-radius:18px;padding:22px;min-height:200px}
+        .benefit-card .icon{width:44px;height:44px;border-radius:13px;background:#edf8fa;color:#087ea4;display:grid;place-items:center;font-size:18px;margin-bottom:17px}
+        .benefit-card h3{font-size:14px;margin:0 0 8px;color:#17354a}
+        .benefit-card p{font-size:10px;line-height:1.65;color:#7a8b96;margin:0}
+        .professional-cta{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:30px;background:linear-gradient(135deg,#06243f,#087ea4);border-radius:24px;color:#fff;box-shadow:0 24px 54px #07314c24}
+        .professional-cta h2{font-size:clamp(25px,4vw,36px);margin:6px 0 8px;letter-spacing:-1.2px}
+        .professional-cta p{font-size:11px;color:#c8e2e8;line-height:1.7;max-width:680px;margin:0}
+        .professional-cta .eyebrow{color:#77e3eb}
+        .professional-cta .primary{background:#fff;color:#075d86;box-shadow:none;white-space:nowrap}
+        .professional-disclaimer{margin-top:18px;font-size:9px;line-height:1.65;color:#8b99a3}
+        @media(max-width:900px){.how-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.benefit-grid{grid-template-columns:1fr 1fr}.professional-cta{align-items:flex-start;flex-direction:column}.professional-cta .primary{width:100%}}
+        @media(max-width:620px){.landing-inner{width:calc(100% - 24px)}.landing-section{padding:54px 0}.features.professional-features{grid-template-columns:1fr}.how-grid,.benefit-grid{grid-template-columns:1fr}.how-card,.benefit-card{min-height:auto}.professional-cta{padding:23px 18px;border-radius:19px}.hero-note{text-align:left}.section-head h2{font-size:30px}}
+
     </style>
 </head>
 <body>
@@ -18,7 +72,7 @@
 <div id="landing" class="screen">
     <nav class="nav">
         <div class="brand">
-            <div class="logo">O</div>
+            <div class="logo"><i class="fas fa-water"></i></div>
             <div><b>OCEANIC</b><small>LENDING COMPANY</small></div>
         </div>
         <div class="nav-actions">
@@ -27,28 +81,121 @@
         </div>
     </nav>
     <main class="hero">
-        <div>
-            <span class="eyebrow"><i class="fas fa-wallet"></i> YOUR DIGITAL LENDING WALLET</span>
-            <h1>Borrow, manage and <span>track your money.</span></h1>
-            <p>Open your Oceanic account, complete your loan application in five simple steps, and manage your wallet from one dashboard.</p>
+        <div class="hero-copy">
+            <span class="eyebrow"><i class="fas fa-layer-group"></i> DIGITAL LENDING, DESIGNED FOR CLARITY</span>
+            <h1>A simpler way to apply, track and <span>manage your financing.</span></h1>
+            <p>Oceanic Lending brings your lending journey into one organised experience. Create your account, complete a guided loan request, monitor your application status, manage your wallet and submit withdrawal requests from one responsive dashboard.</p>
+
             <div class="actions">
-                <button class="primary" onclick="showAuth('register')"><i class="fas fa-rocket"></i> Get started →</button>
-                <button class="ghost" onclick="showAuth('login')"><i class="fas fa-arrow-right"></i> I already have an account</button>
+                <button class="primary" onclick="showAuth('register')"><i class="fas fa-user-plus"></i> Create your account</button>
+                <button class="ghost" onclick="showAuth('login')"><i class="fas fa-right-to-bracket"></i> Log in to your dashboard</button>
             </div>
-            <div class="features">
-                <span><i class="fas fa-check-circle" style="color:#099d76;background:#def8ee;border-radius:50%;padding:4px;"></i> Personal wallet</span>
-                <span><i class="fas fa-check-circle" style="color:#099d76;background:#def8ee;border-radius:50%;padding:4px;"></i> Loan tracking</span>
-                <span><i class="fas fa-check-circle" style="color:#099d76;background:#def8ee;border-radius:50%;padding:4px;"></i> Withdrawal requests</span>
+
+            <div class="features professional-features">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-list-check"></i></div>
+                    <div><b>Guided application</b><small>Move through a clear five-step loan request without unnecessary complexity.</small></div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <div><b>Application visibility</b><small>View your latest loan status directly from your personal dashboard.</small></div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-wallet"></i></div>
+                    <div><b>Wallet overview</b><small>See your available balance and recent activity in one organised workspace.</small></div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mobile-screen-button"></i></div>
+                    <div><b>Responsive access</b><small>Use Oceanic comfortably across desktop, tablet and mobile devices.</small></div>
+                </div>
             </div>
+
+            <p class="hero-note"><i class="fas fa-circle-info"></i> Loan applications are subject to eligibility assessment, review and approval. Final rates, fees, repayment terms and approved amounts may vary.</p>
         </div>
+
         <div class="wallet">
             <small>OCEANIC WALLET</small>
-            <small style="float:right"><i class="fas fa-ellipsis-h"></i></small>
+            <small style="float:right"><i class="fas fa-shield-halved"></i></small>
             <strong>$24,680.00</strong>
             <small>Available balance</small>
             <div class="bottom"><span><i class="fas fa-circle" style="font-size:6px;color:#20c9d7;"></i> •••• 2849</span><span>OCEANIC</span></div>
         </div>
     </main>
+
+    <section class="landing-section alt">
+        <div class="landing-inner">
+            <div class="section-head">
+                <span class="eyebrow"><i class="fas fa-route"></i> HOW IT WORKS</span>
+                <h2>A straightforward path from account creation to application tracking.</h2>
+                <p>Every stage is organised to keep the process understandable, visible and easy to manage from your account.</p>
+            </div>
+
+            <div class="how-grid">
+                <article class="how-card">
+                    <div class="how-number">01</div>
+                    <h3>Create your account</h3>
+                    <p>Register your Oceanic profile with your basic account information and continue directly to your personal dashboard.</p>
+                </article>
+                <article class="how-card">
+                    <div class="how-number">02</div>
+                    <h3>Complete your request</h3>
+                    <p>Provide your personal, address, income and loan details through a structured five-step application.</p>
+                </article>
+                <article class="how-card">
+                    <div class="how-number">03</div>
+                    <h3>Review and submit</h3>
+                    <p>Check the information you entered, review the illustrative repayment estimate and submit your request for assessment.</p>
+                </article>
+                <article class="how-card">
+                    <div class="how-number">04</div>
+                    <h3>Track your status</h3>
+                    <p>Return to your dashboard to view your latest application status alongside wallet and account activity.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="landing-section">
+        <div class="landing-inner">
+            <div class="section-head">
+                <span class="eyebrow"><i class="fas fa-gauge-high"></i> ONE ACCOUNT, ONE WORKSPACE</span>
+                <h2>Everything important stays organised in one dashboard.</h2>
+                <p>Oceanic is designed to reduce unnecessary movement between screens by keeping your key lending and wallet information together.</p>
+            </div>
+
+            <div class="benefit-grid">
+                <article class="benefit-card">
+                    <div class="icon"><i class="fas fa-file-circle-check"></i></div>
+                    <h3>Clear loan progress</h3>
+                    <p>Your latest application information remains visible from the dashboard, helping you understand the current stage without searching through separate pages.</p>
+                </article>
+                <article class="benefit-card">
+                    <div class="icon"><i class="fas fa-clock-rotate-left"></i></div>
+                    <h3>Recent account activity</h3>
+                    <p>Review recent wallet transactions and account movements in a simple activity view built for quick scanning on any screen size.</p>
+                </article>
+                <article class="benefit-card">
+                    <div class="icon"><i class="fas fa-money-bill-transfer"></i></div>
+                    <h3>Withdrawal management</h3>
+                    <p>Submit withdrawal requests from your account and keep the process connected to the same dashboard you use for your lending activity.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="landing-section" style="padding-top:0">
+        <div class="landing-inner">
+            <div class="professional-cta">
+                <div>
+                    <span class="eyebrow"><i class="fas fa-arrow-trend-up"></i> GET STARTED WITH OCEANIC</span>
+                    <h2>Manage your lending journey with greater clarity.</h2>
+                    <p>Create your account to access your personal dashboard, complete your loan request and keep your wallet and application information together.</p>
+                </div>
+                <button class="primary" onclick="showAuth('register')"><i class="fas fa-arrow-right"></i> Open your account</button>
+            </div>
+            <p class="professional-disclaimer">Illustrative estimates shown within the application are not final offers. Eligibility, rates, fees, repayment terms and approved amounts remain subject to review and approval.</p>
+        </div>
+    </section>
 </div>
 
 <!-- AUTH PAGE -->
@@ -56,18 +203,18 @@
     <div class="auth">
         <aside class="auth-side">
             <div class="brand">
-                <div class="logo">O</div>
+                <div class="logo"><i class="fas fa-water"></i></div>
                 <div><b>OCEANIC</b><small style="color:#b5d6df">LENDING COMPANY</small></div>
             </div>
-            <h1><i class="fas fa-wallet" style="color:#20c9d7;"></i> Everything you need in one wallet.</h1>
-            <p>Manage your profile, loan application, balance and withdrawals from one place.</p>
+            <h1><i class="fas fa-chart-pie" style="color:#20c9d7;"></i> Your lending activity, organised in one place.</h1>
+            <p>Access your wallet, complete loan requests, monitor application status and manage withdrawals from a responsive account experience.</p>
         </aside>
         <section class="auth-card">
             <button class="back" onclick="showScreen('landing')"><i class="fas fa-arrow-left"></i> Back</button>
             <div id="loginBox">
                 <span class="eyebrow"><i class="fas fa-user"></i> WELCOME BACK</span>
-                <h2>Log in to your wallet</h2>
-                <p class="muted">Enter your account details to continue.</p>
+                <h2>Welcome back</h2>
+                <p class="muted">Log in to access your Oceanic dashboard and continue managing your account.</p>
                 <label class="field"><i class="fas fa-envelope"></i> Email address<input id="le" type="email"></label>
                 <label class="field"><i class="fas fa-lock"></i> Password<input id="lp" type="password"></label>
                 <button class="primary full" onclick="login()"><i class="fas fa-sign-in-alt"></i> Log in</button>
@@ -75,8 +222,8 @@
             </div>
             <div id="registerBox" class="hidden">
                 <span class="eyebrow"><i class="fas fa-user-plus"></i> CREATE ACCOUNT</span>
-                <h2>Open your Oceanic wallet</h2>
-                <p class="muted">Create an account before starting your application.</p>
+                <h2>Create your Oceanic account</h2>
+                <p class="muted">Set up your account to access the dashboard and begin your loan application.</p>
                 <label class="field"><i class="fas fa-user"></i> Full name<input id="rn"></label>
                 <label class="field"><i class="fas fa-envelope"></i> Email address<input id="re" type="email"></label>
                 <label class="field"><i class="fas fa-phone"></i> Phone number<input id="rp"></label>
@@ -93,7 +240,7 @@
 <div id="dashboard" class="screen hidden">
     <nav class="dashnav">
         <div class="brand">
-            <div class="logo">O</div>
+            <div class="logo"><i class="fas fa-water"></i></div>
             <div><b>OCEANIC</b><small>LENDING COMPANY</small></div>
         </div>
         <div class="user">
@@ -108,7 +255,7 @@
                 <h1>Good day, <span id="dn"></span>.</h1>
                 <p>Manage your wallet and loan activity.</p>
             </div>
-            <button class="primary" onclick="openLoan()"><i class="fas fa-hand-holding-usd"></i> Apply for a loan +</button>
+            <button class="primary" onclick="openLoan()"><i class="fas fa-file-signature"></i> Apply for a loan</button>
         </div>
         <div class="balance">
             <div>
@@ -118,7 +265,7 @@
             </div>
             <div class="balance-actions">
                 <button onclick="openWithdraw()"><i class="fas fa-arrow-up"></i> Withdraw</button>
-                <button onclick="openLoan()"><i class="fas fa-hand-holding-usd"></i> Request loan</button>
+                <button onclick="openLoan()"><i class="fas fa-file-pen"></i> New loan request</button>
             </div>
         </div>
         <div class="grid">
@@ -135,12 +282,12 @@
     </main>
 </div>
 
-<!-- LOAN MODAL -->
+<!-- INLINE LOAN APPLICATION -->
 <div id="loan" class="modal hidden">
     <div class="modal-card">
         <div class="modal-head">
             <div><span class="eyebrow"><i class="fas fa-file-invoice"></i> LOAN APPLICATION</span><h2>Five simple steps</h2></div>
-            <button class="close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <button class="close" onclick="closeLoan()" aria-label="Close loan application"><i class="fas fa-times"></i></button>
         </div>
         <div class="steps">
             <div id="st1" class="step active">1</div><div class="line"></div>
@@ -387,16 +534,25 @@ async function loadDashboard() {
 }
 
 function openLoan() {
-    document.getElementById('loan').classList.remove('hidden');
+    const loan = document.getElementById('loan');
+    const dashboardMain = document.querySelector('#dashboard .dashboard');
+    if (dashboardMain && loan.parentElement !== dashboardMain) dashboardMain.appendChild(loan);
+    loan.classList.remove('hidden');
     step = 1;
     document.getElementById('an').value = user?.fullName || '';
     document.getElementById('aph').value = user?.phone || '';
     document.getElementById('ae').value = user?.email || '';
     renderLoan();
+    requestAnimationFrame(() => loan.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+}
+
+function closeLoan() {
+    const loan = document.getElementById('loan');
+    if (loan) loan.classList.add('hidden');
+    step = 1;
 }
 
 function closeModal() {
-    document.getElementById('loan').classList.add('hidden');
     document.getElementById('withdraw').classList.add('hidden');
 }
 
@@ -487,7 +643,7 @@ async function submitLoan() {
         });
 
         showToast('Application submitted for review!', 'fa-check-circle');
-        closeModal();
+        closeLoan();
         loadDashboard();
     } catch (e) {
         showToast('Error: ' + e.message, 'fa-exclamation-circle');
@@ -526,6 +682,10 @@ async function requestWithdraw() {
 }
 
 (async function init() {
+    const loan = document.getElementById('loan');
+    const dashboardMain = document.querySelector('#dashboard .dashboard');
+    if (dashboardMain && loan && loan.parentElement !== dashboardMain) dashboardMain.appendChild(loan);
+
     if (token) {
         try {
             await loadDashboard();
