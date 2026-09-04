@@ -1,251 +1,182 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Oceanic Lending Company</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        *{box-sizing:border-box}body{margin:0;font-family:Inter,sans-serif;color:#10263d;background:#f2f9fc}button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}.screen{min-height:100vh}.nav{height:78px;padding:0 6%;display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid #e4edf1}.brand{display:flex;gap:10px;align-items:center}.logo{width:43px;height:43px;border-radius:13px;background:linear-gradient(145deg,#20c9d7,#0879a4);display:grid;place-items:center;color:#fff;font-size:23px;font-weight:800}.brand b{display:block;letter-spacing:2px}.brand small{display:block;font-size:8px;letter-spacing:2px;color:#81909b}.nav-actions{display:flex;gap:12px}.link,.ghost,.back{background:none;border:0;color:#486779;font-weight:700}.nav-btn,.primary{border:0;border-radius:12px;background:linear-gradient(135deg,#087ea4,#075d86);color:#fff;padding:13px 19px;font-weight:800;box-shadow:0 10px 25px #087ea433}.hero{max-width:1180px;margin:auto;min-height:calc(100vh - 78px);display:grid;grid-template-columns:1.1fr .7fr;gap:70px;align-items:center;padding:50px 25px}.eyebrow{font-size:10px;letter-spacing:1.7px;font-weight:800;color:#087ea4}.hero h1{font-size:clamp(42px,6vw,70px);line-height:1.03;letter-spacing:-3px;margin:14px 0 22px;color:#071f37}.hero h1 span{color:#087ea4}.hero p{max-width:600px;color:#718391;line-height:1.8}.actions{display:flex;gap:12px;margin-top:30px}.features{display:flex;gap:25px;margin-top:35px;font-size:11px;color:#687d8b}.features .fa{color:#099d76;background:#def8ee;border-radius:50%;padding:4px;font-style:normal}.wallet{background:linear-gradient(145deg,#06243f,#0b7895);color:#fff;border-radius:26px;padding:30px;min-height:310px;box-shadow:0 30px 70px #07314c33;transform:rotate(2deg)}.wallet strong{display:block;font-size:35px;margin-top:75px}.wallet small{opacity:.65}.wallet .bottom{display:flex;justify-content:space-between;margin-top:85px;font-size:10px;opacity:.65}.auth{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}.auth-side{background:linear-gradient(145deg,#06243f,#087ea4);color:#fff;padding:8%;display:flex;flex-direction:column;justify-content:center}.auth-side h1{font-size:52px;max-width:500px;line-height:1.05}.auth-side p{max-width:450px;line-height:1.8;color:#c7e1e8}.auth-card{max-width:500px;width:100%;margin:auto;padding:35px}.auth-card h2{font-size:30px}.muted{color:#82939f;font-size:12px;line-height:1.7}.field{display:block;margin:15px 0;font-size:11px;font-weight:700;color:#466173}.field input,.field select,.field textarea{display:block;width:100%;margin-top:7px;padding:13px;border:1px solid #dce8ee;border-radius:11px;background:#fff;outline:0}.full{width:100%;margin-top:10px}.switch{text-align:center;font-size:11px;color:#81909b}.switch button{border:0;background:none;color:#087ea4;font-weight:800}.message{color:#d25757;font-size:11px;text-align:center;margin-top:12px}.dashnav{height:78px;padding:0 6%;display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid #e4edf1}.user{display:flex;gap:10px;align-items:center;font-size:12px;font-weight:700}.avatar{border:0;border-radius:50%;width:37px;height:37px;background:#e6f7f8;color:#087ea4;font-size:16px}.dashboard{max-width:1180px;margin:auto;padding:50px 25px}.welcome{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}.welcome h1{font-size:34px;margin:5px 0}.welcome h1 span{color:#087ea4}.welcome p{font-size:12px;color:#84939e}.balance{background:linear-gradient(135deg,#06243f,#087ea4);color:#fff;border-radius:25px;padding:30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 22px 50px #07314c20}.balance small{font-size:9px;letter-spacing:1.7px;opacity:.65}.balance h2{font-size:42px;margin:8px 0}.balance-actions{display:flex;gap:10px}.balance-actions button{border:1px solid #ffffff33;background:#ffffff12;color:#fff;border-radius:10px;padding:11px 15px;font-weight:700}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.panel{background:#fff;border:1px solid #e4edf1;border-radius:19px;padding:22px;min-height:230px}.panel h3{font-size:14px}.empty{padding:50px;text-align:center;color:#9aa8b1;font-size:11px}.modal{position:fixed;inset:0;background:#061d31cc;backdrop-filter:blur(7px);z-index:10;overflow:auto;padding:25px}.modal-card{background:#fff;max-width:760px;margin:20px auto;border-radius:25px;padding:28px}.modal-head{display:flex;justify-content:space-between}.close{border:0;border-radius:50%;background:#edf4f7;width:34px;height:34px;font-size:20px;color:#486779}.steps{display:flex;align-items:center;margin:28px 0 38px}.step{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#edf3f5;color:#82929c;font-size:11px;font-weight:800}.step.active{background:#087ea4;color:#fff}.line{height:2px;background:#e5edf1;flex:1;margin:0 8px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.estimate{margin-top:18px;padding:18px;background:#082c46;color:#fff;border-radius:15px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px}.estimate small{display:block;font-size:8px;opacity:.6}.estimate b{font-size:13px}.review{background:#f5fafc;padding:15px;border-radius:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:10px;margin-top:18px}.review b{display:block;margin-top:3px}.notice{font-size:9px;line-height:1.6;background:#fff8e6;padding:10px;border-radius:10px;margin-top:12px}.backstep{border:0;background:none;color:#60798a;font-size:11px;font-weight:700;margin-top:14px}.toast{position:fixed;bottom:20px;right:20px;background:#071f37;color:#fff;padding:16px 24px;border-radius:12px;font-size:13px;z-index:999;box-shadow:0 10px 30px #00000033;animation:slideIn .3s ease;display:flex;align-items:center;gap:10px}.toast .fa{font-size:16px}.error{border-color:#d25757!important;background:#fff5f5!important}@keyframes slideIn{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}@media(max-width:850px){.hero,.auth{grid-template-columns:1fr}.wallet,.auth-side{display:none}.grid{grid-template-columns:1fr}.welcome{flex-direction:column;align-items:start;gap:15px}.balance{flex-direction:column;align-items:start;gap:22px}.balance-actions{width:100%}.balance-actions button{flex:1}}@media(max-width:560px){.nav,.dashnav{padding:0 18px}.hero{padding:40px 18px}.hero h1{font-size:40px}.actions{flex-direction:column}.two,.review,.estimate{grid-template-columns:1fr}.modal{padding:10px}.modal-card{padding:20px 16px}}
-
-
-        /* ===== RESPONSIVE / MODERN UI OVERRIDES ===== */
-        :root{--navy:#071f37;--navy2:#06243f;--blue:#087ea4;--cyan:#20c9d7;--teal:#0b9b73;--card:#fff;--line:#dfe9ee;--muted:#718391;--shadow:0 18px 50px rgba(7,31,55,.10)}
-        html{scroll-behavior:smooth}body{min-width:0;-webkit-font-smoothing:antialiased;background:radial-gradient(circle at 8% 0%,#20c9d714,transparent 28%),linear-gradient(180deg,#f8fcfd,#f2f8fa)}
-        button{min-height:42px}input,select,textarea{min-height:44px}.screen{min-height:100dvh}.nav,.dashnav{position:sticky;top:0;z-index:20;min-height:76px;height:auto;backdrop-filter:blur(16px);background:#fffffff0;padding-top:max(10px,env(safe-area-inset-top));padding-bottom:10px}
-        .logo{box-shadow:0 9px 24px #087ea42d}.logo i{font-size:20px}.nav-actions{align-items:center;flex-wrap:wrap;justify-content:flex-end}.nav-btn,.primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s ease}.nav-btn:hover,.primary:hover{transform:translateY(-1px);box-shadow:0 13px 28px #087ea440}.ghost,.link,.back{display:inline-flex;align-items:center;gap:8px}
-        .hero{width:min(1180px,calc(100% - 40px));grid-template-columns:minmax(0,1.1fr) minmax(330px,.72fr);gap:62px;padding:58px 0 74px}.hero h1{font-size:clamp(44px,6vw,74px);letter-spacing:-3.4px}.hero p{font-size:14px}.features{flex-wrap:wrap}.features span{background:#fff;border:1px solid var(--line);border-radius:13px;padding:10px 12px;box-shadow:0 8px 22px #071f3708}.wallet{transform:rotate(1deg);overflow:hidden;position:relative}.wallet:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#ffffff18;right:-90px;top:-95px}.wallet>*{position:relative;z-index:1}
-        .auth{grid-template-columns:minmax(360px,.92fr) minmax(0,1.08fr)}.auth-side{position:relative;overflow:hidden}.auth-side:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:#ffffff0e;right:-190px;bottom:-180px}.auth-side>*{position:relative;z-index:1}.auth-card{border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:38px}.field input,.field select,.field textarea{transition:border .18s,box-shadow .18s}.field input:focus,.field select:focus,.field textarea:focus{border-color:#67bdd4;box-shadow:0 0 0 4px #087ea414}.message{line-height:1.5}
-        .dashboard{width:min(1180px,calc(100% - 40px));padding:44px 0 64px}.welcome{gap:20px}.welcome h1{font-size:clamp(30px,4vw,40px);letter-spacing:-1.3px}.balance{overflow:hidden;position:relative}.balance:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:#ffffff12;right:-90px;top:-135px}.balance>*{position:relative;z-index:1}.grid{grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr)}.panel{min-width:0;box-shadow:0 8px 24px #071f3708}.panel h3{display:flex;align-items:center;gap:8px}.panel h3 i{color:var(--blue)}#activity{min-width:0}#activity>div:not(.empty){display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center}#activity strong{float:none!important;white-space:nowrap}
-        /* Loan application lives inside the dashboard instead of using an overlay. */
-        #loan.modal{position:static;inset:auto;background:transparent;backdrop-filter:none;z-index:auto;overflow:visible;padding:0;margin:24px 0 0;display:block}
-        #loan.modal.hidden{display:none!important}#loan .modal-card{max-width:none;width:100%;margin:0;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)}#loan .modal-head{align-items:flex-start;gap:16px}#loan .steps{margin:24px 0 34px}#loan .step{flex:0 0 36px}#loan .line{min-width:16px}#loan .field input,#loan .field select{background:#fff}#loan .primary.full{max-width:280px;margin-left:auto;display:flex}#loan .backstep{display:inline-flex;align-items:center;gap:7px}
-        .modal:not(#loan){display:grid;place-items:center}.modal:not(#loan) .modal-card{width:min(100%,430px);margin:0}
-        .toast{max-width:min(380px,calc(100% - 40px));bottom:max(20px,env(safe-area-inset-bottom))}
-        @media(max-width:1050px){.hero{grid-template-columns:minmax(0,1fr) 380px;gap:38px}.grid{grid-template-columns:1fr}.hero h1{font-size:clamp(46px,6vw,64px)}}
-        @media(max-width:850px){.nav,.dashnav{padding-left:16px;padding-right:16px}.hero,.dashboard{width:min(720px,calc(100% - 28px))}.hero{grid-template-columns:1fr;min-height:auto;padding:44px 0 64px}.wallet{transform:none;max-width:560px;width:100%;margin:0 auto}.auth{grid-template-columns:1fr}.auth-side{display:flex;min-height:auto;padding:30px 22px}.auth-side h1{font-size:36px;margin:20px 0 10px}.auth-side p{font-size:12px}.auth-card{box-shadow:none;margin:0 auto;padding:28px 22px}.welcome{flex-direction:column;align-items:flex-start}.welcome>.primary{width:100%}.balance{flex-direction:column;align-items:flex-start;gap:22px}.balance-actions{width:100%}.balance-actions button{flex:1;justify-content:center}.two,.review{grid-template-columns:1fr 1fr}#loan .modal-card{padding:24px}#loan .steps{overflow-x:auto;padding-bottom:4px}.estimate{grid-template-columns:repeat(3,minmax(0,1fr))}}
-        @media(max-width:620px){.brand>div:last-child{display:none}.nav-actions{gap:6px}.nav-actions .link{font-size:0;padding:9px}.nav-actions .link i{font-size:16px}.nav-btn{padding:11px 13px;font-size:11px}.hero{width:calc(100% - 24px);padding-top:32px}.hero h1{font-size:clamp(38px,12vw,52px);letter-spacing:-2.2px}.hero p{font-size:13px}.actions{display:grid;grid-template-columns:1fr;width:100%}.actions .primary,.actions .ghost{width:100%}.features{display:grid;grid-template-columns:1fr;gap:8px}.wallet{min-height:285px;padding:24px}.auth-side{padding:24px 18px}.auth-side h1{font-size:31px}.auth-card{padding:24px 18px;border-radius:20px}.dashboard{width:calc(100% - 24px);padding-top:28px}.user span{display:none}.balance{padding:24px}.balance h2{font-size:36px}.balance-actions{display:grid;grid-template-columns:1fr}.panel{padding:18px}.grid{gap:14px}#activity>div:not(.empty){grid-template-columns:1fr}#activity strong{justify-self:start}.two,.review,.estimate{grid-template-columns:1fr}#loan .modal-card{padding:20px 16px;border-radius:18px}#loan .modal-head h2{font-size:22px}#loan .steps{gap:0;margin:20px 0 28px}#loan .step{width:32px;height:32px;flex-basis:32px}#loan .line{margin:0 5px}#loan .primary.full{max-width:none}.modal{padding:12px}.modal-card{padding:22px 18px}.toast{left:14px;right:14px;bottom:max(14px,env(safe-area-inset-bottom));max-width:none}}
-        @media(max-width:390px){.nav-btn{font-size:0;width:42px;padding:0}.nav-btn i{font-size:15px}.hero h1{font-size:37px}.dashboard{width:calc(100% - 20px)}.balance{border-radius:20px}.panel{border-radius:16px}#loan .modal-card{padding:18px 13px}.field input,.field select,.field textarea{padding:12px}.steps .line{min-width:8px}}
-
-    
-        .account-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 18px}.account-chip{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;display:flex;align-items:center;gap:12px;min-width:0;box-shadow:0 7px 22px #071f3707}.account-chip>i{width:38px;height:38px;border-radius:11px;background:#eaf7f9;color:var(--blue);display:grid;place-items:center;flex:0 0 38px}.account-chip div{min-width:0}.account-chip small{display:block;font-size:8px;letter-spacing:1px;color:#82939f;font-weight:800}.account-chip b{display:block;font-size:12px;margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.verify-badge{margin-left:auto;border-radius:999px;padding:5px 9px;font-size:8px;font-weight:800;text-transform:uppercase}.verify-badge.pending{background:#fff4d6;color:#8b6508}.verify-badge.verified{background:#e0f8ef;color:#0b7f5c}.verify-badge.rejected{background:#ffe8ea;color:#b23c48}.loan-note{font-size:10px;color:#82939f;line-height:1.55;margin-top:8px}.loan-note strong{color:#486779}.features i{color:#0b9b73!important;background:#def8ee;border-radius:50%;padding:4px;font-style:normal}.legal-note{max-width:650px;margin-top:18px;color:#91a0aa;font-size:9px;line-height:1.55}@media(max-width:850px){.account-strip{grid-template-columns:1fr 1fr}}@media(max-width:620px){.account-strip{grid-template-columns:1fr}.account-chip{padding:13px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#06243f">
+  <title>Oceanic Lending Company</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{--navy:#071f37;--navy2:#06243f;--blue:#087ea4;--blue2:#075d86;--cyan:#20c9d7;--teal:#0b9b73;--red:#cc4f59;--amber:#a36a07;--bg:#f4f9fb;--card:#fff;--line:#e0eaee;--text:#10263d;--muted:#718391;--soft:#eef7f9;--shadow:0 18px 50px rgba(7,31,55,.10);--shadow2:0 8px 24px rgba(7,31,55,.06)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 8% 0%,rgba(32,201,215,.10),transparent 28%),linear-gradient(180deg,#f8fcfd,var(--bg));-webkit-font-smoothing:antialiased}button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}.screen{min-height:100dvh}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;color:var(--blue)}.muted{font-size:12px;line-height:1.7;color:var(--muted)}
+    .primary,.nav-btn{border:0;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;padding:13px 18px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 10px 25px rgba(8,126,164,.22);transition:.18s}.primary:hover,.nav-btn:hover{transform:translateY(-1px)}.primary:disabled{opacity:.65;cursor:not-allowed;transform:none}.ghost,.link,.back{border:0;background:none;color:#4f6d7e;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px}.full{width:100%}
+    .nav,.dashnav{min-height:78px;padding:10px max(18px,6vw);display:flex;justify-content:space-between;align-items:center;gap:18px;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(16px);position:sticky;top:0;z-index:30}.brand{display:flex;align-items:center;gap:10px}.logo{width:44px;height:44px;flex:0 0 44px;border-radius:14px;background:linear-gradient(145deg,var(--cyan),var(--blue));display:grid;place-items:center;color:#fff;font-size:21px;box-shadow:0 9px 22px rgba(8,126,164,.22)}.brand b{display:block;font-size:14px;letter-spacing:1.8px;line-height:1.1}.brand small{display:block;font-size:8px;letter-spacing:1.5px;color:#81909b;margin-top:3px}.nav-actions{display:flex;gap:9px;align-items:center}
+    .hero{width:min(1180px,calc(100% - 40px));margin:auto;min-height:calc(100dvh - 78px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(330px,.72fr);gap:66px;align-items:center;padding:56px 0 70px}.hero h1{font-size:clamp(44px,6vw,74px);line-height:1.01;letter-spacing:-3.6px;margin:14px 0 21px;color:var(--navy)}.hero h1 span{color:var(--blue)}.hero p{max-width:650px;font-size:14px;line-height:1.85;color:var(--muted)}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:32px}.feature{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px;display:flex;align-items:center;gap:9px;font-size:10px;font-weight:750;color:#607684;box-shadow:var(--shadow2)}.feature i{color:var(--teal)}
+    .wallet{background:linear-gradient(145deg,var(--navy2),#0b7895);color:#fff;border-radius:28px;padding:30px;min-height:330px;box-shadow:0 30px 70px rgba(7,49,76,.24);position:relative;overflow:hidden}.wallet:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-80px;top:-100px;background:rgba(255,255,255,.08)}.wallet>*{position:relative;z-index:1}.wallet-top,.wallet-bottom{display:flex;justify-content:space-between;align-items:center}.wallet strong{display:block;font-size:clamp(34px,4vw,44px);margin-top:76px}.wallet small{opacity:.7}.wallet-bottom{margin-top:82px;font-size:10px;opacity:.75}
+    .auth{display:grid;grid-template-columns:minmax(360px,.9fr) minmax(0,1.1fr);min-height:100dvh;background:#fff}.auth-side{background:linear-gradient(145deg,var(--navy2),var(--blue));color:#fff;padding:clamp(36px,6vw,78px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}.auth-side:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.07);right:-190px;bottom:-180px}.auth-side>*{position:relative;z-index:1}.auth-side h1{font-size:clamp(40px,5vw,60px);line-height:1.04;letter-spacing:-2.4px;margin:28px 0 18px}.auth-side p{max-width:490px;line-height:1.8;color:#c7e1e8}.auth-main{display:flex;justify-content:center;align-items:center;padding:38px}.auth-card{width:min(100%,500px);padding:36px;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}.auth-card h2{font-size:30px;letter-spacing:-1px;margin-bottom:8px}.back{padding:0;margin-bottom:24px}.field{display:block;margin:14px 0;font-size:10px;font-weight:800;color:#4e6979}.field span{display:flex;align-items:center;gap:7px}.field input,.field select,.field textarea{display:block;width:100%;margin-top:7px;padding:13px 14px;border:1px solid #d8e5ea;border-radius:11px;background:#fff;color:var(--text);outline:0;min-height:45px}.field textarea{min-height:90px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:#67bdd4;box-shadow:0 0 0 4px rgba(8,126,164,.08)}.switch{text-align:center;font-size:11px;color:#81909b;margin-top:17px}.switch button{border:0;background:none;color:var(--blue);font-weight:800}
+    .user{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:750;min-width:0}.user span{max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.avatar{width:40px;height:40px;border:0;border-radius:12px;background:#e9f7f8;color:var(--blue);display:grid;place-items:center}.dashboard{width:min(1180px,calc(100% - 40px));margin:auto;padding:42px 0 64px}.welcome{display:flex;justify-content:space-between;align-items:flex-end;gap:22px;margin-bottom:26px}.welcome h1{font-size:clamp(30px,4vw,40px);letter-spacing:-1.5px;margin:6px 0}.welcome h1 span{color:var(--blue)}.welcome p{font-size:12px;color:#84939e;margin:0}.account-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}.account-chip{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 14px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow2)}.account-chip>i{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#eaf7f8;color:var(--blue)}.account-chip small{display:block;font-size:8px;color:#8b9aa4;letter-spacing:.7px}.account-chip b{display:block;font-size:11px;margin-top:3px;text-transform:capitalize}.verify-badge{display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;font-size:8px;font-weight:800;text-transform:uppercase}.verify-badge.pending{background:#fff5dd;color:#99670b}.verify-badge.verified{background:#e6f8f1;color:#077d5c}.verify-badge.rejected{background:#ffeded;color:#b23e48}
+    .balance{background:linear-gradient(135deg,var(--navy2),var(--blue));color:#fff;border-radius:25px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:28px;box-shadow:0 22px 50px rgba(7,49,76,.16);position:relative;overflow:hidden}.balance:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-95px;top:-140px;background:rgba(255,255,255,.08)}.balance>*{position:relative;z-index:1}.balance small{font-size:9px;letter-spacing:1.2px;opacity:.72}.balance h2{font-size:clamp(35px,5vw,48px);margin:8px 0;letter-spacing:-1.4px}.balance-actions{display:flex;gap:9px;flex-wrap:wrap}.balance-actions button{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.10);color:#fff;border-radius:11px;padding:11px 14px;font-weight:750;display:inline-flex;align-items:center;gap:8px}.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:17px;margin-top:17px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:21px;min-width:0;box-shadow:var(--shadow2)}.panel h3{font-size:13px;margin:0;display:flex;align-items:center;gap:8px}.panel h3 i{color:var(--blue)}.empty{padding:45px 16px;text-align:center;color:#9aa8b1;font-size:10px}.activity-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;border-top:1px solid #edf2f4;padding:13px 0;font-size:10px}.activity-row:first-child{border-top:0}.activity-row b{display:block}.activity-row small{display:block;color:#82929d;margin-top:4px}.activity-row strong{white-space:nowrap}.loan-note{margin-top:10px;padding:9px;background:#f4f9fb;border-radius:9px;font-size:9px;line-height:1.5}.loan-status{margin-top:17px;padding:16px;background:var(--soft);border:1px solid #deecef;border-radius:14px}.loan-status p{font-size:11px;line-height:1.7;color:#627986;margin:0 0 12px}
+    .workspace{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}.workspace-head{padding:24px 26px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.workspace-head h2{margin:6px 0 5px;font-size:25px;letter-spacing:-.7px}.close-workspace{width:40px;height:40px;flex:0 0 40px;border:1px solid var(--line);background:#f5f9fa;color:#587383;border-radius:12px}.workspace-body{padding:25px}.steps{display:flex;align-items:center;margin:2px 0 27px}.step{width:35px;height:35px;flex:0 0 35px;border-radius:50%;display:grid;place-items:center;background:#edf3f5;color:#82929c;font-size:10px;font-weight:800}.step.active{background:var(--blue);color:#fff}.line{height:2px;background:#e5edf1;flex:1;margin:0 7px}.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.estimate{margin-top:16px;padding:17px;background:#082c46;color:#fff;border-radius:14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.estimate small{display:block;font-size:8px;opacity:.65}.estimate b{display:block;margin-top:4px;font-size:12px}.review{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;background:#f5fafc;border:1px solid #e0ebef;border-radius:13px;padding:15px;font-size:9px}.review b{display:block;margin-top:4px;font-size:10px;overflow-wrap:anywhere}.notice{margin-top:13px;padding:11px;border-radius:10px;background:#fff8e6;border:1px solid #f3e1ae;color:#71510c;font-size:9px;line-height:1.65}.workspace-actions{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:15px}.backstep{border:0;background:none;color:#60798a;font-size:10px;font-weight:750;display:inline-flex;align-items:center;gap:7px;padding:10px 0}
+    .withdraw-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-bottom:16px}.summary-box{border:1px solid var(--line);border-radius:13px;padding:12px;background:#f8fbfc}.summary-box small{display:block;font-size:8px;color:#899aa4;letter-spacing:.7px}.summary-box b{display:block;font-size:12px;margin-top:4px}.processing-box{margin-top:16px;padding:18px;border:1px solid #d9e8ed;border-radius:14px;background:#f4fafb;text-align:center}.processing-box i{font-size:22px;color:var(--blue)}.processing-box b{display:block;margin:8px 0 4px;font-size:12px}.processing-box small{color:var(--muted);font-size:9px;line-height:1.6}.other-reason{display:none}.other-reason.show{display:block}
+    .toast-stack{position:fixed;top:max(14px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:999;width:min(470px,calc(100% - 28px));display:grid;gap:8px;pointer-events:none}.toast{background:#0d2b42;color:#fff;border:1px solid #21475f;border-radius:13px;padding:13px 15px;box-shadow:0 14px 40px rgba(0,0,0,.20);font-size:11px;display:flex;align-items:flex-start;gap:9px;animation:toastIn .22s ease;pointer-events:auto}.toast i{color:var(--cyan);margin-top:1px}.toast.error-toast{background:#4b2026;border-color:#7c323d}.toast.error-toast i{color:#ff949c}.toast.success-toast{background:#103c31;border-color:#1f6754}.toast.success-toast i{color:#66e3bd}@keyframes toastIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}.wallet{max-width:560px;width:100%;margin:auto}.auth{grid-template-columns:1fr}.auth-side{min-height:auto;padding:30px 22px}.auth-side h1{font-size:36px;margin:18px 0 10px}.auth-main{padding:24px 15px 38px}.auth-card{box-shadow:none}.dashboard,.hero{width:min(720px,calc(100% - 28px))}.welcome{flex-direction:column;align-items:flex-start}.welcome .primary{width:100%}.account-strip{grid-template-columns:1fr 1fr}.balance{flex-direction:column;align-items:flex-start}.balance-actions{width:100%}.balance-actions button{flex:1;justify-content:center}.grid{grid-template-columns:1fr}.workspace-body{padding:22px}.withdraw-summary{grid-template-columns:1fr 1fr}}
+    @media(max-width:620px){.brand>div:last-child{display:none}.nav,.dashnav{padding-inline:14px}.nav-actions{gap:5px}.nav-actions .link span{display:none}.nav-btn{padding:11px 12px;font-size:10px}.hero{width:calc(100% - 24px);padding:34px 0 52px}.hero h1{font-size:clamp(38px,12vw,52px);letter-spacing:-2.4px}.hero p{font-size:12px}.actions{display:grid;grid-template-columns:1fr;width:100%}.actions>*{width:100%}.features{grid-template-columns:1fr}.auth-side{padding:24px 18px}.auth-side h1{font-size:31px}.auth-main{padding:14px 11px 30px}.auth-card{padding:24px 18px;border-radius:20px}.user span{display:none}.dashboard{width:calc(100% - 24px);padding-top:27px}.account-strip{grid-template-columns:1fr}.balance{padding:23px}.balance-actions{display:grid;grid-template-columns:1fr}.panel{padding:17px}.activity-row{grid-template-columns:1fr}.activity-row strong{justify-self:start}.workspace{border-radius:18px}.workspace-head{padding:20px 15px 15px}.workspace-head h2{font-size:22px}.workspace-body{padding:18px 14px 20px}.two,.review,.estimate,.withdraw-summary{grid-template-columns:1fr}.steps{overflow:auto;padding-bottom:4px}.step{width:31px;height:31px;flex-basis:31px}.workspace-actions{flex-direction:column-reverse;align-items:stretch}.workspace-actions .primary,.workspace-actions .backstep{width:100%;justify-content:center}.wallet{min-height:285px;padding:24px}}
+  </style>
 </head>
 <body>
+<div id="toastStack" class="toast-stack"></div>
 
-<!-- LANDING PAGE -->
 <div id="landing" class="screen">
-    <nav class="nav">
-        <div class="brand">
-            <div class="logo"><i class="fas fa-water"></i></div>
-            <div><b>OCEANIC</b><small>LENDING COMPANY</small></div>
-        </div>
-        <div class="nav-actions">
-            <button class="link" onclick="showAuth('login')"><i class="fas fa-sign-in-alt"></i> Log in</button>
-            <button class="nav-btn" onclick="showAuth('register')"><i class="fas fa-user-plus"></i> Create account</button>
-        </div>
-    </nav>
-    <main class="hero">
-        <div>
-            <span class="eyebrow"><i class="fas fa-building-shield"></i> SMARTER LENDING. CLEARER FINANCIAL CONTROL.</span>
-            <h1>A simpler way to apply, track and <span>manage your financing.</span></h1>
-            <p>Oceanic Lending gives you one secure place to manage your lending journey. Create your account, complete a guided loan application, monitor your application status, manage your wallet and submit withdrawal requests from a modern dashboard designed for desktop, tablet and mobile.</p>
-            <div class="actions">
-                <button class="primary" onclick="showAuth('register')"><i class="fas fa-arrow-right"></i> Open an account</button>
-                <button class="ghost" onclick="showAuth('login')"><i class="far fa-circle-user"></i> I already have an account</button>
-            </div>
-            <div class="features">
-                <span><i class="fas fa-wallet"></i> Personal wallet</span>
-                <span><i class="fas fa-file-circle-check"></i> Guided loan application</span>
-                <span><i class="fas fa-chart-line"></i> Application tracking</span>
-                <span><i class="fas fa-money-bill-transfer"></i> Withdrawal management</span>
-                <span><i class="fas fa-user-shield"></i> Account verification</span>
-            </div>
-            <p class="legal-note">Loan applications are subject to eligibility assessment, review and approval. Rates, fees, repayment terms and available amounts may vary based on the final approved offer.</p>
-        </div>
-        <div class="wallet">
-            <small>OCEANIC WALLET</small>
-            <small style="float:right"><i class="fas fa-ellipsis-h"></i></small>
-            <strong>$24,680.00</strong>
-            <small>Available balance</small>
-            <div class="bottom"><span><i class="fas fa-circle" style="font-size:6px;color:#20c9d7;"></i> •••• 2849</span><span>OCEANIC</span></div>
-        </div>
-    </main>
-</div>
-
-<!-- AUTH PAGE -->
-<div id="auth" class="screen hidden">
-    <div class="auth">
-        <aside class="auth-side">
-            <div class="brand">
-                <div class="logo"><i class="fas fa-water"></i></div>
-                <div><b>OCEANIC</b><small style="color:#b5d6df">LENDING COMPANY</small></div>
-            </div>
-            <h1><i class="fas fa-shield-halved" style="color:#20c9d7;"></i> One account for your lending journey.</h1>
-            <p>Access your wallet, complete applications, review account verification, follow loan decisions and manage withdrawals from one responsive workspace.</p>
-        </aside>
-        <section class="auth-card">
-            <button class="back" onclick="showScreen('landing')"><i class="fas fa-arrow-left"></i> Back</button>
-            <div id="loginBox">
-                <span class="eyebrow"><i class="fas fa-user"></i> WELCOME BACK</span>
-                <h2>Log in to your wallet</h2>
-                <p class="muted">Enter your account details to continue.</p>
-                <label class="field"><i class="fas fa-envelope"></i> Email address<input id="le" type="email"></label>
-                <label class="field"><i class="fas fa-lock"></i> Password<input id="lp" type="password"></label>
-                <button class="primary full" onclick="login()"><i class="fas fa-sign-in-alt"></i> Log in</button>
-                <p class="switch">Don't have an account? <button onclick="showAuth('register')">Create one</button></p>
-            </div>
-            <div id="registerBox" class="hidden">
-                <span class="eyebrow"><i class="fas fa-user-plus"></i> CREATE ACCOUNT</span>
-                <h2>Open your Oceanic wallet</h2>
-                <p class="muted">Create an account before starting your application.</p>
-                <label class="field"><i class="fas fa-user"></i> Full name<input id="rn"></label>
-                <label class="field"><i class="fas fa-envelope"></i> Email address<input id="re" type="email"></label>
-                <label class="field"><i class="fas fa-phone"></i> Phone number<input id="rp"></label>
-                <label class="field"><i class="fas fa-lock"></i> Password<input id="rpass" type="password"></label>
-                <button class="primary full" onclick="register()"><i class="fas fa-user-plus"></i> Create account</button>
-                <p class="switch">Already registered? <button onclick="showAuth('login')">Log in</button></p>
-            </div>
-            <div id="am" class="message"></div>
-        </section>
+  <nav class="nav">
+    <div class="brand"><div class="logo"><i class="fa-solid fa-water"></i></div><div><b>OCEANIC</b><small>LENDING COMPANY</small></div></div>
+    <div class="nav-actions">
+      <button class="link" onclick="showAuth('login')"><i class="fa-solid fa-right-to-bracket"></i><span>Log in</span></button>
+      <button class="nav-btn" onclick="showAuth('register')"><i class="fa-solid fa-user-plus"></i> Create account</button>
     </div>
+  </nav>
+  <main class="hero">
+    <section>
+      <span class="eyebrow"><i class="fa-solid fa-shield-halved"></i> Smarter lending, clearer control</span>
+      <h1>A simpler way to apply, track and <span>manage your financing.</span></h1>
+      <p>Oceanic Lending gives you one secure place to create an account, complete a guided loan application, monitor your application status, manage your wallet and request withdrawals from a responsive dashboard.</p>
+      <div class="actions">
+        <button class="primary" onclick="showAuth('register')"><i class="fa-solid fa-arrow-right"></i> Open an account</button>
+        <button class="ghost" onclick="showAuth('login')"><i class="fa-regular fa-circle-user"></i> I already have an account</button>
+      </div>
+      <div class="features">
+        <div class="feature"><i class="fa-solid fa-wallet"></i> Personal wallet</div>
+        <div class="feature"><i class="fa-solid fa-file-circle-check"></i> Loan tracking</div>
+        <div class="feature"><i class="fa-solid fa-building-columns"></i> Bank withdrawals</div>
+      </div>
+    </section>
+    <section class="wallet" aria-label="Oceanic wallet preview">
+      <div class="wallet-top"><small>OCEANIC WALLET</small><i class="fa-solid fa-wifi"></i></div>
+      <strong>$24,680.00</strong>
+      <small>Available balance</small>
+      <div class="wallet-bottom"><span>•••• 2849</span><span>USD / JPY</span></div>
+    </section>
+  </main>
 </div>
 
-<!-- DASHBOARD -->
-<div id="dashboard" class="screen hidden">
-    <nav class="dashnav">
-        <div class="brand">
-            <div class="logo"><i class="fas fa-water"></i></div>
-            <div><b>OCEANIC</b><small>LENDING COMPANY</small></div>
+<div id="auth" class="screen hidden">
+  <div class="auth">
+    <aside class="auth-side">
+      <div class="brand"><div class="logo"><i class="fa-solid fa-water"></i></div><div><b>OCEANIC</b><small style="color:#b8d7df">LENDING COMPANY</small></div></div>
+      <h1>One account for your lending journey.</h1>
+      <p>Manage your wallet, loan applications, verification status and withdrawals from a clean experience designed for desktop, tablet and mobile.</p>
+    </aside>
+    <main class="auth-main">
+      <section class="auth-card">
+        <button class="back" onclick="showScreen('landing')"><i class="fa-solid fa-arrow-left"></i> Back to home</button>
+        <div id="loginBox">
+          <span class="eyebrow"><i class="fa-regular fa-circle-user"></i> Welcome back</span>
+          <h2>Log in to your account</h2>
+          <p class="muted">Enter your account details to continue.</p>
+          <label class="field"><span><i class="fa-regular fa-envelope"></i> Email address</span><input id="le" type="email" autocomplete="email" placeholder="you@example.com"></label>
+          <label class="field"><span><i class="fa-solid fa-lock"></i> Password</span><input id="lp" type="password" autocomplete="current-password" placeholder="Enter your password"></label>
+          <button id="loginBtn" class="primary full" onclick="login()"><i class="fa-solid fa-right-to-bracket"></i> Log in</button>
+          <p class="switch">Don't have an account? <button onclick="showAuth('register')">Create one</button></p>
         </div>
-        <div class="user">
-            <span id="un"></span>
-            <button class="avatar" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
+        <div id="registerBox" class="hidden">
+          <span class="eyebrow"><i class="fa-solid fa-user-plus"></i> Create account</span>
+          <h2>Open your Oceanic wallet</h2>
+          <p class="muted">Choose either a US Dollar or Japanese Yen wallet for your account.</p>
+          <label class="field"><span><i class="fa-regular fa-user"></i> Full name</span><input id="rn" autocomplete="name" placeholder="Your full name"></label>
+          <label class="field"><span><i class="fa-regular fa-envelope"></i> Email address</span><input id="re" type="email" autocomplete="email" placeholder="you@example.com"></label>
+          <label class="field"><span><i class="fa-solid fa-phone"></i> Phone number</span><input id="rp" type="tel" autocomplete="tel" placeholder="Your phone number"></label>
+          <label class="field"><span><i class="fa-solid fa-coins"></i> Wallet currency</span><select id="rcurrency"><option value="USD">$ — US Dollar (USD)</option><option value="JPY">¥ — Japanese Yen (JPY)</option></select></label>
+          <label class="field"><span><i class="fa-solid fa-lock"></i> Password</span><input id="rpass" type="password" autocomplete="new-password" placeholder="At least 8 characters"></label>
+          <button id="registerBtn" class="primary full" onclick="register()"><i class="fa-solid fa-user-check"></i> Create account</button>
+          <p class="switch">Already registered? <button onclick="showAuth('login')">Log in</button></p>
         </div>
-    </nav>
-    <main class="dashboard">
-        <div class="welcome">
-            <div>
-                <span class="eyebrow"><i class="fas fa-gauge-high"></i> MY DASHBOARD</span>
-                <h1>Good day, <span id="dn"></span>.</h1>
-                <p>Manage your wallet, account verification, loan applications and withdrawals.</p>
-            </div>
-            <button class="primary" onclick="openLoan()"><i class="fas fa-file-signature"></i> Apply for a loan</button>
-        </div>
-        <div class="account-strip">
-            <div class="account-chip"><i class="fas fa-user-shield"></i><div><small>ACCOUNT VERIFICATION</small><b id="verifyText">Pending review</b></div><span id="verifyBadge" class="verify-badge pending">Pending</span></div>
-            <div class="account-chip"><i class="fas fa-coins"></i><div><small>WALLET CURRENCY</small><b id="walletCurrency">NGN</b></div></div>
-            <div class="account-chip"><i class="fas fa-shield-halved"></i><div><small>ACCOUNT STATUS</small><b id="accountStatus">Active</b></div></div>
-        </div>
-        <div class="balance">
-            <div>
-                <small><i class="fas fa-coins"></i> AVAILABLE BALANCE</small>
-                <h2 id="bal">$0.00</h2>
-                <small>Wallet balance</small>
-            </div>
-            <div class="balance-actions">
-                <button onclick="openWithdraw()"><i class="fas fa-arrow-up"></i> Withdraw</button>
-                <button onclick="openLoan()"><i class="fas fa-file-pen"></i> New loan request</button>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="panel">
-                <h3><i class="fas fa-history"></i> Recent activity</h3>
-                <div id="activity" class="empty"><i class="fas fa-inbox"></i> No transactions yet.</div>
-            </div>
-            <div class="panel">
-                <h3><i class="fas fa-file-invoice"></i> Loan status</h3>
-                <p id="ls" style="margin-top:45px;font-size:12px;color:#718391"><i class="fas fa-info-circle"></i> No application yet.</p>
-                <button class="ghost" onclick="openLoan()"><i class="fas fa-arrow-right"></i> Start application →</button>
-            </div>
-        </div>
+      </section>
     </main>
+  </div>
 </div>
 
-<!-- INLINE LOAN APPLICATION -->
-<div id="loan" class="modal hidden">
-    <div class="modal-card">
-        <div class="modal-head">
-            <div><span class="eyebrow"><i class="fas fa-file-invoice"></i> LOAN APPLICATION</span><h2>Five simple steps</h2></div>
-            <button class="close" onclick="closeLoan()" aria-label="Close loan application"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="steps">
-            <div id="st1" class="step active">1</div><div class="line"></div>
-            <div id="st2" class="step">2</div><div class="line"></div>
-            <div id="st3" class="step">3</div><div class="line"></div>
-            <div id="st4" class="step">4</div><div class="line"></div>
-            <div id="st5" class="step">5</div>
-        </div>
+<div id="dashboard" class="screen hidden">
+  <nav class="dashnav">
+    <div class="brand"><div class="logo"><i class="fa-solid fa-water"></i></div><div><b>OCEANIC</b><small>LENDING COMPANY</small></div></div>
+    <div class="user"><span id="un"></span><button class="avatar" onclick="logout()" title="Log out"><i class="fa-solid fa-arrow-right-from-bracket"></i></button></div>
+  </nav>
+  <main class="dashboard">
+    <div class="welcome">
+      <div><span class="eyebrow"><i class="fa-solid fa-gauge-high"></i> My dashboard</span><h1>Good day, <span id="dn"></span>.</h1><p>Manage your wallet, account verification, applications and withdrawals.</p></div>
+      <button class="primary" onclick="openLoan()"><i class="fa-solid fa-file-signature"></i> Apply for a loan</button>
+    </div>
+
+    <div class="account-strip">
+      <div class="account-chip"><i id="currencyIcon" class="fa-solid fa-dollar-sign"></i><div><small>WALLET CURRENCY</small><b id="walletCurrency">USD</b></div></div>
+      <div class="account-chip"><i class="fa-solid fa-user-check"></i><div><small>VERIFICATION</small><b id="verifyText">Pending admin review</b><span id="verifyBadge" class="verify-badge pending">pending</span></div></div>
+      <div class="account-chip"><i class="fa-solid fa-shield-halved"></i><div><small>ACCOUNT STATUS</small><b id="accountStatus">Active</b></div></div>
+    </div>
+
+    <section class="balance">
+      <div><small><i class="fa-solid fa-wallet"></i> AVAILABLE BALANCE</small><h2 id="bal">$0.00</h2><small>Current wallet balance</small></div>
+      <div class="balance-actions">
+        <button onclick="openWithdraw()"><i class="fa-solid fa-building-columns"></i> Withdraw</button>
+        <button onclick="openLoan()"><i class="fa-solid fa-file-pen"></i> New loan request</button>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="panel"><h3><i class="fa-solid fa-clock-rotate-left"></i> Recent activity</h3><div id="activity" class="empty"><i class="fa-regular fa-folder-open"></i> No transactions yet.</div></section>
+      <section class="panel"><h3><i class="fa-solid fa-file-circle-check"></i> Loan status</h3><div class="loan-status"><p id="ls"><i class="fa-solid fa-circle-info"></i> No application yet.</p><button class="ghost" onclick="openLoan()"><i class="fa-solid fa-arrow-right"></i> Start application</button></div></section>
+    </div>
+
+    <section id="loan" class="workspace hidden">
+      <div class="workspace-head"><div><span class="eyebrow"><i class="fa-solid fa-file-signature"></i> Loan application</span><h2>Five clear steps</h2><p class="muted">Complete your application directly inside your dashboard.</p></div><button class="close-workspace" onclick="closeLoan()"><i class="fa-solid fa-xmark"></i></button></div>
+      <div class="workspace-body">
+        <div class="steps"><div id="st1" class="step active">1</div><div class="line"></div><div id="st2" class="step">2</div><div class="line"></div><div id="st3" class="step">3</div><div class="line"></div><div id="st4" class="step">4</div><div class="line"></div><div id="st5" class="step">5</div></div>
         <div id="ls1">
-            <span class="eyebrow"><i class="fas fa-user"></i> STEP 1 OF 5</span>
-            <h3>Personal information</h3>
-            <div class="two">
-                <label class="field"><i class="fas fa-user"></i> Applicant's name<input id="an"></label>
-                <label class="field"><i class="fas fa-globe"></i> Country<select id="country"><option>Nigeria</option><option>Ghana</option><option>Kenya</option><option>South Africa</option><option>United Kingdom</option><option>United States</option><option>Other</option></select></label>
-                <label class="field"><i class="fas fa-phone"></i> Phone<input id="aph"></label>
-                <label class="field"><i class="fas fa-envelope"></i> Active email address<input id="ae"></label>
-            </div>
-            <button class="primary full" onclick="nextStep(1)"><i class="fas fa-arrow-right"></i> Continue →</button>
+          <span class="eyebrow">Step 1 of 5</span><h3>Personal information</h3>
+          <div class="two"><label class="field"><span><i class="fa-regular fa-user"></i> Applicant's name</span><input id="an"></label><label class="field"><span><i class="fa-solid fa-earth-africa"></i> Country</span><select id="country"><option>Nigeria</option><option>Ghana</option><option>Kenya</option><option>South Africa</option><option>United Kingdom</option><option>United States</option><option>Japan</option><option>Other</option></select></label><label class="field"><span><i class="fa-solid fa-phone"></i> Phone</span><input id="aph"></label><label class="field"><span><i class="fa-regular fa-envelope"></i> Active email address</span><input id="ae" type="email"></label></div>
+          <div class="workspace-actions"><span></span><button class="primary" onclick="nextStep(1)">Continue <i class="fa-solid fa-arrow-right"></i></button></div>
         </div>
         <div id="ls2" class="hidden">
-            <span class="eyebrow"><i class="fas fa-home"></i> STEP 2 OF 5</span>
-            <h3>Your address</h3>
-            <label class="field"><i class="fas fa-location-dot"></i> Address title<input id="address"></label>
-            <div class="two">
-                <label class="field"><i class="fas fa-city"></i> City<input id="city"></label>
-                <label class="field"><i class="fas fa-map"></i> State / Region<input id="state"></label>
-            </div>
-            <button class="primary full" onclick="nextStep(2)"><i class="fas fa-arrow-right"></i> Continue →</button>
+          <span class="eyebrow">Step 2 of 5</span><h3>Your address</h3>
+          <label class="field"><span><i class="fa-solid fa-house"></i> Address</span><input id="address" placeholder="Street address"></label><div class="two"><label class="field"><span><i class="fa-solid fa-city"></i> City</span><input id="city"></label><label class="field"><span><i class="fa-solid fa-map-location-dot"></i> State / Region</span><input id="state"></label></div>
+          <div class="workspace-actions"><button class="backstep" onclick="prevStep()"><i class="fa-solid fa-arrow-left"></i> Previous</button><button class="primary" onclick="nextStep(2)">Continue <i class="fa-solid fa-arrow-right"></i></button></div>
         </div>
         <div id="ls3" class="hidden">
-            <span class="eyebrow"><i class="fas fa-money-bill"></i> STEP 3 OF 5</span>
-            <h3>Income information</h3>
-            <label class="field"><i class="fas fa-money-bill-wave"></i> Monthly income<input id="income" type="number"></label>
-            <label class="field"><i class="fas fa-briefcase"></i> Source of income<select id="source"><option>Employment</option><option>Business</option><option>Self-employed</option><option>Other</option></select></label>
-            <button class="primary full" onclick="nextStep(3)"><i class="fas fa-arrow-right"></i> Continue →</button>
+          <span class="eyebrow">Step 3 of 5</span><h3>Income information</h3>
+          <label class="field"><span><i class="fa-solid fa-money-bill-wave"></i> Monthly income</span><input id="income" type="number" min="0"></label><label class="field"><span><i class="fa-solid fa-briefcase"></i> Source of income</span><select id="source"><option>Employment</option><option>Business</option><option>Self-employed</option><option>Other</option></select></label>
+          <div class="workspace-actions"><button class="backstep" onclick="prevStep()"><i class="fa-solid fa-arrow-left"></i> Previous</button><button class="primary" onclick="nextStep(3)">Continue <i class="fa-solid fa-arrow-right"></i></button></div>
         </div>
         <div id="ls4" class="hidden">
-            <span class="eyebrow"><i class="fas fa-calculator"></i> STEP 4 OF 5</span>
-            <h3>Loan details</h3>
-            <div class="two">
-                <label class="field"><i class="fas fa-hand-holding-usd"></i> Loan amount<input id="amount" type="number" oninput="estimate()"></label>
-                <label class="field"><i class="fas fa-dollar-sign"></i> Loan currency<select id="currency" onchange="estimate()"><option>NGN</option><option>USD</option><option>GBP</option><option>EUR</option></select></label>
-                <label class="field"><i class="fas fa-clock"></i> Loan period<select id="period" onchange="estimate()"><option value="1">1 year</option><option value="2">2 years</option><option value="3">3 years</option><option value="4">4 years</option><option value="5">5 years</option></select></label>
-                <label class="field"><i class="fas fa-bullseye"></i> Purpose<select id="purpose"><option>Business</option><option>Education</option><option>Home</option><option>Personal</option><option>Emergency</option></select></label>
-            </div>
-            <div class="estimate">
-                <div><small><i class="fas fa-percent"></i> RATE</small><b>12% / year</b></div>
-                <div><small><i class="fas fa-calculator"></i> ESTIMATED TOTAL</small><b id="total">—</b></div>
-                <div><small><i class="fas fa-calendar"></i> ESTIMATED MONTHLY</small><b id="monthly">—</b></div>
-            </div>
-            <button class="primary full" onclick="nextStep(4)"><i class="fas fa-arrow-right"></i> Review application →</button>
+          <span class="eyebrow">Step 4 of 5</span><h3>Loan details</h3>
+          <div class="two"><label class="field"><span><i class="fa-solid fa-sack-dollar"></i> Loan amount</span><input id="amount" type="number" min="0" oninput="estimate()"></label><label class="field"><span id="loanCurrencyLabelIcon"><i class="fa-solid fa-dollar-sign"></i> Loan currency</span><select id="currency" onchange="estimate()"><option value="USD">$ — USD</option><option value="JPY">¥ — JPY</option></select></label><label class="field"><span><i class="fa-regular fa-calendar"></i> Loan period</span><select id="period" onchange="estimate()"><option value="1">1 year</option><option value="2">2 years</option><option value="3">3 years</option><option value="4">4 years</option><option value="5">5 years</option></select></label><label class="field"><span><i class="fa-solid fa-bullseye"></i> Purpose</span><select id="purpose"><option>Business</option><option>Education</option><option>Home</option><option>Personal</option><option>Emergency</option></select></label></div>
+          <div class="estimate"><div><small>RATE</small><b>12% / year</b></div><div><small>ESTIMATED TOTAL</small><b id="total">—</b></div><div><small>ESTIMATED MONTHLY</small><b id="monthly">—</b></div></div>
+          <div class="workspace-actions"><button class="backstep" onclick="prevStep()"><i class="fa-solid fa-arrow-left"></i> Previous</button><button class="primary" onclick="nextStep(4)">Review application <i class="fa-solid fa-arrow-right"></i></button></div>
         </div>
         <div id="ls5" class="hidden">
-            <span class="eyebrow"><i class="fas fa-check-circle"></i> STEP 5 OF 5</span>
-            <h3>Review & submit</h3>
-            <div id="review" class="review"></div>
-            <div class="notice"><i class="fas fa-info-circle"></i> Illustrative estimate only. Final eligibility, rates, fees and repayment terms require proper review and approval.</div>
-            <button class="primary full" onclick="submitLoan()"><i class="fas fa-check"></i> Submit application ✓</button>
+          <span class="eyebrow">Step 5 of 5</span><h3>Review & submit</h3><div id="review" class="review"></div><div class="notice"><i class="fa-solid fa-circle-info"></i> Illustrative estimate only. Final eligibility, rates, fees and repayment terms require review and approval.</div>
+          <div class="workspace-actions"><button class="backstep" onclick="prevStep()"><i class="fa-solid fa-arrow-left"></i> Previous</button><button class="primary" onclick="submitLoan()"><i class="fa-solid fa-paper-plane"></i> Submit application</button></div>
         </div>
-        <button id="prev" class="backstep" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Previous step</button>
-    </div>
-</div>
+      </div>
+    </section>
 
-<!-- WITHDRAW MODAL -->
-<div id="withdraw" class="modal hidden">
-    <div class="modal-card" style="max-width:430px">
-        <button class="close" style="float:right" onclick="closeModal()"><i class="fas fa-times"></i></button>
-        <span class="eyebrow"><i class="fas fa-wallet"></i> WALLET</span>
-        <h2>Request withdrawal</h2>
-        <p class="muted">Enter the amount and destination.</p>
-        <label class="field"><i class="fas fa-money-bill"></i> Amount<input id="wa" type="number"></label>
-        <label class="field"><i class="fas fa-university"></i> Destination<input id="wd" placeholder="Bank account / payment destination"></label>
-        <button class="primary full" onclick="requestWithdraw()"><i class="fas fa-arrow-up"></i> Request withdrawal</button>
-        <div id="wm" class="message"></div>
-    </div>
+    <section id="withdraw" class="workspace hidden">
+      <div class="workspace-head"><div><span class="eyebrow"><i class="fa-solid fa-building-columns"></i> Withdrawal request</span><h2>Send funds to your bank account</h2><p class="muted">Enter the receiving bank details and tell us the reason for the withdrawal.</p></div><button class="close-workspace" onclick="closeWithdraw()"><i class="fa-solid fa-xmark"></i></button></div>
+      <div class="workspace-body">
+        <div class="withdraw-summary"><div class="summary-box"><small>AVAILABLE</small><b id="withdrawAvailable">$0.00</b></div><div class="summary-box"><small>CURRENCY</small><b id="withdrawCurrency">USD</b></div><div class="summary-box"><small>STATUS</small><b>Secure request</b></div></div>
+        <div class="two">
+          <label class="field"><span><i class="fa-regular fa-user"></i> Account holder name</span><input id="wAccountName" autocomplete="name" placeholder="Name on bank account"></label>
+          <label class="field"><span><i class="fa-solid fa-building-columns"></i> Bank name</span><input id="wBankName" placeholder="Receiving bank"></label>
+          <label class="field"><span><i class="fa-solid fa-hashtag"></i> Account number</span><input id="wAccountNumber" inputmode="numeric" autocomplete="off" placeholder="Bank account number"></label>
+          <label class="field"><span><i id="withdrawAmountIcon" class="fa-solid fa-dollar-sign"></i> Amount to withdraw</span><input id="wAmount" type="number" min="0" inputmode="decimal" placeholder="0.00"></label>
+        </div>
+        <label class="field"><span><i class="fa-regular fa-message"></i> Reason for withdrawal</span><select id="wReason" onchange="toggleOtherReason()"><option value="">Select a reason</option><option value="personal_expenses">Personal expenses</option><option value="business_expenses">Business expenses</option><option value="education">Education</option><option value="medical">Medical expenses</option><option value="family_support">Family support</option><option value="bills">Bills and utilities</option><option value="investment">Investment</option><option value="transfer_to_own_account">Transfer to my own bank account</option><option value="other">Other</option></select></label>
+        <label id="otherReasonWrap" class="field other-reason"><span><i class="fa-solid fa-pen"></i> Please specify</span><textarea id="wOtherReason" placeholder="Briefly explain the withdrawal reason"></textarea></label>
+        <div class="notice"><i class="fa-solid fa-shield-halved"></i> Verify the bank details carefully before submitting. A successful request may reserve the amount from your available balance while it is reviewed.</div>
+        <div id="withdrawProcessing" class="processing-box hidden"><i class="fa-solid fa-spinner fa-spin"></i><b>Processing your withdrawal request</b><small>Please keep this page open. If the request cannot be completed within 20 seconds, you will receive a timeout notification at the top of the screen.</small></div>
+        <div class="workspace-actions"><button class="backstep" onclick="closeWithdraw()"><i class="fa-solid fa-arrow-left"></i> Cancel</button><button id="withdrawBtn" class="primary" onclick="requestWithdraw()"><i class="fa-solid fa-arrow-up-right-from-square"></i> Submit withdrawal request</button></div>
+      </div>
+    </section>
+  </main>
 </div>
 
 <script>
@@ -253,359 +184,74 @@ const API = 'https://back-production-766a.up.railway.app';
 let user = null;
 let step = 1;
 let token = localStorage.getItem('oceanicToken');
+let withdrawBusy = false;
 
-function apiUrl(endpoint) {
-    const base = API.replace(/\/+$/, '');
-    const path = '/' + String(endpoint || '').replace(/^\/+/, '');
-    return base + path;
+function apiUrl(endpoint){return API.replace(/\/+$/,'')+'/'+String(endpoint||'').replace(/^\/+/, '');}
+async function apiCall(endpoint, options={}){
+  const url=apiUrl(endpoint);let res;
+  try{res=await fetch(url,{...options,headers:{'Content-Type':'application/json',...(token?{'Authorization':`Bearer ${token}`}:{}) ,...(options.headers||{})}});}catch(e){if(e.name==='AbortError')throw e;throw new Error(`Cannot reach the backend at ${API}.`)}
+  const raw=await res.text();let data={};if(raw){try{data=JSON.parse(raw)}catch{throw new Error(`Backend returned an invalid response (${res.status}).`)}}
+  if(!res.ok)throw new Error(data.error||data.message||`API request failed (${res.status})`);return data;
+}
+function escapeHtml(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function showToast(msg,type='info',duration=3600){const stack=document.getElementById('toastStack');const t=document.createElement('div');t.className=`toast ${type==='error'?'error-toast':type==='success'?'success-toast':''}`;const icon=type==='error'?'fa-triangle-exclamation':type==='success'?'fa-circle-check':'fa-circle-info';t.innerHTML=`<i class="fa-solid ${icon}"></i><span>${escapeHtml(msg)}</span>`;stack.appendChild(t);setTimeout(()=>t.remove(),duration)}
+function showScreen(id){document.querySelectorAll('.screen').forEach(x=>x.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})}
+function showAuth(type){showScreen('auth');document.getElementById('loginBox').classList.toggle('hidden',type!=='login');document.getElementById('registerBox').classList.toggle('hidden',type!=='register')}
+function money(amount,currency='USD'){return new Intl.NumberFormat(currency==='JPY'?'ja-JP':'en-US',{style:'currency',currency,minimumFractionDigits:currency==='JPY'?0:2,maximumFractionDigits:currency==='JPY'?0:2}).format(Number(amount)||0)}
+function currencyIconClass(currency){return currency==='JPY'?'fa-yen-sign':'fa-dollar-sign'}
+function setButtonLoading(button,loading,label){if(!button)return;button.disabled=loading;button.dataset.original=button.dataset.original||button.innerHTML;button.innerHTML=loading?`<i class="fa-solid fa-spinner fa-spin"></i> ${label}`:button.dataset.original}
+
+async function register(){
+  const name=document.getElementById('rn').value.trim(),email=document.getElementById('re').value.trim().toLowerCase(),phone=document.getElementById('rp').value.trim(),password=document.getElementById('rpass').value,currency=document.getElementById('rcurrency').value,btn=document.getElementById('registerBtn');
+  if(!name||!email||!phone||password.length<8)return showToast('Please complete every field. Password must be at least 8 characters.','error');
+  setButtonLoading(btn,true,'Creating account...');
+  try{const data=await apiCall('/api/auth/register',{method:'POST',body:JSON.stringify({fullName:name,email,phone,password,currency})});token=data.token;localStorage.setItem('oceanicToken',token);user=data.user;showToast('Account created successfully.','success');await loadDashboard()}catch(e){showToast(e.message,'error')}finally{setButtonLoading(btn,false)}
+}
+async function login(){
+  const email=document.getElementById('le').value.trim().toLowerCase(),password=document.getElementById('lp').value,btn=document.getElementById('loginBtn');
+  if(!email||!password)return showToast('Enter your email address and password.','error');
+  setButtonLoading(btn,true,'Signing in...');
+  try{const data=await apiCall('/api/auth/login',{method:'POST',body:JSON.stringify({email,password})});token=data.token;localStorage.setItem('oceanicToken',token);user=data.user;showToast('Welcome back.','success');await loadDashboard()}catch(e){showToast(e.message,'error')}finally{setButtonLoading(btn,false)}
+}
+function logout(){localStorage.removeItem('oceanicToken');token=null;user=null;showScreen('landing');showToast('You have been logged out.','info')}
+
+async function loadDashboard(){
+  try{
+    const data=await apiCall('/api/me');user=data.user;showScreen('dashboard');document.getElementById('un').textContent=user.fullName;document.getElementById('dn').textContent=user.fullName.split(' ')[0];document.getElementById('bal').textContent=money(user.balance,user.currency);document.getElementById('walletCurrency').textContent=user.currency;document.getElementById('currencyIcon').className=`fa-solid ${currencyIconClass(user.currency)}`;document.getElementById('accountStatus').textContent=(user.status||'active').replaceAll('_',' ');
+    const verification=user.verificationStatus||'pending',badge=document.getElementById('verifyBadge'),verifyText=document.getElementById('verifyText');badge.className='verify-badge '+verification;badge.textContent=verification.replaceAll('_',' ');verifyText.textContent=verification==='verified'?'Identity verified':verification==='rejected'?'Review required':'Pending admin review';
+    const wallet=await apiCall('/api/wallet'),tx=Array.isArray(wallet.transactions)?wallet.transactions:[];document.getElementById('activity').innerHTML=tx.length?tx.slice(0,7).map(t=>`<div class="activity-row"><div><b>${escapeHtml(t.description||t.type)}</b><small><i class="fa-regular fa-clock"></i> ${new Date(t.createdAt).toLocaleString()}</small></div><strong style="color:${['withdrawal','admin_debit'].includes(t.type)?'#cc4f59':'#0b9b73'}">${money(t.amount,t.currency)}</strong></div>`).join(''):'<div class="empty"><i class="fa-regular fa-folder-open"></i> No transactions yet.</div>';
+    const loans=await apiCall('/api/loans'),lastLoan=Array.isArray(loans.loans)?loans.loans[0]:null;document.getElementById('ls').innerHTML=lastLoan?`<i class="fa-solid fa-circle-info"></i> Application: <strong>${money(lastLoan.loanAmount,lastLoan.currency)}</strong><br>${escapeHtml(lastLoan.loanPeriodYears)} year(s) • Status: <strong>${escapeHtml(String(lastLoan.status).replaceAll('_',' '))}</strong>${lastLoan.reviewerNote?`<div class="loan-note"><strong>Review note:</strong> ${escapeHtml(lastLoan.reviewerNote)}</div>`:''}`:'<i class="fa-solid fa-circle-info"></i> No application yet. Start your five-step application.';
+  }catch(e){showToast('Unable to load dashboard: '+e.message,'error');throw e}
 }
 
-async function apiCall(endpoint, options = {}) {
-    const url = apiUrl(endpoint);
-    let res;
+function hideWorkspaces(except){['loan','withdraw'].forEach(id=>{if(id!==except)document.getElementById(id).classList.add('hidden')})}
+function openLoan(){if(!user)return showAuth('login');hideWorkspaces('loan');const el=document.getElementById('loan');el.classList.remove('hidden');step=1;document.getElementById('an').value=user.fullName||'';document.getElementById('aph').value=user.phone||'';document.getElementById('ae').value=user.email||'';const currency=document.getElementById('currency');currency.value=user.currency;currency.disabled=true;document.getElementById('loanCurrencyLabelIcon').innerHTML=`<i class="fa-solid ${currencyIconClass(user.currency)}"></i> Loan currency`;estimate();renderLoan();requestAnimationFrame(()=>el.scrollIntoView({behavior:'smooth',block:'start'}))}
+function closeLoan(){document.getElementById('loan').classList.add('hidden');step=1}
+function renderLoan(){for(let i=1;i<=5;i++){document.getElementById('ls'+i).classList.toggle('hidden',i!==step);document.getElementById('st'+i).classList.toggle('active',i<=step)}if(step===5)reviewLoan()}
+function nextStep(n){if(n===1&&(!an.value.trim()||!aph.value.trim()||!ae.value.trim()))return showToast('Complete all required personal details.','error');if(n===2&&(!address.value.trim()||!city.value.trim()||!state.value.trim()))return showToast('Complete all address fields.','error');if(n===3&&!income.value)return showToast('Enter your monthly income.','error');if(n===4&&!amount.value)return showToast('Enter the loan amount.','error');step=n+1;renderLoan();document.getElementById('loan').scrollIntoView({behavior:'smooth',block:'start'})}
+function prevStep(){if(step>1){step--;renderLoan();document.getElementById('loan').scrollIntoView({behavior:'smooth',block:'start'})}}
+function estimate(){const amt=Number(document.getElementById('amount').value),years=Number(document.getElementById('period').value),currency=document.getElementById('currency').value;if(!amt){total.textContent='—';monthly.textContent='—';return}const all=amt+(amt*.12*years);total.textContent=money(all,currency);monthly.textContent=money(all/(years*12),currency)}
+function reviewLoan(){const amt=Number(amount.value),years=Number(period.value),currency=document.getElementById('currency').value,all=amt+(amt*.12*years);review.innerHTML=[['Applicant',an.value],['Country',country.value],['Address',`${address.value}, ${city.value}, ${state.value}`],['Monthly income',money(Number(income.value)||0,currency)],['Loan amount',money(amt,currency)],['Period',years+' year(s)'],['Purpose',purpose.value],['Estimated repayment',money(all,currency)]].map(([a,b])=>`<div>${escapeHtml(a)}<b>${escapeHtml(b)}</b></div>`).join('')}
+async function submitLoan(){try{await apiCall('/api/loans',{method:'POST',body:JSON.stringify({applicantName:an.value,country:country.value,addressTitle:address.value,city:city.value,stateRegion:state.value,phone:aph.value,email:ae.value,monthlyIncome:Number(income.value),loanAmount:Number(amount.value),currency:document.getElementById('currency').value,loanPeriodYears:Number(period.value),purpose:purpose.value})});showToast('Loan application submitted for review.','success');closeLoan();await loadDashboard()}catch(e){showToast(e.message,'error')}}
 
-    try {
-        res = await fetch(url, {
-            ...options,
-            headers: {
-                'Content-Type': 'application/json',
-                ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
-                ...(options.headers || {})
-            }
-        });
-    } catch (networkError) {
-        throw new Error(`Cannot reach the backend at ${API}. Check the Railway deployment and CORS settings.`);
-    }
-
-    const raw = await res.text();
-    let data = {};
-
-    if (raw) {
-        try {
-            data = JSON.parse(raw);
-        } catch {
-            throw new Error(
-                `Backend returned HTML/non-JSON instead of API JSON (${res.status} ${res.statusText}). ` +
-                `Requested: ${url}. Check that this exact API route is deployed.`
-            );
-        }
-    }
-
-    if (!res.ok) {
-        throw new Error(data.error || data.message || `API request failed (${res.status})`);
-    }
-
-    return data;
+function openWithdraw(){if(!user)return showAuth('login');hideWorkspaces('withdraw');const el=document.getElementById('withdraw');el.classList.remove('hidden');document.getElementById('wAccountName').value=user.fullName||'';document.getElementById('withdrawAvailable').textContent=money(user.balance,user.currency);document.getElementById('withdrawCurrency').textContent=user.currency;document.getElementById('withdrawAmountIcon').className=`fa-solid ${currencyIconClass(user.currency)}`;document.getElementById('withdrawProcessing').classList.add('hidden');document.getElementById('withdrawBtn').disabled=false;requestAnimationFrame(()=>el.scrollIntoView({behavior:'smooth',block:'start'}))}
+function closeWithdraw(){if(withdrawBusy)return showToast('The request is still processing.','info');document.getElementById('withdraw').classList.add('hidden')}
+function toggleOtherReason(){document.getElementById('otherReasonWrap').classList.toggle('show',document.getElementById('wReason').value==='other')}
+async function requestWithdraw(){
+  if(withdrawBusy)return;
+  const accountName=wAccountName.value.trim(),bankName=wBankName.value.trim(),accountNumber=wAccountNumber.value.trim(),amount=Number(wAmount.value),reason=wReason.value,otherReason=wOtherReason.value.trim();
+  if(!accountName||!bankName||!accountNumber||!amount||!reason)return showToast('Complete the bank details, amount and withdrawal reason.','error');
+  if(reason==='other'&&!otherReason)return showToast('Please specify the withdrawal reason.','error');
+  if(amount>Number(user.balance||0))return showToast('The withdrawal amount exceeds your available balance.','error');
+  withdrawBusy=true;const btn=document.getElementById('withdrawBtn'),processing=document.getElementById('withdrawProcessing');btn.disabled=true;btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Processing...';processing.classList.remove('hidden');
+  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),20000);
+  try{
+    await apiCall('/api/withdrawals',{method:'POST',signal:controller.signal,body:JSON.stringify({amount,accountName,bankName,accountNumber,reason,otherReason:reason==='other'?otherReason:null})});
+    showToast('Withdrawal request submitted successfully.','success',4500);document.getElementById('withdraw').classList.add('hidden');await loadDashboard();
+  }catch(e){if(e.name==='AbortError')showToast('Withdrawal request timed out after 20 seconds. Please check your connection and try again.','error',6000);else showToast('Withdrawal error: '+e.message,'error',6000)}finally{clearTimeout(timer);withdrawBusy=false;btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-arrow-up-right-from-square"></i> Submit withdrawal request';processing.classList.add('hidden')}
 }
 
-function showToast(msg, icon = 'fa-check-circle') {
-    const t = document.createElement('div');
-    t.className = 'toast';
-    t.innerHTML = `<i class="fas ${icon}" style="color:#20c9d7;"></i> ${msg}`;
-    document.body.appendChild(t);
-    setTimeout(() => t.remove(), 3000);
-}
-
-function showScreen(id) {
-    document.querySelectorAll('.screen').forEach(x => x.classList.add('hidden'));
-    document.getElementById(id).classList.remove('hidden');
-}
-
-function showAuth(type) {
-    showScreen('auth');
-    document.getElementById('loginBox').classList.toggle('hidden', type !== 'login');
-    document.getElementById('registerBox').classList.toggle('hidden', type !== 'register');
-    document.getElementById('am').textContent = '';
-}
-
-function escapeHtml(value) {
-    return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
-
-function formatMoney(amount, currency = 'USD') {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: currency,
-        minimumFractionDigits: 2
-    }).format(amount || 0);
-}
-
-async function register() {
-    const name = document.getElementById('rn').value.trim();
-    const email = document.getElementById('re').value.trim().toLowerCase();
-    const phone = document.getElementById('rp').value.trim();
-    const password = document.getElementById('rpass').value;
-
-    if (!name || !email || !phone || password.length < 8) {
-        document.getElementById('am').textContent = 'Please fill all fields. Password must be at least 8 characters.';
-        return;
-    }
-
-    try {
-        const data = await apiCall('/api/auth/register', {
-            method: 'POST',
-            body: JSON.stringify({ fullName: name, email, phone, password })
-        });
-        token = data.token;
-        localStorage.setItem('oceanicToken', token);
-        user = data.user;
-        showToast('Account created successfully!', 'fa-user-check');
-        loadDashboard();
-    } catch (e) {
-        document.getElementById('am').textContent = e.message;
-    }
-}
-
-async function login() {
-    const email = document.getElementById('le').value.trim().toLowerCase();
-    const password = document.getElementById('lp').value;
-
-    if (!email || !password) {
-        document.getElementById('am').textContent = 'Please enter email and password.';
-        return;
-    }
-
-    try {
-        const data = await apiCall('/api/auth/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, password })
-        });
-        token = data.token;
-        localStorage.setItem('oceanicToken', token);
-        user = data.user;
-        showToast('Welcome back!', 'fa-hand-peace');
-        loadDashboard();
-    } catch (e) {
-        document.getElementById('am').textContent = e.message;
-    }
-}
-
-function logout() {
-    localStorage.removeItem('oceanicToken');
-    token = null;
-    user = null;
-    showScreen('landing');
-    showToast('Logged out', 'fa-sign-out-alt');
-}
-
-async function loadDashboard() {
-    try {
-        const data = await apiCall('/api/me');
-        user = data.user;
-        showScreen('dashboard');
-        document.getElementById('un').textContent = user.fullName;
-        document.getElementById('dn').textContent = user.fullName.split(' ')[0];
-        document.getElementById('bal').textContent = formatMoney(user.balance, user.currency || 'NGN');
-        document.getElementById('walletCurrency').textContent = user.currency || 'NGN';
-        document.getElementById('accountStatus').textContent = (user.status || 'active').replaceAll('_', ' ');
-
-        const verification = user.verificationStatus || 'pending';
-        const verifyText = document.getElementById('verifyText');
-        const verifyBadge = document.getElementById('verifyBadge');
-        verifyBadge.className = 'verify-badge ' + verification;
-        verifyBadge.textContent = verification.replaceAll('_', ' ');
-        verifyText.textContent = verification === 'verified' ? 'Identity verified' : verification === 'rejected' ? 'Review required' : 'Pending admin review';
-
-        const wallet = await apiCall('/api/wallet');
-        const tx = Array.isArray(wallet.transactions) ? wallet.transactions : [];
-        document.getElementById('activity').innerHTML = tx.length ?
-            tx.slice(0, 6).map(t =>
-                `<div style="padding:12px 0;border-top:1px solid #edf2f4;font-size:10px">
-                    <b>${escapeHtml(t.description || t.type)}</b><br>
-                    <span style="color:#82929d"><i class="far fa-clock"></i> ${new Date(t.createdAt).toLocaleString()}</span>
-                    <strong style="float:right;color:${['withdrawal','admin_debit'].includes(t.type) ? '#d25757' : '#0b9b73'}">
-                        ${['withdrawal','admin_debit'].includes(t.type) ? '<i class="fas fa-arrow-up-right-from-square"></i>' : '<i class="fas fa-arrow-down"></i>'} ${formatMoney(t.amount, t.currency)}
-                    </strong>
-                </div>`
-            ).join('') : '<div class="empty"><i class="fas fa-inbox"></i> No transactions yet.</div>';
-
-        const loans = await apiCall('/api/loans');
-        const lastLoan = Array.isArray(loans.loans) ? loans.loans[0] : null;
-        document.getElementById('ls').innerHTML = lastLoan ?
-            `<i class="fas fa-info-circle"></i> Application: <strong>${formatMoney(lastLoan.loanAmount, lastLoan.currency)}</strong> • ${escapeHtml(lastLoan.loanPeriodYears)} year(s) • Status: <strong>${escapeHtml(String(lastLoan.status).replaceAll('_',' '))}</strong>${lastLoan.reviewerNote ? `<div class="loan-note"><strong>Review note:</strong> ${escapeHtml(lastLoan.reviewerNote)}</div>` : ''}` :
-            '<i class="fas fa-info-circle"></i> No application yet. Start your five-step application.';
-
-    } catch (e) {
-        showToast('Error loading dashboard: ' + e.message, 'fa-exclamation-circle');
-        throw e;
-    }
-}
-
-function openLoan() {
-    const loan = document.getElementById('loan');
-    const dashboardMain = document.querySelector('#dashboard .dashboard');
-    if (dashboardMain && loan.parentElement !== dashboardMain) dashboardMain.appendChild(loan);
-    loan.classList.remove('hidden');
-    step = 1;
-    document.getElementById('an').value = user?.fullName || '';
-    document.getElementById('aph').value = user?.phone || '';
-    document.getElementById('ae').value = user?.email || '';
-    const currencySelect = document.getElementById('currency');
-    const walletCurrency = user?.currency || 'NGN';
-    if (![...currencySelect.options].some(o => o.value === walletCurrency)) {
-        const option = document.createElement('option');
-        option.value = walletCurrency;
-        option.textContent = walletCurrency;
-        currencySelect.appendChild(option);
-    }
-    currencySelect.value = walletCurrency;
-    currencySelect.disabled = true;
-    estimate();
-    renderLoan();
-    requestAnimationFrame(() => loan.scrollIntoView({ behavior: 'smooth', block: 'start' }));
-}
-
-function closeLoan() {
-    const loan = document.getElementById('loan');
-    if (loan) loan.classList.add('hidden');
-    step = 1;
-}
-
-function closeModal() {
-    document.getElementById('withdraw').classList.add('hidden');
-}
-
-function renderLoan() {
-    for (let i = 1; i <= 5; i++) {
-        document.getElementById('ls' + i).classList.toggle('hidden', i !== step);
-        document.getElementById('st' + i).classList.toggle('active', i <= step);
-    }
-    document.getElementById('prev').style.visibility = step > 1 ? 'visible' : 'hidden';
-    if (step === 5) reviewLoan();
-}
-
-function nextStep(n) {
-    if (n === 1 && (!document.getElementById('an').value || !document.getElementById('aph').value || !document.getElementById('ae').value)) {
-        return showToast('Complete all required fields.', 'fa-exclamation-circle');
-    }
-    if (n === 2 && (!document.getElementById('address').value || !document.getElementById('city').value || !document.getElementById('state').value)) {
-        return showToast('Complete the address fields.', 'fa-exclamation-circle');
-    }
-    if (n === 3 && !document.getElementById('income').value) {
-        return showToast('Enter monthly income.', 'fa-exclamation-circle');
-    }
-    if (n === 4 && !document.getElementById('amount').value) {
-        return showToast('Enter the loan amount.', 'fa-exclamation-circle');
-    }
-    step = n + 1;
-    renderLoan();
-}
-
-function prevStep() {
-    if (step > 1) { step--; renderLoan(); }
-}
-
-function estimate() {
-    const amount = parseFloat(document.getElementById('amount').value);
-    const years = parseInt(document.getElementById('period').value);
-    const currency = document.getElementById('currency').value;
-    if (!amount) {
-        document.getElementById('total').textContent = '—';
-        document.getElementById('monthly').textContent = '—';
-        return;
-    }
-    const rate = 0.12;
-    const interest = amount * rate * years;
-    const total = amount + interest;
-    document.getElementById('total').textContent = formatMoney(total, currency);
-    document.getElementById('monthly').textContent = formatMoney(total / (years * 12), currency);
-}
-
-function reviewLoan() {
-    const amount = parseFloat(document.getElementById('amount').value);
-    const years = parseInt(document.getElementById('period').value);
-    const currency = document.getElementById('currency').value;
-    const rate = 0.12;
-    const total = amount + (amount * rate * years);
-    document.getElementById('review').innerHTML = [
-        ['<i class="fas fa-user"></i> Applicant', document.getElementById('an').value],
-        ['<i class="fas fa-globe"></i> Country', document.getElementById('country').value],
-        ['<i class="fas fa-home"></i> Address', document.getElementById('address').value],
-        ['<i class="fas fa-money-bill"></i> Monthly income', formatMoney(parseFloat(document.getElementById('income').value) || 0, currency)],
-        ['<i class="fas fa-hand-holding-usd"></i> Loan amount', formatMoney(amount, currency)],
-        ['<i class="fas fa-clock"></i> Period', years + ' year(s)'],
-        ['<i class="fas fa-bullseye"></i> Purpose', document.getElementById('purpose').value],
-        ['<i class="fas fa-calculator"></i> Estimated repayment', formatMoney(total, currency)]
-    ].map(x => `<div>${x[0]}<b>${x[1]}</b></div>`).join('');
-}
-
-async function submitLoan() {
-    try {
-        const data = {
-            applicantName: document.getElementById('an').value,
-            country: document.getElementById('country').value,
-            addressTitle: document.getElementById('address').value,
-            city: document.getElementById('city').value,
-            stateRegion: document.getElementById('state').value,
-            phone: document.getElementById('aph').value,
-            email: document.getElementById('ae').value,
-            monthlyIncome: parseFloat(document.getElementById('income').value),
-            loanAmount: parseFloat(document.getElementById('amount').value),
-            currency: document.getElementById('currency').value,
-            loanPeriodYears: parseInt(document.getElementById('period').value),
-            purpose: document.getElementById('purpose').value
-        };
-
-        await apiCall('/api/loans', {
-            method: 'POST',
-            body: JSON.stringify(data)
-        });
-
-        showToast('Application submitted for review!', 'fa-check-circle');
-        closeLoan();
-        loadDashboard();
-    } catch (e) {
-        showToast('Error: ' + e.message, 'fa-exclamation-circle');
-    }
-}
-
-function openWithdraw() {
-    document.getElementById('withdraw').classList.remove('hidden');
-    document.getElementById('wm').textContent = '';
-}
-
-async function requestWithdraw() {
-    const amount = parseFloat(document.getElementById('wa').value);
-    const destination = document.getElementById('wd').value.trim();
-
-    if (!amount || !destination) {
-        document.getElementById('wm').textContent = 'Enter amount and destination.';
-        return;
-    }
-    if (amount > user.balance) {
-        document.getElementById('wm').textContent = 'Amount exceeds available balance.';
-        return;
-    }
-
-    try {
-        await apiCall('/api/withdrawals', {
-            method: 'POST',
-            body: JSON.stringify({ amount, destination })
-        });
-        showToast('Withdrawal request submitted for approval!', 'fa-check-circle');
-        closeModal();
-        loadDashboard();
-    } catch (e) {
-        document.getElementById('wm').textContent = e.message;
-    }
-}
-
-(async function init() {
-    const loan = document.getElementById('loan');
-    const dashboardMain = document.querySelector('#dashboard .dashboard');
-    if (dashboardMain && loan && loan.parentElement !== dashboardMain) dashboardMain.appendChild(loan);
-
-    if (token) {
-        try {
-            await loadDashboard();
-            return;
-        } catch (e) {
-            localStorage.removeItem('oceanicToken');
-            token = null;
-        }
-    }
-    showScreen('landing');
-})();
+(async function init(){if(token){try{await loadDashboard();return}catch(e){localStorage.removeItem('oceanicToken');token=null}}showScreen('landing')})();
 </script>
 </body>
 </html>
