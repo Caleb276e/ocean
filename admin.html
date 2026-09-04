@@ -1,329 +1,194 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Admin - Oceanic Lending</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        *{box-sizing:border-box}body{margin:0;font-family:Inter,sans-serif;background:#0a1628;color:#e8edf5}
-        .login-page{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1628,#1a3a5c)}
-        .login-card{background:#142b44;padding:45px;border-radius:20px;width:380px;box-shadow:0 20px 60px #00000066}
-        .login-card .logo{text-align:center;font-size:48px;color:#20c9d7;margin-bottom:10px}
-        .login-card h1{font-size:26px;margin-bottom:8px;color:#fff;text-align:center}
-        .login-card p{color:#8aa4b8;font-size:13px;margin-bottom:30px;text-align:center}
-        .login-card .input-group{position:relative;margin:15px 0}
-        .login-card .input-group .fa{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#5a7a92}
-        .login-card input{width:100%;padding:14px 14px 14px 42px;border:1px solid #2a4a66;border-radius:10px;background:#0d1f32;color:#fff;font-size:14px}
-        .login-card input:focus{outline:2px solid #087ea4;border-color:transparent}
-        .login-card button{width:100%;padding:14px;background:linear-gradient(135deg,#087ea4,#075d86);border:0;border-radius:10px;color:#fff;font-weight:700;font-size:15px;margin-top:8px;cursor:pointer}
-        .login-card button:hover{opacity:.9}
-        .login-card .error{color:#ff6b6b;font-size:12px;text-align:center;margin-top:12px}
-        .dash{display:none;padding:25px}
-        .dash-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;flex-wrap:wrap;gap:15px}
-        .dash-header h1{font-size:28px;margin:0}
-        .dash-header h1 .fa{color:#20c9d7}
-        .dash-header .logout{background:#2a4a66;border:0;color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer}
-        .dash-header .logout:hover{background:#3a5a76}
-        .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin-bottom:30px}
-        .stat{background:#142b44;padding:20px;border-radius:12px;border:1px solid #1f3f5a}
-        .stat .fa{color:#20c9d7;margin-right:6px}
-        .stat small{color:#8aa4b8;font-size:10px;letter-spacing:1px}
-        .stat h2{font-size:28px;margin:8px 0 0}
-        .section{background:#142b44;border-radius:12px;padding:20px;margin-bottom:25px;border:1px solid #1f3f5a;overflow-x:auto}
-        .section h3{font-size:16px;margin:0 0 15px;color:#b8d4e8}
-        .section h3 .fa{color:#20c9d7;margin-right:8px}
-        table{width:100%;border-collapse:collapse;font-size:12px}
-        th{text-align:left;padding:10px 8px;color:#8aa4b8;border-bottom:1px solid #1f3f5a;font-weight:600}
-        td{padding:10px 8px;border-bottom:1px solid #0d1f32}
-        .badge{padding:4px 10px;border-radius:12px;font-size:9px;font-weight:700;display:inline-block}
-        .badge.pending{background:#f59f00;color:#000}
-        .badge.under_review{background:#f59f00;color:#000}
-        .badge.approved{background:#20c997;color:#000}
-        .badge.rejected{background:#ff6b6b;color:#fff}
-        .badge.completed{background:#20c997;color:#000}
-        .badge.processing{background:#4dabf7;color:#000}
-        .badge.cancelled{background:#868e96;color:#fff}
-        .badge.active{background:#20c997;color:#000}
-        .badge.inactive{background:#ff6b6b;color:#fff}
-        .action-btn{background:#1f3f5a;border:0;color:#fff;padding:5px 12px;border-radius:6px;font-size:10px;margin:2px;font-weight:600;cursor:pointer}
-        .action-btn.approve{background:#20c997}
-        .action-btn.reject{background:#ff6b6b}
-        .action-btn:hover{opacity:.8}
-        .empty{color:#5a7a92;text-align:center;padding:30px;font-size:13px}
-        .empty .fa{font-size:30px;display:block;margin-bottom:10px;color:#2a4a66}
-        .toast{position:fixed;bottom:20px;right:20px;background:#142b44;color:#fff;padding:14px 22px;border-radius:10px;font-size:13px;border:1px solid #2a4a66;z-index:999;animation:slideIn .3s;display:flex;align-items:center;gap:10px}
-        .toast .fa{color:#20c9d7;font-size:16px}
-        @keyframes slideIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
-        @media(max-width:768px){.login-card{width:90%;padding:30px}.dash-header{flex-direction:column;align-items:start;gap:10px}.stats{grid-template-columns:1fr 1fr}}
-        @media(max-width:480px){.stats{grid-template-columns:1fr}}
-        .status-select{padding:4px 8px;border-radius:6px;border:1px solid #2a4a66;background:#0d1f32;color:#fff;font-size:11px}
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#081626">
+  <title>Oceanic Lending Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{--bg:#081626;--panel:#0f2236;--panel2:#132c44;--line:#203d56;--text:#eef7fb;--muted:#8eabbf;--cyan:#20c9d7;--blue:#0d83aa;--green:#30c995;--red:#ff6b6b;--amber:#f6b73c;--shadow:0 22px 60px rgba(0,0,0,.26)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at top right,#0c628044,transparent 30%),var(--bg);color:var(--text);min-width:0;-webkit-font-smoothing:antialiased}button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+    .login-page{min-height:100dvh;display:grid;place-items:center;padding:24px;background:linear-gradient(135deg,#081626,#103652)}
+    .login-card{width:min(100%,430px);background:rgba(15,34,54,.95);border:1px solid var(--line);border-radius:24px;padding:36px;box-shadow:var(--shadow)}
+    .login-brand{display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:26px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(145deg,var(--cyan),var(--blue));display:grid;place-items:center;color:white;font-size:22px;box-shadow:0 10px 28px #20c9d733}.login-card h1{text-align:center;margin:0;font-size:28px}.login-card p{text-align:center;color:var(--muted);font-size:12px;line-height:1.6;margin:8px 0 26px}.input{position:relative;margin:14px 0}.input i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#6d8ca2}.input input{width:100%;height:48px;padding:0 14px 0 42px;background:#091b2b;border:1px solid #29465d;border-radius:12px;color:white;outline:0}.input input:focus,.field input:focus,.field select:focus,.field textarea:focus{border-color:#3aaec8;box-shadow:0 0 0 4px #20c9d712}.primary,.btn{border:0;border-radius:11px;padding:11px 14px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px;color:#fff;background:#1b3b54}.primary{width:100%;padding:14px;background:linear-gradient(135deg,var(--blue),#096487)}.danger{background:#6d2c36}.success{background:#157b61}.warning{background:#805d16}.ghost{background:transparent;border:1px solid var(--line)}.error{color:#ff8b8b;font-size:11px;text-align:center;margin-top:12px;line-height:1.5}
+    .app{display:none;min-height:100dvh}.sidebar{position:fixed;left:0;top:0;bottom:0;width:250px;background:#091928;border-right:1px solid #17334a;padding:22px 16px;z-index:30}.brand{display:flex;align-items:center;gap:10px;padding:4px 6px 22px}.brand b{display:block;letter-spacing:1.5px;font-size:13px}.brand small{display:block;color:#66859b;font-size:8px;letter-spacing:1.5px;margin-top:3px}.nav{display:grid;gap:6px}.nav button{width:100%;border:0;background:transparent;color:#8da8bb;padding:12px 13px;border-radius:11px;text-align:left;font-weight:700;font-size:12px;display:flex;gap:10px;align-items:center}.nav button:hover,.nav button.active{background:#112b40;color:white}.nav button.active i{color:var(--cyan)}.sidebar-foot{position:absolute;left:16px;right:16px;bottom:18px}.sidebar-foot .btn{width:100%}
+    .main{margin-left:250px;min-width:0}.topbar{position:sticky;top:0;z-index:20;min-height:72px;background:#081626e8;backdrop-filter:blur(15px);border-bottom:1px solid #17334a;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.topbar h1{font-size:20px;margin:0}.top-actions{display:flex;gap:8px;align-items:center}.icon-btn{width:42px;height:42px;border:1px solid var(--line);border-radius:11px;background:#10263a;color:#d9edf5;display:grid;place-items:center}.mobile-menu{display:none}.content{padding:24px;max-width:1600px;margin:auto}.section-view{display:none}.section-view.active{display:block}.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:20px}.section-head h2{font-size:24px;margin:0}.section-head p{font-size:11px;color:var(--muted);margin:5px 0 0}.toolbar{display:flex;gap:9px;flex-wrap:wrap}.search{position:relative;min-width:250px}.search i{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#6d8ca2}.search input,.filter{height:42px;background:#0d2133;border:1px solid var(--line);border-radius:11px;color:#fff;outline:0}.search input{width:100%;padding:0 12px 0 36px}.filter{padding:0 12px}.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-bottom:20px}.stat{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:17px;padding:18px;min-width:0}.stat-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:9px;font-weight:800;letter-spacing:.8px}.stat-icon{width:34px;height:34px;border-radius:10px;background:#20c9d714;color:var(--cyan);display:grid;place-items:center}.stat strong{display:block;font-size:28px;margin-top:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.stat small{color:#6d8ca2;font-size:9px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:18px;box-shadow:0 10px 30px rgba(0,0,0,.08)}.card h3{margin:0 0 14px;font-size:14px}.data-list{display:grid;gap:10px}.record{border:1px solid #1c3b53;background:#0b1f31;border-radius:14px;padding:14px;display:grid;grid-template-columns:minmax(180px,1.25fr) repeat(3,minmax(110px,.7fr)) auto;gap:14px;align-items:center;min-width:0}.record.user-record{grid-template-columns:minmax(190px,1.25fr) minmax(160px,1fr) minmax(110px,.6fr) minmax(105px,.55fr) auto}.record.transaction-record{grid-template-columns:minmax(180px,1.2fr) minmax(140px,.8fr) minmax(120px,.65fr) minmax(120px,.65fr) minmax(150px,.8fr)}.record.audit-record{grid-template-columns:minmax(160px,.8fr) minmax(0,1.7fr) minmax(140px,.7fr)}.cell{min-width:0}.cell label{display:block;color:#66879e;font-size:8px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;margin-bottom:5px}.cell b,.cell span{font-size:11px;overflow-wrap:anywhere}.cell small{display:block;color:#7f9caf;font-size:9px;line-height:1.5;margin-top:3px}.actions{display:flex;gap:7px;justify-content:flex-end;flex-wrap:wrap}.actions .btn{font-size:10px;padding:9px 11px}.badge{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:5px 9px;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.4px}.badge.pending,.badge.under_review{background:#f6b73c20;color:#ffd16c}.badge.verified,.badge.approved,.badge.completed,.badge.active{background:#30c9951c;color:#62e5b8}.badge.rejected,.badge.suspended,.badge.inactive,.badge.cancelled{background:#ff6b6b1a;color:#ff9595}.badge.processing{background:#4dabf71b;color:#83c8ff}.empty{text-align:center;color:#6f8ca1;padding:42px 16px;font-size:11px}.empty i{font-size:28px;display:block;margin-bottom:10px;color:#284961}.summary-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.mini-list{display:grid;gap:10px}.mini{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #18364d;padding-top:10px;font-size:10px}.mini:first-child{border-top:0;padding-top:0}.mini span{color:var(--muted)}
+    .drawer-backdrop{position:fixed;inset:0;background:#020a11b8;backdrop-filter:blur(7px);z-index:60;padding:18px;display:grid;place-items:center}.drawer{width:min(100%,620px);max-height:calc(100dvh - 36px);overflow:auto;background:#0d2133;border:1px solid #29465d;border-radius:22px;box-shadow:var(--shadow)}.drawer-head{position:sticky;top:0;z-index:2;background:#0d2133f2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-start;gap:18px}.drawer-head h3{margin:4px 0 0}.drawer-body{padding:20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:block;font-size:10px;font-weight:750;color:#a8c1d2;margin:10px 0}.field input,.field select,.field textarea{display:block;width:100%;margin-top:7px;padding:12px;background:#081a2a;border:1px solid #29465d;border-radius:11px;color:#fff;outline:0}.field textarea{min-height:90px;resize:vertical}.drawer-section{padding:16px 0;border-top:1px solid #1e3d55}.drawer-section:first-child{border-top:0;padding-top:0}.drawer-section h4{margin:0 0 10px;font-size:12px}.drawer-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}.drawer-actions .btn{flex:1}.hint{font-size:9px;color:#718fa4;line-height:1.6}.toast{position:fixed;right:18px;bottom:max(18px,env(safe-area-inset-bottom));z-index:100;background:#123149;border:1px solid #2d526d;color:#fff;padding:13px 16px;border-radius:12px;box-shadow:var(--shadow);font-size:11px;max-width:min(390px,calc(100% - 36px));display:flex;gap:9px;align-items:flex-start}.toast.error-toast i{color:#ff8b8b}.toast i{color:var(--cyan);margin-top:1px}
+    @media(max-width:1180px){.stats{grid-template-columns:repeat(3,1fr)}.record,.record.user-record{grid-template-columns:1fr 1fr 1fr}.record .actions{grid-column:1/-1;justify-content:flex-start}.summary-grid{grid-template-columns:1fr}}
+    @media(max-width:860px){.sidebar{transform:translateX(-100%);transition:.22s}.sidebar.open{transform:translateX(0);box-shadow:20px 0 60px rgba(0,0,0,.35)}.main{margin-left:0}.mobile-menu{display:grid}.content{padding:18px}.topbar{padding-inline:16px}.stats{grid-template-columns:repeat(2,1fr)}.section-head{align-items:flex-start;flex-direction:column}.toolbar,.search{width:100%}.record,.record.user-record,.record.transaction-record,.record.audit-record{grid-template-columns:1fr 1fr}.record .actions{grid-column:1/-1}.sidebar-backdrop{position:fixed;inset:0;background:#0007;z-index:25}.form-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.login-page{padding:12px}.login-card{padding:28px 18px}.content{padding:14px 10px}.topbar h1{font-size:17px}.stats{grid-template-columns:1fr 1fr;gap:9px}.stat{padding:14px}.stat strong{font-size:24px}.record,.record.user-record,.record.transaction-record,.record.audit-record{grid-template-columns:1fr;padding:13px}.record .actions{grid-column:auto}.actions{justify-content:flex-start}.section-head h2{font-size:21px}.filter{flex:1;min-width:0}.drawer-backdrop{padding:0;align-items:end}.drawer{width:100%;max-height:92dvh;border-radius:22px 22px 0 0}.drawer-head,.drawer-body{padding-left:16px;padding-right:16px}.form-grid{grid-template-columns:1fr}.drawer-actions{display:grid;grid-template-columns:1fr}.toast{left:12px;right:12px;max-width:none}.brand b{font-size:12px}}
+    @media(max-width:390px){.stats{grid-template-columns:1fr}.top-actions .text-refresh{display:none}}
+  </style>
 </head>
 <body>
-
-<!-- LOGIN -->
 <div id="loginPage" class="login-page">
-    <div class="login-card">
-        <div class="logo"><i class="fas fa-shield-alt"></i></div>
-        <h1>Admin Access</h1>
-        <p>Oceanic Lending Management</p>
-        <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input id="adminUser" type="text" placeholder="Username" autocomplete="username">
-        </div>
-        <div class="input-group">
-            <i class="fas fa-lock"></i>
-            <input id="adminPass" type="password" placeholder="Password" autocomplete="current-password">
-        </div>
-        <button onclick="adminLogin()"><i class="fas fa-sign-in-alt"></i> Login to Dashboard</button>
-        <div id="adminError" class="error"></div>
-    </div>
+  <section class="login-card">
+    <div class="login-brand"><div class="logo"><i class="fa-solid fa-shield-halved"></i></div></div>
+    <h1>Oceanic Admin</h1>
+    <p>Secure operations dashboard for customer accounts, verification, wallet adjustments, loans, withdrawals and transaction oversight.</p>
+    <div class="input"><i class="fa-regular fa-user"></i><input id="adminUser" autocomplete="username" placeholder="Admin username"></div>
+    <div class="input"><i class="fa-solid fa-lock"></i><input id="adminPass" type="password" autocomplete="current-password" placeholder="Admin password"></div>
+    <button class="primary" onclick="adminLogin()"><i class="fa-solid fa-right-to-bracket"></i> Sign in to admin</button>
+    <div id="adminError" class="error"></div>
+  </section>
 </div>
 
-<!-- DASHBOARD -->
-<div id="dashboard" class="dash">
-    <div class="dash-header">
-        <h1><i class="fas fa-chart-pie"></i> Admin Dashboard</h1>
-        <button class="logout" onclick="adminLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
-    </div>
+<div id="adminApp" class="app">
+  <div id="sideBackdrop" class="sidebar-backdrop hidden" onclick="toggleSidebar(false)"></div>
+  <aside id="sidebar" class="sidebar">
+    <div class="brand"><div class="logo"><i class="fa-solid fa-water"></i></div><div><b>OCEANIC</b><small>ADMIN CONTROL</small></div></div>
+    <nav class="nav">
+      <button class="active" data-view="overview" onclick="showView('overview',this)"><i class="fa-solid fa-chart-pie"></i> Overview</button>
+      <button data-view="users" onclick="showView('users',this)"><i class="fa-solid fa-users"></i> Users</button>
+      <button data-view="loans" onclick="showView('loans',this)"><i class="fa-solid fa-file-invoice-dollar"></i> Loans</button>
+      <button data-view="withdrawals" onclick="showView('withdrawals',this)"><i class="fa-solid fa-money-bill-transfer"></i> Withdrawals</button>
+      <button data-view="transactions" onclick="showView('transactions',this)"><i class="fa-solid fa-receipt"></i> Transactions</button>
+      <button data-view="audit" onclick="showView('audit',this)"><i class="fa-solid fa-clipboard-check"></i> Audit log</button>
+    </nav>
+    <div class="sidebar-foot"><button class="btn ghost" onclick="adminLogout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button></div>
+  </aside>
 
-    <div class="stats" id="stats">
-        <div class="stat"><small><i class="fas fa-users"></i> TOTAL USERS</small><h2 id="totalUsers">0</h2></div>
-        <div class="stat"><small><i class="fas fa-file-invoice"></i> TOTAL LOANS</small><h2 id="totalLoans">0</h2></div>
-        <div class="stat"><small><i class="fas fa-hourglass-half"></i> PENDING WITHDRAWALS</small><h2 id="pendingWithdrawals">0</h2></div>
-        <div class="stat"><small><i class="fas fa-clock"></i> PENDING LOANS</small><h2 id="pendingLoans">0</h2></div>
-    </div>
+  <main class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:10px"><button class="icon-btn mobile-menu" onclick="toggleSidebar(true)"><i class="fa-solid fa-bars"></i></button><h1 id="viewTitle">Overview</h1></div>
+      <div class="top-actions"><button class="btn ghost" onclick="loadDashboard()"><i class="fa-solid fa-rotate"></i><span class="text-refresh"> Refresh</span></button></div>
+    </header>
 
-    <div class="section">
-        <h3><i class="fas fa-users"></i> Users</h3>
-        <div id="usersList"><div class="empty"><i class="fas fa-users"></i>Loading...</div></div>
-    </div>
+    <div class="content">
+      <section id="view-overview" class="section-view active">
+        <div class="section-head"><div><h2>Operations overview</h2><p>Live administrative view of accounts, verification, lending and withdrawals.</p></div></div>
+        <div class="stats">
+          <div class="stat"><div class="stat-top"><span>TOTAL USERS</span><div class="stat-icon"><i class="fa-solid fa-users"></i></div></div><strong id="sUsers">0</strong><small>Registered accounts</small></div>
+          <div class="stat"><div class="stat-top"><span>VERIFIED</span><div class="stat-icon"><i class="fa-solid fa-user-check"></i></div></div><strong id="sVerified">0</strong><small>Verified accounts</small></div>
+          <div class="stat"><div class="stat-top"><span>PENDING LOANS</span><div class="stat-icon"><i class="fa-solid fa-file-circle-question"></i></div></div><strong id="sLoans">0</strong><small>Awaiting decision</small></div>
+          <div class="stat"><div class="stat-top"><span>PENDING WITHDRAWALS</span><div class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></div></div><strong id="sWithdrawals">0</strong><small>Needs processing</small></div>
+          <div class="stat"><div class="stat-top"><span>TRANSACTIONS</span><div class="stat-icon"><i class="fa-solid fa-receipt"></i></div></div><strong id="sTransactions">0</strong><small>Ledger entries</small></div>
+        </div>
+        <div class="summary-grid">
+          <div class="card"><h3><i class="fa-solid fa-bolt" style="color:var(--cyan)"></i> Recent activity</h3><div id="overviewActivity" class="mini-list"></div></div>
+          <div class="card"><h3><i class="fa-solid fa-shield" style="color:var(--cyan)"></i> Account health</h3><div id="accountHealth" class="mini-list"></div></div>
+        </div>
+      </section>
 
-    <div class="section">
-        <h3><i class="fas fa-file-invoice"></i> Loan Applications</h3>
-        <div id="loansList"><div class="empty"><i class="fas fa-spinner fa-spin"></i>Loading...</div></div>
-    </div>
+      <section id="view-users" class="section-view">
+        <div class="section-head"><div><h2>Users</h2><p>Verify accounts, suspend access, update profile details and credit or debit wallet funds.</p></div><div class="toolbar"><div class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="userSearch" oninput="renderUsers()" placeholder="Search name, email or phone"></div><select id="userFilter" class="filter" onchange="renderUsers()"><option value="all">All users</option><option value="verified">Verified</option><option value="pending">Verification pending</option><option value="rejected">Verification rejected</option><option value="suspended">Suspended</option></select></div></div>
+        <div class="card"><div id="usersList" class="data-list"></div></div>
+      </section>
 
-    <div class="section">
-        <h3><i class="fas fa-hand-holding-usd"></i> Withdrawal Requests</h3>
-        <div id="withdrawalsList"><div class="empty"><i class="fas fa-spinner fa-spin"></i>Loading...</div></div>
+      <section id="view-loans" class="section-view">
+        <div class="section-head"><div><h2>Loan applications</h2><p>Review applications, add notes and control the full approval status.</p></div><div class="toolbar"><div class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="loanSearch" oninput="renderLoans()" placeholder="Search applicant or email"></div><select id="loanFilter" class="filter" onchange="renderLoans()"><option value="all">All statuses</option><option value="under_review">Under review</option><option value="approved">Approved</option><option value="rejected">Rejected</option><option value="cancelled">Cancelled</option></select></div></div>
+        <div class="card"><div id="loansList" class="data-list"></div></div>
+      </section>
+
+      <section id="view-withdrawals" class="section-view">
+        <div class="section-head"><div><h2>Withdrawal requests</h2><p>Move withdrawals through pending, processing, completed, rejected or cancelled states.</p></div><div class="toolbar"><div class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="withdrawalSearch" oninput="renderWithdrawals()" placeholder="Search reference or destination"></div><select id="withdrawalFilter" class="filter" onchange="renderWithdrawals()"><option value="all">All statuses</option><option value="pending">Pending</option><option value="processing">Processing</option><option value="completed">Completed</option><option value="rejected">Rejected</option><option value="cancelled">Cancelled</option></select></div></div>
+        <div class="card"><div id="withdrawalsList" class="data-list"></div></div>
+      </section>
+
+      <section id="view-transactions" class="section-view">
+        <div class="section-head"><div><h2>Transactions</h2><p>Read-only financial ledger including loan disbursements, withdrawals and admin fund adjustments.</p></div><div class="toolbar"><div class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="transactionSearch" oninput="renderTransactions()" placeholder="Search description, type or reference"></div></div></div>
+        <div class="card"><div id="transactionsList" class="data-list"></div></div>
+      </section>
+
+      <section id="view-audit" class="section-view">
+        <div class="section-head"><div><h2>Audit log</h2><p>Administrative action history for verification, wallet adjustments and status changes.</p></div></div>
+        <div class="card"><div id="auditList" class="data-list"></div></div>
+      </section>
     </div>
+  </main>
+</div>
+
+<div id="drawerBackdrop" class="drawer-backdrop hidden" onclick="closeDrawerFromBackdrop(event)">
+  <section class="drawer" onclick="event.stopPropagation()">
+    <div class="drawer-head"><div><span id="drawerEyebrow" style="font-size:9px;color:var(--cyan);font-weight:800;letter-spacing:1px">CONTROL</span><h3 id="drawerTitle">Manage</h3></div><button class="icon-btn" onclick="closeDrawer()"><i class="fa-solid fa-xmark"></i></button></div>
+    <div id="drawerBody" class="drawer-body"></div>
+  </section>
 </div>
 
 <script>
-let adminToken = localStorage.getItem('oceanicAdminToken');
 const API = 'https://back-production-766a.up.railway.app';
+let adminToken = localStorage.getItem('oceanicAdminToken');
+let state = { users:[], loans:[], withdrawals:[], transactions:[], auditLogs:[] };
 
-function showToast(msg) {
-    const t = document.createElement('div');
-    t.className = 'toast';
-    t.innerHTML = `<i class="fas fa-check-circle"></i> ${msg}`;
-    document.body.appendChild(t);
-    setTimeout(() => t.remove(), 3000);
+function apiUrl(endpoint){return API.replace(/\/+$/,'') + '/' + String(endpoint||'').replace(/^\/+/, '');}
+async function apiCall(endpoint, options={}){
+  let res;
+  try{res=await fetch(apiUrl(endpoint),{...options,headers:{'Content-Type':'application/json',...(adminToken?{'Authorization':`Bearer ${adminToken}`}:{}) ,...(options.headers||{})}})}catch(e){throw new Error('Cannot reach the backend. Check deployment and CORS settings.');}
+  const raw=await res.text(); let data={};
+  if(raw){try{data=JSON.parse(raw)}catch{throw new Error(`Backend returned non-JSON (${res.status}).`)}}
+  if(!res.ok) throw new Error(data.error||data.message||`Request failed (${res.status})`);
+  return data;
+}
+function esc(v){return String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+function fmt(amount,currency='NGN'){try{return new Intl.NumberFormat('en-NG',{style:'currency',currency}).format(Number(amount||0));}catch{return `${currency} ${Number(amount||0).toLocaleString()}`}}
+function fmtDate(v){if(!v)return '—';try{return new Date(v).toLocaleString()}catch{return String(v)}}
+function badge(status){return `<span class="badge ${esc(status||'pending')}">${esc(String(status||'unknown').replaceAll('_',' '))}</span>`}
+function userName(id){const u=state.users.find(x=>x.id===id);return u?u.fullName:id;}
+function toast(msg,error=false){const t=document.createElement('div');t.className='toast'+(error?' error-toast':'');t.innerHTML=`<i class="fa-solid ${error?'fa-triangle-exclamation':'fa-circle-check'}"></i><span>${esc(msg)}</span>`;document.body.appendChild(t);setTimeout(()=>t.remove(),3500)}
+function toggleSidebar(open){document.getElementById('sidebar').classList.toggle('open',open);document.getElementById('sideBackdrop').classList.toggle('hidden',!open)}
+function showView(name,button){document.querySelectorAll('.section-view').forEach(x=>x.classList.remove('active'));document.getElementById('view-'+name).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));(button||document.querySelector(`[data-view="${name}"]`))?.classList.add('active');document.getElementById('viewTitle').textContent=({overview:'Overview',users:'Users',loans:'Loan applications',withdrawals:'Withdrawals',transactions:'Transactions',audit:'Audit log'})[name]||'Admin';toggleSidebar(false);}
+
+async function adminLogin(){
+  const username=document.getElementById('adminUser').value.trim(), password=document.getElementById('adminPass').value;
+  if(!username||!password){document.getElementById('adminError').textContent='Enter your admin username and password.';return;}
+  try{const data=await apiCall('/api/admin/login',{method:'POST',body:JSON.stringify({username,password})});adminToken=data.token;localStorage.setItem('oceanicAdminToken',adminToken);document.getElementById('adminError').textContent='';await loadDashboard();toast('Admin session started.');}catch(e){document.getElementById('adminError').textContent=e.message;}
+}
+function adminLogout(){localStorage.removeItem('oceanicAdminToken');adminToken=null;state={users:[],loans:[],withdrawals:[],transactions:[],auditLogs:[]};document.getElementById('adminApp').style.display='none';document.getElementById('loginPage').style.display='grid';closeDrawer();}
+async function loadDashboard(){
+  try{const data=await apiCall('/api/admin/dashboard');state=data;document.getElementById('loginPage').style.display='none';document.getElementById('adminApp').style.display='block';renderAll();}
+  catch(e){if(adminToken){toast(e.message,true);adminLogout();}else throw e;}
+}
+function renderAll(){renderStats();renderOverview();renderUsers();renderLoans();renderWithdrawals();renderTransactions();renderAudit();}
+function renderStats(){document.getElementById('sUsers').textContent=state.users.length;document.getElementById('sVerified').textContent=state.users.filter(u=>u.verificationStatus==='verified').length;document.getElementById('sLoans').textContent=state.loans.filter(l=>l.status==='under_review').length;document.getElementById('sWithdrawals').textContent=state.withdrawals.filter(w=>w.status==='pending'||w.status==='processing').length;document.getElementById('sTransactions').textContent=state.transactions.length;}
+function renderOverview(){
+  const recent=[...state.transactions].slice(0,6);document.getElementById('overviewActivity').innerHTML=recent.length?recent.map(t=>`<div class="mini"><div><b>${esc(t.description||t.type)}</b><small>${esc(userName(t.userId))} · ${fmtDate(t.createdAt)}</small></div><span>${fmt(t.amount,t.currency)}</span></div>`).join(''):'<div class="empty">No transactions yet.</div>';
+  const active=state.users.filter(u=>u.status==='active').length,suspended=state.users.filter(u=>u.status!=='active').length,pendingV=state.users.filter(u=>u.verificationStatus==='pending').length,rejectedV=state.users.filter(u=>u.verificationStatus==='rejected').length;
+  document.getElementById('accountHealth').innerHTML=`<div class="mini"><b>Active accounts</b><span>${active}</span></div><div class="mini"><b>Restricted accounts</b><span>${suspended}</span></div><div class="mini"><b>Verification pending</b><span>${pendingV}</span></div><div class="mini"><b>Verification rejected</b><span>${rejectedV}</span></div>`;
+}
+function renderUsers(){
+  const q=(document.getElementById('userSearch')?.value||'').toLowerCase(),f=document.getElementById('userFilter')?.value||'all';
+  const items=state.users.filter(u=>{const text=`${u.fullName} ${u.email} ${u.phone}`.toLowerCase();const filter=f==='all'||(f==='suspended'?u.status==='suspended':u.verificationStatus===f);return text.includes(q)&&filter;});
+  document.getElementById('usersList').innerHTML=items.length?items.map(u=>`<article class="record user-record"><div class="cell"><label>User</label><b>${esc(u.fullName)}</b><small>${esc(u.email)}<br>${esc(u.phone)}</small></div><div class="cell"><label>Wallet</label><b>${fmt(u.balance,u.currency)}</b><small>${esc(u.currency)}</small></div><div class="cell"><label>Verification</label>${badge(u.verificationStatus)}</div><div class="cell"><label>Account</label>${badge(u.status)}</div><div class="actions"><button class="btn" onclick="openUser('${u.id}')"><i class="fa-solid fa-sliders"></i> Manage</button></div></article>`).join(''):'<div class="empty"><i class="fa-solid fa-users"></i>No matching users.</div>';
+}
+function renderLoans(){
+  const q=(document.getElementById('loanSearch')?.value||'').toLowerCase(),f=document.getElementById('loanFilter')?.value||'all';
+  const items=state.loans.filter(l=>`${l.applicantName} ${l.email}`.toLowerCase().includes(q)&&(f==='all'||l.status===f));
+  document.getElementById('loansList').innerHTML=items.length?items.map(l=>`<article class="record"><div class="cell"><label>Applicant</label><b>${esc(l.applicantName)}</b><small>${esc(l.email)} · ${esc(l.purpose)}</small></div><div class="cell"><label>Amount</label><b>${fmt(l.loanAmount,l.currency)}</b><small>${esc(l.loanPeriodYears)} year(s)</small></div><div class="cell"><label>Status</label>${badge(l.status)}</div><div class="cell"><label>Submitted</label><span>${fmtDate(l.createdAt)}</span></div><div class="actions"><button class="btn" onclick="openLoan('${l.id}')"><i class="fa-solid fa-file-pen"></i> Review</button></div></article>`).join(''):'<div class="empty"><i class="fa-solid fa-file-invoice"></i>No matching loans.</div>';
+}
+function renderWithdrawals(){
+  const q=(document.getElementById('withdrawalSearch')?.value||'').toLowerCase(),f=document.getElementById('withdrawalFilter')?.value||'all';
+  const items=state.withdrawals.filter(w=>`${w.reference} ${w.destination} ${userName(w.userId)}`.toLowerCase().includes(q)&&(f==='all'||w.status===f));
+  document.getElementById('withdrawalsList').innerHTML=items.length?items.map(w=>`<article class="record"><div class="cell"><label>User / reference</label><b>${esc(userName(w.userId))}</b><small>${esc(w.reference)}</small></div><div class="cell"><label>Amount</label><b>${fmt(w.amount,w.currency)}</b><small>${esc(w.destination)}</small></div><div class="cell"><label>Status</label>${badge(w.status)}</div><div class="cell"><label>Requested</label><span>${fmtDate(w.createdAt)}</span></div><div class="actions"><button class="btn" onclick="openWithdrawal('${w.id}')"><i class="fa-solid fa-sliders"></i> Manage</button></div></article>`).join(''):'<div class="empty"><i class="fa-solid fa-money-bill-transfer"></i>No matching withdrawals.</div>';
+}
+function renderTransactions(){
+  const q=(document.getElementById('transactionSearch')?.value||'').toLowerCase();const items=state.transactions.filter(t=>`${t.description} ${t.type} ${t.reference} ${userName(t.userId)}`.toLowerCase().includes(q));
+  document.getElementById('transactionsList').innerHTML=items.length?items.map(t=>`<article class="record transaction-record"><div class="cell"><label>Transaction</label><b>${esc(t.description||t.type)}</b><small>${esc(t.reference||'—')}</small></div><div class="cell"><label>User</label><span>${esc(userName(t.userId))}</span></div><div class="cell"><label>Amount</label><b>${fmt(t.amount,t.currency)}</b></div><div class="cell"><label>Status</label>${badge(t.status)}</div><div class="cell"><label>Date</label><span>${fmtDate(t.createdAt)}</span></div></article>`).join(''):'<div class="empty"><i class="fa-solid fa-receipt"></i>No transactions.</div>';
+}
+function renderAudit(){
+  const items=state.auditLogs||[];document.getElementById('auditList').innerHTML=items.length?items.map(a=>`<article class="record audit-record"><div class="cell"><label>Action</label><b>${esc(String(a.action||'').replaceAll('_',' '))}</b></div><div class="cell"><label>Details</label><small>${esc(JSON.stringify(a.details||{}))}</small></div><div class="cell"><label>Date</label><span>${fmtDate(a.createdAt)}</span></div></article>`).join(''):'<div class="empty"><i class="fa-solid fa-clipboard-check"></i>No admin audit entries yet.</div>';
 }
 
-function apiUrl(endpoint) {
-    const base = API.replace(/\/+$/, '');
-    const path = '/' + String(endpoint || '').replace(/^\/+/, '');
-    return base + path;
+function openDrawer(title,eyebrow,html){document.getElementById('drawerTitle').textContent=title;document.getElementById('drawerEyebrow').textContent=eyebrow;document.getElementById('drawerBody').innerHTML=html;document.getElementById('drawerBackdrop').classList.remove('hidden');document.body.style.overflow='hidden';}
+function closeDrawer(){document.getElementById('drawerBackdrop').classList.add('hidden');document.body.style.overflow='';}
+function closeDrawerFromBackdrop(e){if(e.target===document.getElementById('drawerBackdrop'))closeDrawer();}
+function openUser(id){
+  const u=state.users.find(x=>x.id===id);if(!u)return;
+  openDrawer(u.fullName,'USER CONTROL',`<div class="drawer-section"><h4>Account details</h4><div class="form-grid"><label class="field">Full name<input id="duName" value="${esc(u.fullName)}"></label><label class="field">Phone<input id="duPhone" value="${esc(u.phone)}"></label><label class="field">Account status<select id="duStatus"><option value="active" ${u.status==='active'?'selected':''}>Active</option><option value="inactive" ${u.status==='inactive'?'selected':''}>Inactive</option><option value="suspended" ${u.status==='suspended'?'selected':''}>Suspended</option></select></label><label class="field">Wallet<input value="${esc(fmt(u.balance,u.currency))}" disabled></label></div><div class="drawer-actions"><button class="btn" onclick="saveUser('${u.id}')"><i class="fa-solid fa-floppy-disk"></i> Save account</button></div></div><div class="drawer-section"><h4>Verification</h4><label class="field">Verification status<select id="duVerify"><option value="pending" ${u.verificationStatus==='pending'?'selected':''}>Pending</option><option value="verified" ${u.verificationStatus==='verified'?'selected':''}>Verified</option><option value="rejected" ${u.verificationStatus==='rejected'?'selected':''}>Rejected</option></select></label><label class="field">Internal verification note<textarea id="duVerifyNote" placeholder="Optional note">${esc(u.verificationNote||'')}</textarea></label><div class="drawer-actions"><button class="btn success" onclick="saveVerification('${u.id}')"><i class="fa-solid fa-user-check"></i> Update verification</button></div></div><div class="drawer-section"><h4>Wallet adjustment</h4><p class="hint">Credits and debits create permanent transaction entries. The wallet currency is ${esc(u.currency)} and cannot be mixed with another currency.</p><div class="form-grid"><label class="field">Action<select id="duFundAction"><option value="credit">Credit funds</option><option value="debit">Debit funds</option></select></label><label class="field">Amount<input id="duFundAmount" type="number" min="0" step="0.01" placeholder="0.00"></label></div><label class="field">Reason / description<input id="duFundDescription" placeholder="e.g. Manual funding adjustment"></label><div class="drawer-actions"><button class="btn warning" onclick="adjustFunds('${u.id}','${esc(u.currency)}')"><i class="fa-solid fa-wallet"></i> Apply wallet adjustment</button></div></div>`);
 }
+async function saveUser(id){try{await apiCall(`/api/admin/users/${id}`,{method:'PATCH',body:JSON.stringify({fullName:document.getElementById('duName').value.trim(),phone:document.getElementById('duPhone').value.trim(),status:document.getElementById('duStatus').value})});toast('User account updated.');closeDrawer();await loadDashboard();}catch(e){toast(e.message,true)}}
+async function saveVerification(id){try{await apiCall(`/api/admin/users/${id}/verification`,{method:'PATCH',body:JSON.stringify({status:document.getElementById('duVerify').value,note:document.getElementById('duVerifyNote').value.trim()||null})});toast('Verification updated.');closeDrawer();await loadDashboard();}catch(e){toast(e.message,true)}}
+async function adjustFunds(id,currency){const action=document.getElementById('duFundAction').value,amount=Number(document.getElementById('duFundAmount').value),description=document.getElementById('duFundDescription').value.trim();if(!amount||amount<=0||!description)return toast('Enter a valid amount and reason.',true);if(!confirm(`${action==='credit'?'Credit':'Debit'} ${fmt(amount,currency)}?`))return;try{await apiCall(`/api/admin/users/${id}/funds`,{method:'POST',body:JSON.stringify({action,amount,currency,description})});toast(`Wallet ${action} completed.`);closeDrawer();await loadDashboard();}catch(e){toast(e.message,true)}}
+function openLoan(id){const l=state.loans.find(x=>x.id===id);if(!l)return;openDrawer(l.applicantName,'LOAN REVIEW',`<div class="drawer-section"><div class="form-grid"><label class="field">Applicant<input value="${esc(l.applicantName)}" disabled></label><label class="field">Amount<input value="${esc(fmt(l.loanAmount,l.currency))}" disabled></label><label class="field">Monthly income<input value="${esc(fmt(l.monthlyIncome,l.currency))}" disabled></label><label class="field">Period<input value="${esc(l.loanPeriodYears)} year(s)" disabled></label></div><label class="field">Purpose<input value="${esc(l.purpose)}" disabled></label><label class="field">Address<textarea disabled>${esc(`${l.addressTitle}, ${l.city}, ${l.stateRegion}, ${l.country}`)}</textarea></label></div><div class="drawer-section"><h4>Decision</h4><label class="field">Status<select id="dlStatus"><option value="under_review" ${l.status==='under_review'?'selected':''}>Under review</option><option value="approved" ${l.status==='approved'?'selected':''}>Approved / disburse</option><option value="rejected" ${l.status==='rejected'?'selected':''}>Rejected</option><option value="cancelled" ${l.status==='cancelled'?'selected':''}>Cancelled</option></select></label><label class="field">Reviewer note<textarea id="dlNote">${esc(l.reviewerNote||'')}</textarea></label><p class="hint">Approving a loan credits the user's wallet once. If it has already been disbursed, changing the status later does not silently reverse the money; use a documented wallet debit if a correction is required.</p><div class="drawer-actions"><button class="btn success" onclick="saveLoan('${l.id}')"><i class="fa-solid fa-check"></i> Save loan decision</button></div></div>`)}
+async function saveLoan(id){const status=document.getElementById('dlStatus').value,note=document.getElementById('dlNote').value.trim()||null;if(status==='approved'&&!confirm('Approve this loan and disburse it to the user wallet?'))return;try{await apiCall(`/api/admin/loans/${id}`,{method:'PATCH',body:JSON.stringify({status,reviewerNote:note})});toast('Loan updated.');closeDrawer();await loadDashboard();}catch(e){toast(e.message,true)}}
+function openWithdrawal(id){const w=state.withdrawals.find(x=>x.id===id);if(!w)return;openDrawer(w.reference,'WITHDRAWAL CONTROL',`<div class="drawer-section"><div class="form-grid"><label class="field">User<input value="${esc(userName(w.userId))}" disabled></label><label class="field">Amount<input value="${esc(fmt(w.amount,w.currency))}" disabled></label></div><label class="field">Destination<textarea disabled>${esc(w.destination)}</textarea></label></div><div class="drawer-section"><h4>Status</h4><label class="field">Withdrawal status<select id="dwStatus"><option value="pending" ${w.status==='pending'?'selected':''}>Pending</option><option value="processing" ${w.status==='processing'?'selected':''}>Processing</option><option value="completed" ${w.status==='completed'?'selected':''}>Completed</option><option value="rejected" ${w.status==='rejected'?'selected':''}>Rejected</option><option value="cancelled" ${w.status==='cancelled'?'selected':''}>Cancelled</option></select></label><label class="field">Reviewer note<textarea id="dwNote">${esc(w.reviewerNote||'')}</textarea></label><p class="hint">Rejected or cancelled withdrawals are refunded once. Reopening a refunded withdrawal reserves the funds again and is blocked if the wallet no longer has enough balance.</p><div class="drawer-actions"><button class="btn" onclick="saveWithdrawal('${w.id}')"><i class="fa-solid fa-floppy-disk"></i> Save withdrawal status</button></div></div>`)}
+async function saveWithdrawal(id){const status=document.getElementById('dwStatus').value,note=document.getElementById('dwNote').value.trim()||null;if((status==='completed'||status==='rejected'||status==='cancelled')&&!confirm(`Set this withdrawal to ${status}?`))return;try{await apiCall(`/api/admin/withdrawals/${id}`,{method:'PATCH',body:JSON.stringify({status,reviewerNote:note})});toast('Withdrawal updated.');closeDrawer();await loadDashboard();}catch(e){toast(e.message,true)}}
 
-async function apiCall(endpoint, options = {}) {
-    const url = apiUrl(endpoint);
-    let res;
-
-    try {
-        res = await fetch(url, {
-            ...options,
-            headers: {
-                'Content-Type': 'application/json',
-                ...(adminToken ? { 'Authorization': `Bearer ${adminToken}` } : {}),
-                ...(options.headers || {})
-            }
-        });
-    } catch (networkError) {
-        throw new Error(`Cannot reach the backend at ${API}. Check the Railway deployment and CORS settings.`);
-    }
-
-    const raw = await res.text();
-    let data = {};
-
-    if (raw) {
-        try {
-            data = JSON.parse(raw);
-        } catch {
-            throw new Error(
-                `Backend returned HTML/non-JSON instead of API JSON (${res.status} ${res.statusText}). ` +
-                `Requested: ${url}. Check that this exact API route is deployed.`
-            );
-        }
-    }
-
-    if (!res.ok) {
-        throw new Error(data.error || data.message || `API request failed (${res.status})`);
-    }
-
-    return data;
-}
-
-function formatMoney(amount, currency = 'USD') {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(amount || 0);
-}
-
-function getBadge(status) {
-    const map = {
-        'pending': 'pending',
-        'under_review': 'under_review',
-        'approved': 'approved',
-        'rejected': 'rejected',
-        'completed': 'completed',
-        'processing': 'processing',
-        'cancelled': 'cancelled',
-        'active': 'active',
-        'inactive': 'inactive'
-    };
-    return `<span class="badge ${map[status] || 'pending'}">${status || 'unknown'}</span>`;
-}
-
-async function adminLogin() {
-    const username = document.getElementById('adminUser').value.trim();
-    const password = document.getElementById('adminPass').value.trim();
-
-    if (!username || !password) {
-        document.getElementById('adminError').textContent = 'Please enter credentials.';
-        return;
-    }
-
-    try {
-        const data = await apiCall('/api/admin/login', {
-            method: 'POST',
-            body: JSON.stringify({ username, password })
-        });
-        adminToken = data.token;
-        localStorage.setItem('oceanicAdminToken', adminToken);
-        document.getElementById('adminError').textContent = '';
-        showToast('Logged in successfully!');
-        loadDashboard();
-    } catch (e) {
-        document.getElementById('adminError').textContent = e.message || 'Invalid credentials';
-    }
-}
-
-async function loadDashboard() {
-    try {
-        const data = await apiCall('/api/admin/dashboard');
-        
-        // Stats
-        document.getElementById('totalUsers').textContent = data.users.length;
-        document.getElementById('totalLoans').textContent = data.loans.length;
-        document.getElementById('pendingWithdrawals').textContent = data.withdrawals.filter(w => w.status === 'pending').length;
-        document.getElementById('pendingLoans').textContent = data.loans.filter(l => l.status === 'under_review').length;
-
-        // Users
-        document.getElementById('usersList').innerHTML = data.users.length ? 
-            `<table>
-                <tr><th><i class="fas fa-user"></i> Name</th><th><i class="fas fa-envelope"></i> Email</th><th><i class="fas fa-phone"></i> Phone</th><th><i class="fas fa-wallet"></i> Balance</th><th><i class="fas fa-circle"></i> Status</th></tr>
-                ${data.users.map(u => `
-                    <tr>
-                        <td><strong>${u.fullName}</strong></td>
-                        <td>${u.email}</td>
-                        <td>${u.phone}</td>
-                        <td>${formatMoney(u.balance, u.currency || 'NGN')}</td>
-                        <td>${getBadge(u.status)}</td>
-                    </tr>
-                `).join('')}
-            </table>` : '<div class="empty"><i class="fas fa-users"></i>No users registered yet.</div>';
-
-        // Loans
-        document.getElementById('loansList').innerHTML = data.loans.length ? 
-            `<table>
-                <tr><th><i class="fas fa-user"></i> Applicant</th><th><i class="fas fa-hand-holding-usd"></i> Amount</th><th><i class="fas fa-clock"></i> Period</th><th><i class="fas fa-circle"></i> Status</th><th><i class="fas fa-cog"></i> Action</th></tr>
-                ${data.loans.map(l => `
-                    <tr>
-                        <td><strong>${l.applicantName}</strong><br><small><i class="fas fa-envelope"></i> ${l.email}</small></td>
-                        <td>${formatMoney(l.loanAmount, l.currency)}</td>
-                        <td>${l.loanPeriodYears} yrs</td>
-                        <td>${getBadge(l.status)}</td>
-                        <td>
-                            ${l.status === 'under_review' ? `
-                                <button class="action-btn approve" onclick="updateLoan('${l.id}','approved')"><i class="fas fa-check"></i> Approve</button>
-                                <button class="action-btn reject" onclick="updateLoan('${l.id}','rejected')"><i class="fas fa-times"></i> Reject</button>
-                            ` : l.status}
-                        </td>
-                    </tr>
-                `).join('')}
-            </table>` : '<div class="empty"><i class="fas fa-file-invoice"></i>No loan applications yet.</div>';
-
-        // Withdrawals
-        document.getElementById('withdrawalsList').innerHTML = data.withdrawals.length ? 
-            `<table>
-                <tr><th><i class="fas fa-user"></i> User</th><th><i class="fas fa-money-bill"></i> Amount</th><th><i class="fas fa-university"></i> Destination</th><th><i class="fas fa-circle"></i> Status</th><th><i class="fas fa-cog"></i> Action</th></tr>
-                ${data.withdrawals.map(w => `
-                    <tr>
-                        <td><strong>${w.userId}</strong><br><small><i class="fas fa-hashtag"></i> ${w.reference}</small></td>
-                        <td>${formatMoney(w.amount, w.currency)}</td>
-                        <td><small><i class="fas fa-map-pin"></i> ${w.destination}</small></td>
-                        <td>${getBadge(w.status)}</td>
-                        <td>
-                            ${w.status === 'pending' ? `
-                                <button class="action-btn approve" onclick="updateWithdrawal('${w.id}','completed')"><i class="fas fa-check"></i> Approve</button>
-                                <button class="action-btn reject" onclick="updateWithdrawal('${w.id}','rejected')"><i class="fas fa-times"></i> Reject</button>
-                            ` : w.status}
-                        </td>
-                    </tr>
-                `).join('')}
-            </table>` : '<div class="empty"><i class="fas fa-hand-holding-usd"></i>No withdrawal requests yet.</div>';
-
-        document.getElementById('loginPage').style.display = 'none';
-        document.getElementById('dashboard').style.display = 'block';
-
-    } catch (e) {
-        showToast('Error: ' + e.message);
-        adminLogout();
-    }
-}
-
-async function updateLoan(id, status) {
-    if (!confirm(`Set loan to ${status}?`)) return;
-    try {
-        await apiCall(`/api/admin/loans/${id}`, {
-            method: 'PATCH',
-            body: JSON.stringify({ status })
-        });
-        showToast(`Loan ${status}!`);
-        loadDashboard();
-    } catch (e) {
-        showToast('Error: ' + e.message);
-    }
-}
-
-async function updateWithdrawal(id, status) {
-    if (!confirm(`Set withdrawal to ${status}?`)) return;
-    try {
-        await apiCall(`/api/admin/withdrawals/${id}`, {
-            method: 'PATCH',
-            body: JSON.stringify({ status })
-        });
-        showToast(`Withdrawal ${status}!`);
-        loadDashboard();
-    } catch (e) {
-        showToast('Error: ' + e.message);
-    }
-}
-
-function adminLogout() {
-    localStorage.removeItem('oceanicAdminToken');
-    adminToken = null;
-    document.getElementById('loginPage').style.display = 'flex';
-    document.getElementById('dashboard').style.display = 'none';
-    showToast('Logged out');
-}
-
-if (adminToken) {
-    loadDashboard().catch(() => adminLogout());
-}
+document.getElementById('adminPass').addEventListener('keydown',e=>{if(e.key==='Enter')adminLogin()});
+if(adminToken) loadDashboard();
 </script>
 </body>
 </html>
