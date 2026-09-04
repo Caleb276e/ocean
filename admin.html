@@ -71,11 +71,11 @@
         <p>Oceanic Lending Management</p>
         <div class="input-group">
             <i class="fas fa-user"></i>
-            <input id="adminUser" type="text" placeholder="Username" value="admin">
+            <input id="adminUser" type="text" placeholder="Username" autocomplete="username">
         </div>
         <div class="input-group">
             <i class="fas fa-lock"></i>
-            <input id="adminPass" type="password" placeholder="Password" value="admin123">
+            <input id="adminPass" type="password" placeholder="Password" autocomplete="current-password">
         </div>
         <button onclick="adminLogin()"><i class="fas fa-sign-in-alt"></i> Login to Dashboard</button>
         <div id="adminError" class="error"></div>
@@ -114,7 +114,7 @@
 
 <script>
 let adminToken = localStorage.getItem('oceanicAdminToken');
-const API = 'https://back-production-766a.up.railway.app/';
+const API = 'https://back-production-766a.up.railway.app';
 
 function showToast(msg) {
     const t = document.createElement('div');
@@ -124,17 +124,47 @@ function showToast(msg) {
     setTimeout(() => t.remove(), 3000);
 }
 
+function apiUrl(endpoint) {
+    const base = API.replace(/\/+$/, '');
+    const path = '/' + String(endpoint || '').replace(/^\/+/, '');
+    return base + path;
+}
+
 async function apiCall(endpoint, options = {}) {
-    const res = await fetch(`${API}${endpoint}`, {
-        ...options,
-        headers: {
-            'Content-Type': 'application/json',
-            ...(adminToken ? { 'Authorization': `Bearer ${adminToken}` } : {}),
-            ...(options.headers || {})
+    const url = apiUrl(endpoint);
+    let res;
+
+    try {
+        res = await fetch(url, {
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...(adminToken ? { 'Authorization': `Bearer ${adminToken}` } : {}),
+                ...(options.headers || {})
+            }
+        });
+    } catch (networkError) {
+        throw new Error(`Cannot reach the backend at ${API}. Check the Railway deployment and CORS settings.`);
+    }
+
+    const raw = await res.text();
+    let data = {};
+
+    if (raw) {
+        try {
+            data = JSON.parse(raw);
+        } catch {
+            throw new Error(
+                `Backend returned HTML/non-JSON instead of API JSON (${res.status} ${res.statusText}). ` +
+                `Requested: ${url}. Check that this exact API route is deployed.`
+            );
         }
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'API Error');
+    }
+
+    if (!res.ok) {
+        throw new Error(data.error || data.message || `API request failed (${res.status})`);
+    }
+
     return data;
 }
 
